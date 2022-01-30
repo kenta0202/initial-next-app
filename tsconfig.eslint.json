@@ -1,0 +1,6 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["src/**/*", ".eslintrc.js"],
+    "exclude": ["node_modules", "dist", "build"],
+    "eslintIgnore": ["webpack"]
+  }
