@@ -1,0 +1,17 @@
+/* なにも設定しない状態(box-sizing:content-box; )だと、widthやheightで指定した大きさにborderとpaddingの値が加算された領域を占めてしまうので、計算するのが面倒くさいのです。
+
+border-boxにしておけば、width: 100%; にするだけで親要素幅や画面幅にフィットさせることができてスムーズになりますね。 */
+
+body {
+  box-sizing: border-box;
+}
+body * {
+  box-sizing: inherit; /* box-sizingの値は継承されないので明示的に設定 */
+}
+
+* {
+  /* デフォルトで余白を無しにしておく */
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
