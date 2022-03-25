@@ -1,6 +1,8 @@
 {
-    "extends": "./tsconfig.json",
-    "include": ["src/**/*", ".eslintrc.js"],
-    "exclude": ["node_modules", "dist", "build"],
-    "eslintIgnore": ["webpack"]
-  }
+  //別ファイルに分けて、チェックするファイルを限定
+  // コンパイルするファイルを指定
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
+  "exclude": ["node_modules", "dist", "build"],
+  "eslintIgnore": ["webpack"]
+}
