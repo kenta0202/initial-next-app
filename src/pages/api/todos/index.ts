@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { UserData } from 'data/users';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { UserData } from '../../../data/users';
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {

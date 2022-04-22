@@ -1,21 +1,26 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/require-await */
 import { GetStaticProps, GetStaticPaths } from 'next';
+import { UserData } from 'data/users';
 
-import { User } from '../../interfaces';
-import { sampleUserData } from '../../utils/sample-data';
+import { User } from '../../types';
 import Layout from '../../components/Layout';
 import ListDetail from '../../components/ListDetail';
 
 type Props = {
-  item?: User;
-  errors?: string;
+  item: User;
+  errors: string;
 };
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+function StaticPropsDetail({ item, errors }: Props) {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
         <p>
-          <span style={{ color: 'red' }}>Error:</span> {errors}
+          <span style={{ color: 'red' }}>Error:</span>
+          {' '}
+          {errors}
         </p>
       </Layout>
     );
@@ -26,13 +31,13 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
       {item && <ListDetail item={item} />}
     </Layout>
   );
-};
+}
 
 export default StaticPropsDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get the paths we want to pre-render based on users
-  const paths = sampleUserData.map((user) => ({
+  const paths = UserData.map((user) => ({
     params: { id: user.id.toString() },
   }));
 
@@ -47,11 +52,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id;
-    const item = sampleUserData.find((data) => data.id === Number(id));
+    const item = UserData.find((data) => data.id === Number(id));
+
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
     return { props: { item } };
-  } catch (err: any) {
+  } catch (err) {
     return { props: { errors: err.message } };
   }
 };

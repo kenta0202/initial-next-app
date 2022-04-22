@@ -1,20 +1,22 @@
+/* eslint-disable react/function-component-definition */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_KEYWORDS } from 'utils/Blog/Constants';
+import {
+  SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_KEYWORDS,
+} from 'utils/Blog/Constants';
 
 type Props = {
   title: string;
 };
 
-export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
+const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
   const router = useRouter();
+
   return (
     <Head>
       <title>
-        {title
-          ? title
-          : router.pathname.slice(1).charAt(0).toUpperCase() + router.pathname.slice(2)}
+        {title || router.pathname.slice(1).charAt(0).toUpperCase() + router.pathname.slice(2)}
       </title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       {/* モバイルブラウザ向けのビューポートの大きさの設定を表す
@@ -30,7 +32,7 @@ export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
       <meta name="format-detection" content="telephone=no, email=no address=no" />
       {/* スマホの関連するアプリにリンクする拡張の無効化 */}
       <meta charSet="utf-8" />
-      {/* 文字コードの設定 日本語で記述するサイトであれば「utf-8」*/}
+      {/* 文字コードの設定 日本語で記述するサイトであれば「utf-8」 */}
       <meta name="author" content="kenta0202" />
       {/* 著者名や会社名などを指定 */}
       <meta name="keywords" content={SITE_KEYWORDS} />
@@ -45,7 +47,9 @@ export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
             ・nofollow：クローラーに巡回させない */}
       {/*  OGPの設定  */}
       {/* OGPタグ:SNSとWebページの情報を連携させる際に記述するタグ */}
-      <meta property="og:type" content="blog" /> {/* 表示するページの種類 */}
+      <meta property="og:type" content="blog" />
+      {' '}
+      {/* 表示するページの種類 */}
       <meta property="og:title" content={SITE_NAME} />
       {/* ページのタイトルを指定します。titleタグで設定したタイトルと同様のものを記述するのが一般的ですが、別のタイトルを記載すると、og:titleのタイトルが優先される。 */}
       <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
@@ -64,3 +68,5 @@ export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
     </Head>
   );
 };
+
+export default HeadInformation;

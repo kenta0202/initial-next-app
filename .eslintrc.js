@@ -1,14 +1,9 @@
 module.exports = {
-  // 独自のグローバル変数を定義
-  // いきなりコード上に現れる本来のグローバルオブジェクト（windowなど）には存在しない値
-  // これらで定義された値をいきなりコード上で使うと ESLint （eslint-loader）によりReferenceErrorが起こされる可能性があります。
-  global: {},
   root: true,
   env: {
     // プログラムの実行環境を ESLint に教える
     es6: true,
     node: true,
-    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser',
   // デフォルトではeslinitのparserはないからインストールする
@@ -26,8 +21,8 @@ module.exports = {
     これをしただけではルールはオンにならない
      */
     '@typescript-eslint',
-    'tailwindcss',
-    'jest',
+    // 'tailwindcss',
+    // 'jest',
     'import',
     'jsx-a11y',
     'react',
@@ -48,6 +43,14 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   rules: {
+    "linebreak-style": 0,
+    'react/function-component-definition': [
+          2,
+          {
+            namedComponents: 'function-declaration',
+            unnamedComponents: 'function-expression',
+          },
+        ],
     // 適用する個々のルールと、エラーレベルや例外などその設定値を記述する
     // 定義前の変数の使用を禁じる ESLint と TypeScript ESLint のルール
     'no-use-before-define': 'off',
