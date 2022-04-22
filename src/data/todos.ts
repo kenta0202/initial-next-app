@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Todo } from 'types/Todos';
+import { Todo } from 'interface/Todos';
 
 export const todosData: Todo[] = [
   {

@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { User } from '../types';
+import { User } from '../interface';
 
 export const UserData: User[] = [
   { id: 101, name: 'Alice' },

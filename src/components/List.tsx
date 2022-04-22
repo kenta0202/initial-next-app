@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ListItem from './ListItem';
-import { User } from '../types';
+import { User } from '../interface';
 
 type Props = {
   items: User[];

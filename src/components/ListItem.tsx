@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { User } from '../types';
+import { User } from '../interface';
 
 type Props = {
   data: User;
@@ -10,9 +10,7 @@ type Props = {
 function ListItem({ data }: Props) {
   return (
     <Link href="/users/[id]" as={`/users/${data.id}`}>
-      {data.id}
-      :
-      {data.name}
+      {data.id}:{data.name}
     </Link>
   );
 }
