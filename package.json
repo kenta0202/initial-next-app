@@ -1,14 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "preinstall": "typesync || :",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
     "css:dev": "cross-env NODE_ENV=development  TAILWIND_MODE=watch postcss ./styles/styled.css -o ./styles/dist.css -w ",
     "css:pro": "cross-env NODE_ENV=production postcss ./styles/styled.css -o ./styles/dist.css",
-    "lint": "eslint src --ext .js,jsx,.ts,.tsx --fix"
+    "lint": "eslint src --ext .js,jsx,.ts,.tsx --fix",
+    "type-check": "tsc",
+    "preinstall": "typesync || :"
   },
   "dependencies": {
     "next": "^12.1.0",
