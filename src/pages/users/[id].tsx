@@ -18,7 +18,9 @@ function StaticPropsDetail({ item, errors }: Props) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
         <p>
-          <span style={{ color: 'red' }}>Error:</span> {errors}
+          <span style={{ color: 'red' }}>Error:</span>
+          {' '}
+          {errors}
         </p>
       </Layout>
     );
