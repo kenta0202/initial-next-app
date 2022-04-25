@@ -380,7 +380,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
   /* body {
-    @apply bg-whitegrey text-darkgrey no-scrollbar;
+    @apply font-family: "M PLUS Rounded 1c", sans-serif;
   } */
 
 *, ::before, ::after {
@@ -430,9 +430,33 @@ Ensure the default browser behavior of the `hidden` attribute.
 /* .btn {
     @apply font-semibold text-darkgrey bg-whitegrey border-2 border-darkgrey  dark:text-whitegrey dark:bg-darkgrey dark:border-whitegrey  hover:opacity-70 shadow-md py-1 px-4 rounded-2xl;
   } */
-.text-orange-400 {
+.p-1 {
+  padding: 0.25rem;
+}
+.p-5 {
+  padding: 1.25rem;
+}
+.text-center {
+  text-align: center;
+}
+.font-type {
+  font-family: M PLUS Rounded 1c;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-red-300 {
   --tw-text-opacity: 1;
-  color: rgb(251 146 60 / var(--tw-text-opacity));
+  color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 .text-gray-500 {
   --tw-text-opacity: 1;

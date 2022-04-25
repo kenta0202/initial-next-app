@@ -8,11 +8,11 @@ export default function Document() {
     >
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="font-type">
         <Main />
         <NextScript />
       </body>

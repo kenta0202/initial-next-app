@@ -4,7 +4,7 @@
 
 @layer base {
   /* body {
-    @apply bg-whitegrey text-darkgrey no-scrollbar;
+    @apply font-family: "M PLUS Rounded 1c", sans-serif;
   } */
 }
 
