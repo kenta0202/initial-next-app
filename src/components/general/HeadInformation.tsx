@@ -2,9 +2,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
-import {
-  SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_KEYWORDS,
-} from 'utils/Blog/Constants';
 
 type Props = {
   title: string;
@@ -23,7 +20,7 @@ const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
       初期状態では1.0倍（実サイズ）で表示
       ビューポートの幅をその機器の画面の幅と一致
       */}
-      <meta name="description" content={SITE_DESCRIPTION} />
+      <meta name="description" content={process.env.NEXT_PUBLIC_SITE_DESCRIPTION} />
       {/* Webページの概要や内容などを指定 */}
       <meta name="theme-color" content="#5588cc" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fa811e" />
@@ -35,7 +32,7 @@ const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
       {/* 文字コードの設定 日本語で記述するサイトであれば「utf-8」 */}
       <meta name="author" content="kenta0202" />
       {/* 著者名や会社名などを指定 */}
-      <meta name="keywords" content={SITE_KEYWORDS} />
+      <meta name="keywords" content={process.env.NEXT_PUBLIC_SITE_KEYWORDS} />
       {/* Webページの内容に関係するキーワード */}
       <meta name="referrer" content="same-origin" />
       {/* “name="referrer"”が指定された“meta”要素は文書からリクエストを送信するときのデフォルトのリファラーポリシーを表す。 */}
@@ -47,17 +44,15 @@ const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
             ・nofollow：クローラーに巡回させない */}
       {/*  OGPの設定  */}
       {/* OGPタグ:SNSとWebページの情報を連携させる際に記述するタグ */}
-      <meta property="og:type" content="blog" />
-      {' '}
-      {/* 表示するページの種類 */}
-      <meta property="og:title" content={SITE_NAME} />
+      <meta property="og:type" content="blog" /> {/* 表示するページの種類 */}
+      <meta property="og:title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
       {/* ページのタイトルを指定します。titleタグで設定したタイトルと同様のものを記述するのが一般的ですが、別のタイトルを記載すると、og:titleのタイトルが優先される。 */}
-      <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
+      <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`} />
       {/* 表示するページのURLを指定します。URLは絶対パスで記述。 */}
-      <meta property="og:description" content={SITE_DESCRIPTION} />
+      <meta property="og:description" content={process.env.NEXT_PUBLIC_SITE_DESCRIPTION} />
       {/* og:descriptionの適した文字数は80～90文字程度 */}
-      <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:image" content={`${SITE_URL}/ogp.png`} />
+      <meta property="og:site_name" content={process.env.NEXT_PUBLIC_SITE_NAME} />
+      <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL}/ogp.png`} />
       {/* Webの記事やページがSNSでシェアされた際に表示されるサムネイルとなる画像を指定 */}
       {/* Twitterカードの設定 */}
       <meta name="twitter:card" content="summary" />

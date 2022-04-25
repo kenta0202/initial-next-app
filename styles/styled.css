@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  /* body {
     @apply bg-whitegrey text-darkgrey no-scrollbar;
-  }
+  } */
 }
 
 @layer components {
-  .btn {
+  /* .btn {
     @apply font-semibold text-darkgrey bg-whitegrey border-2 border-darkgrey  dark:text-whitegrey dark:bg-darkgrey dark:border-whitegrey  hover:opacity-70 shadow-md py-1 px-4 rounded-2xl;
-  }
+  } */
 }
 
 @layer utilities {
   .p-21 {
     padding: 5.5rem;
   }
-  .no-scrollbar::-webkit-scrollbar {
+  /* .no-scrollbar::-webkit-scrollbar {
     display: none;
-  }
+  } */
 }
