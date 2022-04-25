@@ -5,35 +5,35 @@ module.exports = {
     es6: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   // デフォルトではeslinitのparserはないからインストールする
 
   parserOptions: {
     // パーサの各種実行オプションを設定する
     // ES2016 以降の構文を有効にするに
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 2020, // Node.js 12の場合は2019、他のバージョンのNode.jsを利用している場合は場合は適宜変更する
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.eslint.json'],
+    project: ["./tsconfig.eslint.json"],
   },
   plugins: [
     /* 任意の（インストール済みの）プラグインを組み込む
     これをしただけではルールはオンにならない
      */
-    '@typescript-eslint',
-    // 'tailwindcss',
+    "@typescript-eslint",
+    "tailwindcss",
     // 'jest',
-    'import',
-    'jsx-a11y',
-    'react',
-    'react-hooks',
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
   ],
   extends: [
     /*   どのルールセットを導入するか？
     プラグインが提供する推奨設定を指定
     ここに記述した共有設定間でルール設定が重複している場合、
     リストの後ろに記述されたほうが優先される*/
-    'plugin:react/recommended',
+    "plugin:react/recommended",
     // "airbnb",
     // "airbnb/hooks",
     // "plugin:import/errors",
@@ -125,12 +125,12 @@ module.exports = {
 ファイルでは無効にするために使ってる。 */
   overrides: [
     {
-      files: ['*.tsx'],
+      files: ["*.tsx"],
       /* コンポーネントの props に型チェックを行うための propTypes プロパティ 59 の定義を強制
 するルール。eslint-config-airbnb で設定されているが、TypeScript の場合は不要なのでファイル
 拡張子が .tsx の場合に無効化するよう設定を上書き */
       rules: {
-        'react/prop-types': 'off',
+        "react/prop-types": "off",
       },
     },
   ],
@@ -141,20 +141,20 @@ module.exports = {
 62 というモジュール解決プラグインに対して、パスに src を追加
 してあげてる */
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       node: {
-        paths: ['src'],
+        paths: ["src"],
       },
     },
   },
   ignorePatterns: [
-    'next-env.d.ts',
-    'build',
-    'public',
-    '**/coverage',
-    '**/node_modules',
-    '**/*.min.js',
-    '*.config.js',
-    '.*lintrc.js',
+    "next-env.d.ts",
+    "build",
+    "public",
+    "**/coverage",
+    "**/node_modules",
+    "**/*.min.js",
+    "*.config.js",
+    ".*lintrc.js",
   ],
 };
