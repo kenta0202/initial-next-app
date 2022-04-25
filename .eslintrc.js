@@ -43,6 +43,8 @@ module.exports = {
     // "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
   rules: {
+    "react/react-in-jsx-scope": "off", //import Reactしなくてもいい
+
     //     "linebreak-style": 0,
     //     "react/function-component-definition": [
     //       2,

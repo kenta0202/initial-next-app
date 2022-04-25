@@ -1,13 +1,13 @@
 /* eslint-disable react/function-component-definition */
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import React from 'react';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
 
 type Props = {
-  title: string;
+  title?: string;
 };
 
-const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
+export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
   const router = useRouter();
 
   return (
@@ -47,7 +47,7 @@ const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
       <meta property="og:type" content="blog" /> {/* 表示するページの種類 */}
       <meta property="og:title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
       {/* ページのタイトルを指定します。titleタグで設定したタイトルと同様のものを記述するのが一般的ですが、別のタイトルを記載すると、og:titleのタイトルが優先される。 */}
-      <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL}${router.asPath}`} />
+      <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL}${router?.asPath}`} />
       {/* 表示するページのURLを指定します。URLは絶対パスで記述。 */}
       <meta property="og:description" content={process.env.NEXT_PUBLIC_SITE_DESCRIPTION} />
       {/* og:descriptionの適した文字数は80～90文字程度 */}

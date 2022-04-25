@@ -379,6 +379,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
+  /* body {
+    @apply bg-whitegrey text-darkgrey no-scrollbar;
+  } */
 
 *, ::before, ::after {
   --tw-translate-x: 0;
@@ -424,18 +427,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.p-1 {
-  padding: 0.25rem;
-}
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
+/* .btn {
+    @apply font-semibold text-darkgrey bg-whitegrey border-2 border-darkgrey  dark:text-whitegrey dark:bg-darkgrey dark:border-whitegrey  hover:opacity-70 shadow-md py-1 px-4 rounded-2xl;
+  } */
 .text-orange-400 {
   --tw-text-opacity: 1;
   color: rgb(251 146 60 / var(--tw-text-opacity));
 }
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+/* .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  } */
