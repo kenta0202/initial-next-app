@@ -34,13 +34,15 @@ module.exports = {
     ここに記述した共有設定間でルール設定が重複している場合、
     リストの後ろに記述されたほうが優先される*/
     "plugin:react/recommended",
+    "plugin:tailwindcss/recommended",
     // "airbnb",
     // "airbnb/hooks",
     // "plugin:import/errors",
     // "plugin:import/warnings",
     // "plugin:import/typescript",
-    // "plugin:@typescript-eslint/recommended",
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/jsx-runtime",
   ],
   rules: {
     "react/react-in-jsx-scope": "off", //import Reactしなくてもいい
@@ -158,5 +160,7 @@ module.exports = {
     "**/*.min.js",
     "*.config.js",
     ".*lintrc.js",
+    "src/pages/_app.tsx",
+    "src/pages/_error.tsx",
   ],
 };
