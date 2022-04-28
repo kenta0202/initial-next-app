@@ -7,9 +7,8 @@ const Firebase = () => {
   return (
     <div>
       <ImageUploader />
-      {/* <UserList />
-
-      <Home /> */}
+      <UserList />
+      <Home />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { auth } from "../../../../firebase";
 const UserInfo = () => {
   return (
     <>
-      <div className=" mx-auto  ">
+      <div className=" ">
         <img src={auth.currentUser.photoURL} alt="" />
       </div>
       <p className="">{auth.currentUser?.displayName}</p>

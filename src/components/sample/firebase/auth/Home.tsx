@@ -10,11 +10,14 @@ const Home = () => {
   const [user] = useAuthState(auth);
   return (
     <>
-      <div className="flex flex-col gap-2 text-center ">
+      <h3 className=" text-2xl">
+        <span className="text-lg">■</span> Auth
+      </h3>
+      <div className="flex flex-col gap-2  ">
         <h3 className="text-xl ">ログイン機能</h3>
         <div>
           {user ? (
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2 items-start ">
               <UserInfo />
               <SignOutButton />
             </div>

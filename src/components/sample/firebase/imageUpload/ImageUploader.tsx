@@ -6,6 +6,9 @@ const ImageUploader = () => {
 
   return (
     <>
+      <h3 className=" text-2xl">
+        <span className="text-lg">■</span> Storage
+      </h3>
       {loading ? (
         <h2>アップロード中・・・</h2>
       ) : (
