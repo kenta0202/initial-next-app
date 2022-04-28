@@ -10,4 +10,13 @@ module.exports = {
   // your project has type errors.
   // ビルド時の型チェックをスキップ
   ignoreBuildErrors: true,
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 200,
+      };
+    }
+    return config;
+  },
 };

@@ -1,4 +1,4 @@
-import Count from "./sample/redux/Count";
+import Count from "../components/sample/redux/Count";
 
 function IndexPage() {
   return (
