@@ -18,9 +18,9 @@ const MyApp = ({ Component, pageProps }) => {
       <HeadInformation />
       <Provider store={store}>
         {/* {getLayout */}
-        <Suspense fallback={<div>...loading</div>}>
-          <Component {...pageProps} />
-        </Suspense>
+        {/* <Suspense fallback={<div>...loading</div>}> */}
+        <Component {...pageProps} />
+        {/* </Suspense> */}
         {/* } */}
       </Provider>
       {/*

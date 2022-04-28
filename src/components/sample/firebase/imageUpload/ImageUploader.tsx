@@ -1,5 +1,6 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { useFileUploadtoFirebase } from "util/hooks/firebase/useOnFileUploadtoFirebase";
+
+/* eslint-disable tailwindcss/no-custom-classname */
 const ImageUploader = () => {
   const { loading, isUploaded, onFileUploadtoFirebase } = useFileUploadtoFirebase();
 
@@ -13,7 +14,6 @@ const ImageUploader = () => {
             <h2>アップロードが完了しました</h2>
           ) : (
             <div className="">
-              <p>a</p>
               <button>
                 ファイルを選択
                 <input
