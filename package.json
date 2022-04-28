@@ -8,8 +8,7 @@
     "css:pro": "cross-env NODE_ENV=production postcss src/styles/styled.css -o src/styles/dist.css",
     "lint": "eslint . src --ext .ts,.tsx",
     "lint:fix": "eslint --fix src --ext .js,jsx,.ts,.tsx ",
-    "type-check": "tsc",
-    "preinstall": "typesync || :"
+    "type-check": "tsc"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
