@@ -2,15 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import userReducer from "../features/userSlice";
-// import { composeWithDevTools } from "redux-devtools-extension";
-
-// const composeEnhancers = composeWithDevTools({});
+import countReducer from "../features/countSlice";
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    count: countReducer,
   },
-  /*  enhancers: composeEnhancers, */
 });
 
 export type AppDispatch = typeof store.dispatch;
