@@ -1,13 +1,16 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-import { auth } from "../../../../firebase";
+// import { auth } from "../../../../firebase";
 
-const UserInfo = () => {
+const UserInfo: React.FC<{ photoURL: string; displayName: string }> = ({
+  photoURL,
+  displayName,
+}) => {
   return (
     <>
       <div className=" ">
-        <img src={auth.currentUser.photoURL} alt="" />
+        <img src={photoURL} alt="" />
       </div>
-      <p className="">{auth.currentUser?.displayName}</p>
+      <p className="">{displayName}</p>
     </>
   );
 };

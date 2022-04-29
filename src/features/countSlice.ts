@@ -16,7 +16,7 @@ export const countSlice = createSlice({
     count: 0,
   },
   reducers: {
-    increment: (state: ICount) => {
+    increment: (state) => {
       state.count++;
     },
     decrement: (state) => {

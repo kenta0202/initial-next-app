@@ -1,28 +1,31 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
+type IUser = {
+  uid: string;
+  photeURL: string;
+  displayName: string;
+};
+const initialState = { uid: "", photeURL: "", displayName: "" };
+
 export const userSlice = createSlice({
   name: "user",
-  initialState: {
-    // 自動で型付けをする
-    user: { uid: "", photeURL: "", displayName: "" },
-  },
+  initialState,
   reducers: {
-    login: (state, action) => {
-      state.user = action.payload;
+    setLogIn: (state, action: PayloadAction<IUser, string>) => {
+      state = action.payload;
+      return { ...state };
     },
-    logout: (state) => {
-      state.user = { uid: "", photeURL: "", displayName: "" };
+    setLogOut: (state) => {
+      state = { uid: "", photeURL: "", displayName: "" };
+      return { ...state };
     },
   },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { setLogIn, setLogOut } = userSlice.actions;
 
-export const selectUser = (state: RootState) => state.user.user; /* reducerのuserと一致 */
+export const selectUser = (state: RootState) => state.user; /* reducerのuserと一致 */
 
 export default userSlice.reducer;
