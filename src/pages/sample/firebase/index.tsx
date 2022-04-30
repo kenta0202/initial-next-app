@@ -1,6 +1,6 @@
 import Home from "components/sample/firebase/auth/Home";
 import ImageUploader from "components/sample/firebase/imageUpload/ImageUploader";
-import UserList from "components/sample/firebase/UserList";
+import UserList from "components/sample/firebase/store/UserList";
 import { Suspense } from "react";
 
 const Firebase = () => {
