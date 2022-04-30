@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../app/store";
+import { RootState } from "app/store";
 
 export const userSlice = createSlice({
   name: "user",

@@ -5,15 +5,16 @@ module.exports = {
     es6: true,
     node: true,
   },
+  // ソースコードを特定の言語仕様に沿って解析
   parser: "@typescript-eslint/parser",
   // デフォルトではeslinitのparserはないからインストールする
 
   parserOptions: {
-    // パーサの各種実行オプションを設定する
-    // ES2016 以降の構文を有効にするに
+    // ES2016 以降の構文を有効にする
     sourceType: "module",
     ecmaVersion: 2020, // Node.js 12の場合は2019、他のバージョンのNode.jsを利用している場合は場合は適宜変更する
     tsconfigRootDir: __dirname,
+    // デフォルトではTSは対応していないので、追加
     project: ["./tsconfig.eslint.json"],
   },
   plugins: [
@@ -45,8 +46,6 @@ module.exports = {
     "plugin:react/jsx-runtime",
   ],
   rules: {
-    "react/react-in-jsx-scope": "off", //import Reactしなくてもいい
-
     //     "linebreak-style": 0,
     //     "react/function-component-definition": [
     //       2,
@@ -68,12 +67,12 @@ module.exports = {
     //       },
     //     ],
     //     //void 演算子の（式としての）使用を禁ずるルール。文はOK
-    //     "no-void": [
-    //       "error",
-    //       {
-    //         allowAsStatement: true,
-    //       },
-    //     ],
+    "no-void": [
+      "error",
+      {
+        allowAsStatement: true,
+      },
+    ],
     //     // return 文の前に常に空行を入れる
     //     "padding-line-between-statements": [
     //       "error",
@@ -97,36 +96,33 @@ module.exports = {
     //     /*     インポートの際のファイル拡張子を記述するかを定義するルール。npm パッケージ以外の
     // ファイルについて .js、.jsx、.ts、.tsx のファイルのみ拡張子を省略し、他のファイルは拡張子
     // を記述させるように設定 */
-    //     "import/extensions": [
-    //       "error",
-    //       "ignorePackages",
-    //       {
-    //         js: "never",
-    //         jsx: "never",
-    //         ts: "never",
-    //         tsx: "never",
-    //       },
-    //     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
     //     // JSX のファイル拡張子を制限するルール。eslint-config-airbnb で .jsx のみに限定されているので、.tsx を追加
-    //     "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
     //     /* JSX でコンポーネントを呼ぶときの props の記述にスプレッド構文を許さないルール。
     // eslint-config-airbnb にてすべて禁止されているが、<Foo {...{ bar, baz } /}> のように個々の
     // props を明記する書き方のみ許容するように設定 */
-    //     "react/jsx-props-no-spreading": [
-    //       "error",
-    //       {
-    //         html: "enforce",
-    //         custom: "enforce",
-    //         explicitSpread: "ignore",
-    //       },
-    //     ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        html: "enforce",
+        custom: "enforce",
+        explicitSpread: "ignore",
+      },
+    ],
     //     /* JSX 記述を使用する場合に react モジュールを React としてインポートすることを強制す
     // る。新しい JSX 変換形式を用いる場合はインポートが不要になるためこの設定を無効化 */
-    //     "react/react-in-jsx-scope": "off",
+    "react/react-in-jsx-scope": "off",
   },
-  /* 任意の glob パターン 60 にマッチするファイルのみ、ルールの適用を上書きできるプ
-ロパティ。ここでは react/prop-types ルールを通常の JSX ファイルでは適用したままにして、.tsx
-ファイルでは無効にするために使ってる。 */
   overrides: [
     {
       files: ["*.tsx"],
@@ -139,10 +135,9 @@ module.exports = {
     },
   ],
   /* 任意の実行ルールに適用される追加の共有設定。tsconfig.json で src/ 配下のファイ
-ルを絶対パスでインポートできるようにしていたけど 61、このままでは eslint-plugin-import がその
+ルを絶対パスでインポートできるようにしていたけど、このままでは eslint-plugin-import がその
 絶対パスを解決できずにエラーを出してしまう。だからここでは eslint-plugin-import が内部で使用
-している eslint-import-resolver-node
-62 というモジュール解決プラグインに対して、パスに src を追加
+している eslint-import-resolver-nodeというモジュール解決プラグインに対して、パスに src を追加
 してあげてる */
   settings: {
     "import/resolver": {

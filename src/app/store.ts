@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
-import countReducer from "../features/countSlice";
+import userReducer from "features/userSlice";
+import countReducer from "features/countSlice";
 
 export const store = configureStore({
   reducer: {
