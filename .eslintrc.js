@@ -44,6 +44,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/jsx-runtime",
+    "prettier",
   ],
   rules: {
     //     "linebreak-style": 0,
