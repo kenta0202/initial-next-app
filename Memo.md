@@ -5,3 +5,7 @@
 
 ### _document.tsx
 - 全体の文書構造をカスタマイズ
+
+### Mongodbを導入
+- npm i  mongodb axios
+- npm i -D types/mongodb
