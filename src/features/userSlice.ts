@@ -14,9 +14,11 @@ export const userSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.user = action.payload;
+      return { ...state };
     },
     logout: (state) => {
       state.user = { uid: "", photeURL: "", displayName: "" };
+      return { ...state };
     },
   },
 });
