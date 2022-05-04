@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "preinstall": "typesync || :",
     "dev": "next",
     "build": "next build",
     "start": "next start",
