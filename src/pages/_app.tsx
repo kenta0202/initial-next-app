@@ -7,7 +7,7 @@ import HeadInformation from "components/general/HeadInformation";
 import { Provider } from "react-redux";
 import { store } from "app/store";
 // import type { AppProps } from "next/app";
-// import Layout from "components/general/Layout";
+import Layout from "components/general/Layout";
 
 const MyApp = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page) => page);

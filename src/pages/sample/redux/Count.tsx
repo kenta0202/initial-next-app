@@ -1,10 +1,9 @@
-import { useAppSelector } from "app/hooks";
 import { selectCount, increment, decrement } from "features/countSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Count = () => {
   const dispatch = useDispatch();
-  const count = useAppSelector(selectCount);
+  const count = useSelector(selectCount);
   return (
     <>
       <div className="flex gap-2 text-2xl ">

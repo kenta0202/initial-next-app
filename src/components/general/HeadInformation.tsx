@@ -3,18 +3,16 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 
-type Props = {
-  title?: string;
-};
-
-export const HeadInformation: React.VFC<Props> = ({ title }: Props) => {
+export const HeadInformation: React.VFC = () => {
   const router = useRouter();
 
+  const HeadTitle =
+    router.pathname === "/"
+      ? `${process.env.NEXT_PUBLIC_SITE_NAME.toUpperCase()}`
+      : `${router.pathname.slice(1)} | ${process.env.NEXT_PUBLIC_SITE_NAME.toUpperCase()} `;
   return (
     <Head>
-      <title>
-        {title || router.pathname.slice(1).charAt(0).toUpperCase() + router.pathname.slice(2)}
-      </title>
+      <title>{HeadTitle}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       {/* モバイルブラウザ向けのビューポートの大きさの設定を表す
       初期状態では1.0倍（実サイズ）で表示

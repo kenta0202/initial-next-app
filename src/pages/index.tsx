@@ -1,3 +1,4 @@
+import Layout from "components/general/Layout";
 import Count from "pages/sample/redux/Count";
 
 function IndexPage() {
@@ -8,5 +9,9 @@ function IndexPage() {
     </>
   );
 }
+
+IndexPage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
 
 export default IndexPage;
