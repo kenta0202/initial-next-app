@@ -5,3 +5,6 @@
 
 ### _document.tsx
 - 全体の文書構造をカスタマイズ
+
+### React-Testing-Libraryのインストール
+- yarn add -D jest@27.5.1 @testing-library/react @testing-library/jest-dom jest-css-modules

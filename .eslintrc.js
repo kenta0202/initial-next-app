@@ -158,5 +158,6 @@ module.exports = {
     ".*lintrc.js",
     "src/pages/_app.tsx",
     "src/pages/_error.tsx",
+    "_tests_",
   ],
 };

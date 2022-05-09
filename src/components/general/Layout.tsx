@@ -1,7 +1,11 @@
 import Footer from "components/general/Footer";
 import Header from "components/general/Header";
 
-export default function Layout({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
@@ -9,4 +13,6 @@ export default function Layout({ children }) {
       <Footer />
     </>
   );
-}
+};
+
+export default Layout;
