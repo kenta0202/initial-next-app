@@ -1,12 +1,13 @@
 import Footer from "components/general/Footer";
 import Header from "components/general/Header";
 import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary";
+import { FC, ReactNode } from "react";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <LayoutErrorBoundary>
       <Header />

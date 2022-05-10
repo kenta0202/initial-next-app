@@ -9,7 +9,7 @@ export const HeadInformation: React.VFC = () => {
   const HeadTitle =
     router.pathname === "/"
       ? `${process.env.NEXT_PUBLIC_SITE_NAME}`
-      : `${router.pathname.slice(1)} | ${process.env.NEXT_PUBLIC_SITE_NAME} `;
+      : `${router.pathname.slice(1).toUpperCase()} | ${process.env.NEXT_PUBLIC_SITE_NAME} `;
   return (
     <Head>
       <title>{HeadTitle}</title>
