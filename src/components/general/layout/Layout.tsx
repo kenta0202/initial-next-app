@@ -1,6 +1,6 @@
 import Footer from "components/general/Footer";
-import Header from "components/general/Header";
 import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary";
+import NavBar from "components/practice/NavBar";
 import { FC, ReactNode } from "react";
 
 type Props = {
@@ -10,9 +10,13 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <LayoutErrorBoundary>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <div className="flex flex-col justify-center items-center min-h-screen text-gray-600">
+        <NavBar />
+        <main className="flex flex-col flex-1 justify-center items-center w-screen">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </LayoutErrorBoundary>
   );
 };

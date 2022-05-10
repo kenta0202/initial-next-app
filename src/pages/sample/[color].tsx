@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React from "react";
 
 const Name = () => {
   const router = useRouter();
@@ -14,7 +13,3 @@ const Name = () => {
   );
 };
 export default Name;
-
-// Name.getLayout = function getLayout(page) {
-//   return <Layout>{page}</Layout>;
-// };

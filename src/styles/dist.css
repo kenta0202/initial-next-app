@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -433,32 +433,85 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.h-12 {
+  height: 3rem;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-screen {
+  width: 100vw;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
 .gap-2 {
   gap: 0.5rem;
 }
-.p-1 {
-  padding: 0.25rem;
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.p-5 {
-  padding: 1.25rem;
+.rounded {
+  border-radius: 0.25rem;
 }
-.text-center {
-  text-align: center;
+.border-r-2 {
+  border-right-width: 2px;
+}
+.border-t-emerald-50 {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(236 253 245 / var(--tw-border-opacity));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .font-type {
   font-family: M PLUS Rounded 1c;
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-red-300 {
   --tw-text-opacity: 1;
@@ -468,6 +521,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
 /* .no-scrollbar::-webkit-scrollbar {
     display: none;
   } */
+
+.hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
