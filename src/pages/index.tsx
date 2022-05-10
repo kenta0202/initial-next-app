@@ -1,4 +1,4 @@
-import Layout from "components/general/Layout";
+import Layout from "components/general/layout/Layout";
 import Count from "pages/sample/redux/Count";
 
 function IndexPage() {
