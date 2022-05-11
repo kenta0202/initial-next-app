@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import axios, { AxiosResponse } from "axios";
 import { useQuery } from "react-query";
 import { delay } from "util/func/fetchDelay";
@@ -29,5 +27,7 @@ export const useQueryTasks = () => {
   return useQuery({
     queryKey: ["task"],
     queryFn: getTasks,
+    // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
+    staleTime: Infinity,
   });
 };

@@ -12,10 +12,10 @@ const NavBar = () => {
             <Link href="/sample/react18/autobatch">Auto-batch</Link>
           </div>
           <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
-            <Link href="/sample/react18/suspence">Suspense</Link>
+            <Link href="/sample/react18/suspense">Suspense</Link>
           </div>
           <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
-            <Link href="/sample/react18/nested_suspence">Nested-Suspense</Link>
+            <Link href="/sample/react18/nested_suspense">Nested-Suspense</Link>
           </div>
           <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
             <Link href="/sample/react18/concurrent">startTransition</Link>
