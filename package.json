@@ -6,7 +6,7 @@
     "start": "next start",
     "css:dev": "cross-env NODE_ENV=development  TAILWIND_MODE=watch postcss src/styles/styled.css -o src/styles/dist.css -w ",
     "css:pro": "cross-env NODE_ENV=production postcss src/styles/styled.css -o src/styles/dist.css",
-    "lint": "eslint . src --ext .ts,.tsx",
+    "lint": "eslint src --ext .js,jsx,.ts,.tsx",
     "lint:fix": "eslint --fix src --ext .js,jsx,.ts,.tsx ",
     "type-check": "tsc",
     "format": "prettier --write --loglevel=warn \"{public,src}/**/*.{js,jsx,ts,tsx,html,gql,graphql,json}\"",

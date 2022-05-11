@@ -7,7 +7,19 @@ import HeadInformation from "components/general/HeadInformation";
 import { Provider } from "react-redux";
 import { store } from "app/store";
 // import type { AppProps } from "next/app";
-import Layout from "components/general/layout/Layout";
+
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false /* 失敗したときのRetryをfalse */,
+      refetchOnWindowFocus: false /* フォーカスしたときの自動フェッチfalse */,
+      suspense: true,
+    },
+  },
+});
 
 const MyApp = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page) => page);
@@ -15,13 +27,12 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <HeadInformation />
-      <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
-      {/*
-       Name.getLayout = function getLayout(page) {
-       return <Layout>{page}</Layout>;
-       各コンポーネントでGetLayoutメソッドを実行することでレイアウトを指定できる
-       };
-     */}
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          {getLayout(<Component {...pageProps} />)}
+          {process.env.NODE_ENV === "development" && <ReactQueryDevtools initialIsOpen={false} />}
+        </QueryClientProvider>
+      </Provider>
     </>
   );
 };
