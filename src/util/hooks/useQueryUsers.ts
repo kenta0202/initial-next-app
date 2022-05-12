@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios";
 import { useQuery } from "react-query";
 import { delay } from "util/func/fetchDelay";
