@@ -1,11 +1,11 @@
-import PracticeLayout from "components/general/layout/PracticeLayout";
+import React18Layout from "components/general/layout/practice/React18Layout"
 
 const React18 = () => {
-  return <div>React18 basic lesson</div>;
-};
+  return <div>React18 basic lesson</div>
+}
 
 React18.getLayout = function getLayout(page) {
-  return <PracticeLayout>{page}</PracticeLayout>;
-};
+  return <React18Layout>{page}</React18Layout>
+}
 
-export default React18;
+export default React18

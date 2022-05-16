@@ -1,11 +1,11 @@
 import Layout from "components/general/layout/Layout"
-import Count from "pages/sample/redux/Count"
+import Link from "next/link"
 
 function IndexPage() {
   return (
     <>
       <h1 className=" text-xl">func D 👋 </h1>
-      <Count />
+      <Link href={"/sample"}>Sampleへ</Link>
     </>
   )
 }
