@@ -1,9 +1,9 @@
-import CSR from "components/general/CSR";
-import PracticeLayout from "components/general/layout/PracticeLayout";
-import Sppinner from "components/general/Sppinner";
-import FetchTasks from "components/practice/react18/FetchTasks";
-import FetchUsers from "components/practice/react18/FetchUsers";
-import { Suspense } from "react";
+import CSR from "components/general/CSR"
+import React18Layout from "components/general/layout/practice/React18Layout"
+import Sppinner from "components/general/Sppinner"
+import FetchTasks from "components/practice/react18/FetchTasks"
+import FetchUsers from "components/practice/react18/FetchUsers"
+import { Suspense } from "react"
 
 const NestedSuspense = () => {
   return (
@@ -33,11 +33,11 @@ const NestedSuspense = () => {
         </Suspense>
       </Suspense>
     </CSR>
-  );
-};
+  )
+}
 
 NestedSuspense.getLayout = function getLayout(page) {
-  return <PracticeLayout>{page}</PracticeLayout>;
-};
+  return <React18Layout>{page}</React18Layout>
+}
 
-export default NestedSuspense;
+export default NestedSuspense

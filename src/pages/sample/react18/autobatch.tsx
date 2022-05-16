@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import axios from "axios";
-import PracticeLayout from "components/general/layout/PracticeLayout";
-import { useState } from "react";
-import { flushSync } from "react-dom";
+import axios from "axios"
+import React18Layout from "components/general/layout/practice/React18Layout"
+import { useState } from "react"
+import { flushSync } from "react-dom"
 const AutoBatch = () => {
   /*
     Reactv18の新機能 StrictMode
@@ -15,33 +15,33 @@ const AutoBatch = () => {
     FlushSyncで無効化
 */
 
-  const [count, setCount] = useState(0);
-  const [fetchcount, setFetchCount] = useState(0);
-  const [users, setUsers] = useState([]);
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [count3, setCount3] = useState(0);
+  const [count, setCount] = useState(0)
+  const [fetchcount, setFetchCount] = useState(0)
+  const [users, setUsers] = useState([])
+  const [count1, setCount1] = useState(0)
+  const [count2, setCount2] = useState(0)
+  const [count3, setCount3] = useState(0)
 
   const handleClick = () => {
     // setCount((count) => count + 1);
     // setFetchCount((fetchcount) => fetchcount + 1);
     void axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
       flushSync(() => {
-        setUsers(res.data);
-      });
+        setUsers(res.data)
+      })
       flushSync(() => {
-        setFetchCount((fetchcount) => fetchcount + 1);
-      });
-    });
-  };
+        setFetchCount((fetchcount) => fetchcount + 1)
+      })
+    })
+  }
   const clickHandler = () => {
     setTimeout(() => {
-      setCount1((count) => count + 1);
-      setCount2((count) => count + 1);
-      setCount3((count) => count + 1);
-    }, 500);
-  };
-  console.log("Rendered AutoBatch");
+      setCount1((count) => count + 1)
+      setCount2((count) => count + 1)
+      setCount3((count) => count + 1)
+    }, 500)
+  }
+  console.log("Rendered AutoBatch")
   return (
     <>
       <p className="my-3 text-xl font-bold text-blue-500">Automatic batching</p>
@@ -62,11 +62,11 @@ const AutoBatch = () => {
         click
       </button>
     </>
-  );
-};
+  )
+}
 
 AutoBatch.getLayout = function getLayout(page) {
-  return <PracticeLayout>{page}</PracticeLayout>;
-};
+  return <React18Layout>{page}</React18Layout>
+}
 
-export default AutoBatch;
+export default AutoBatch

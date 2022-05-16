@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 const Images = () => {
   return (
@@ -7,7 +7,7 @@ const Images = () => {
       width={500}
       height={300}
     />
-  );
-};
+  )
+}
 
-export default Images;
+export default Images
