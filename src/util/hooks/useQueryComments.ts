@@ -23,6 +23,9 @@ const getComments = async () => {
       console.log(error.message)
     }
   }
+  /*
+  これはただ、fetchしてdataをreturnするだけの関数
+  */
 }
 
 export const useQueryComments = () => {
@@ -31,5 +34,9 @@ export const useQueryComments = () => {
     queryFn: getComments /* Promiseを返す関数 */,
     // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
     staleTime: Infinity,
+    /*
+ まずはPromiseをthrowさせる。→fallback
+  Promiseが解決→データを返す→埋め込んだコンポーネントを返す
+　　*/
   })
 }

@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from "next/link"
 
-const NavBar = () => {
+const React18NavBar = () => {
   return (
     <nav className="w-screen font-mono bg-gray-800">
       <div className="flex items-center pl-4 h-12">
@@ -23,7 +23,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default React18NavBar

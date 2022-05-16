@@ -1,8 +1,12 @@
-import type { ReactNode } from "react";
-import type { FallbackProps } from "react-error-boundary";
-import { ErrorBoundary } from "react-error-boundary";
-import { ExclamationCircleIcon } from "@heroicons/react/solid";
+import type { ReactNode } from "react"
+import type { FallbackProps } from "react-error-boundary"
+import { ErrorBoundary } from "react-error-boundary"
+import { ExclamationCircleIcon } from "@heroicons/react/solid"
 
+/*
+子コンポーネントツリーで発生した例外をキャッチして、
+クラッシュしたコンポーネントツリーの代わりに、fallbackのUIを表示するコンポーネント
+*/
 const ErrorFallback = ({ error }: FallbackProps) => {
   return (
     <div className="flex gap-3 items-center">
@@ -12,13 +16,13 @@ const ErrorFallback = ({ error }: FallbackProps) => {
         <pre className=" text-base">{error.message}</pre>
       </div>
     </div>
-  );
-};
+  )
+}
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export const LayoutErrorBoundary: React.FC<Props> = ({ children }) => {
-  return <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>;
-};
+  return <ErrorBoundary FallbackComponent={ErrorFallback}>{children}</ErrorBoundary>
+}

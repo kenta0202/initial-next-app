@@ -19,7 +19,11 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false /* フォーカスしたときの自動フェッチfalse */,
       /* デフォルトはon */
       suspense: true,
-      /* cacheTimeはデフォルトで5分 */
+      /*
+      suspenceはデフォルトでfalse
+      suspence:trueだとuseErrorBoundary: trueになる
+      */
+      /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除*/
     },
   },
 })
