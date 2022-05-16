@@ -1,28 +1,31 @@
-import "../styles/dist.css";
-import "../styles/normalize.css";
-import "../styles/global.css";
+import "../styles/dist.css"
+import "../styles/normalize.css"
+import "../styles/global.css"
 
-import React from "react";
-import HeadInformation from "components/general/HeadInformation";
-import { Provider } from "react-redux";
-import { store } from "app/store";
+import React from "react"
+import HeadInformation from "components/general/HeadInformation"
+import { Provider } from "react-redux"
+import { store } from "app/store"
 // import type { AppProps } from "next/app";
 
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false /* 失敗したときのRetryをfalse */,
+      /* デフォルトは3回 */
       refetchOnWindowFocus: false /* フォーカスしたときの自動フェッチfalse */,
+      /* デフォルトはon */
       suspense: true,
+      /* cacheTimeはデフォルトで5分 */
     },
   },
-});
+})
 
 const MyApp = ({ Component, pageProps }) => {
-  const getLayout = Component.getLayout || ((page) => page);
+  const getLayout = Component.getLayout || ((page) => page)
   // Q: AppProps型がつくとgetLayoutがはじかれる
   return (
     <>
@@ -34,7 +37,7 @@ const MyApp = ({ Component, pageProps }) => {
         </QueryClientProvider>
       </Provider>
     </>
-  );
-};
+  )
+}
 
-export default MyApp;
+export default MyApp
