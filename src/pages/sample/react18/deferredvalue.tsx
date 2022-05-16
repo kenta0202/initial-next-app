@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import axios, { AxiosResponse } from "axios"
 import React18Layout from "components/general/layout/practice/React18Layout"
-import { useState, useEffect, useTransition } from "react"
+import { useEffect, useDeferredValue, useState } from "react"
 
 interface RootObject {
   albumId: number
@@ -13,16 +13,18 @@ interface RootObject {
 }
 
 const Concurrent = () => {
-  const [photos, setPhotos] = useState<RootObject[]>([])
-  const [input, setInput] = useState("") /* Urgent state update */
-  const [searchKey, setSearchKey] = useState("") /* Not urgent state update */
-  const [isPending /* 遅延中かどうか */, startTransition] = useTransition()
+  const [photo, setPhotos] = useState<RootObject>()
+  const [input, setInput] = useState("1")
+  const deferredWord = useDeferredValue(input)
+  /*
+ 入力する値がテキストのレンダリングを待つ→ほぼ同時
+  */
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res: AxiosResponse<RootObject[]> = await axios.get(
-          "https://jsonplaceholder.typicode.com/photos"
+        const res: AxiosResponse<RootObject> = await axios.get(
+          `https://jsonplaceholder.typicode.com/photos/${deferredWord /* input */}`
         )
         setPhotos(res.data)
       } catch (error) {
@@ -32,41 +34,26 @@ const Concurrent = () => {
       }
     }
     void fetchData()
-  }, [])
-
-  const filteredPhotos = photos.filter((photo) => {
-    return photo.title.includes(searchKey)
-  })
+  }, [input])
 
   const updateHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    /* 緊急性がある */
     setInput(e.target.value) /* input */
-    /*
-    緊急性がない
-    遅延の対象 現在の画面を表示し続けている
-    */
-    startTransition(() => setSearchKey(e.target.value)) /* searchKey */
   }
 
   return (
     <div className="flex flex-col items-center text-gray-600">
-      <p className={`my-3 text-xl font-bold ${isPending ? "text-pink-500" : "text-blue-500"}`}>
-        startTransition(concurrent feature)
-      </p>
-      <div>{input}</div>
+      <p className={`my-3 text-xl font-bold `}>startTransition(concurrent feature)</p>
       <input
-        type="text"
+        type="number"
         className=" py-1 px-3 mb-5 text-xs rounded border border-gray-100"
         // value={searchKey}
         // 重たい処理に妨害されてstateの更新が遅くなってしまう
         value={input}
         onChange={updateHandler}
       />
-      {filteredPhotos.map((photo) => (
-        <p className={`mb-2 text-xs ${isPending && "opacity-60"}`} key={photo.id}>
-          {photo.title}
-        </p>
-      ))}
+      <p className="mb-2 text-xs" key={photo?.id}>
+        {photo?.title}
+      </p>
     </div>
   )
 }

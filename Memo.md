@@ -13,6 +13,20 @@
 
 ## Document
 
+## レンダリングのアプローチ
+
+- Fetch-on-Render（レンダリングしたうえでフェッチする）
+  - FCP→FMP→LCP
+  - 非同期処理はカーレースで帰ってきた順に state が更新される
+- Fetch-Then-Render(子孫コンポーネントに必要となるデータを親コンポーネントでまとめて並列的に取得する方法)
+  - FCP→(同時に。長くなる)→FMP→(すぐ)→LCP
+- Render-as-You-Fetch()
+  - Suspence と useQuery
+  - レンダリングしながら Fetch を実施
+  - レンダリングしている最中
+    - 未取得のデータ →Fallback を Render
+    - データフェッチ完了 →Content を Render
+
 ### 例外を投げる
 
 // 渡された数値が 0 以上ではない場合に例外を投げる関数
