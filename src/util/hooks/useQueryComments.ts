@@ -35,7 +35,7 @@ export const useQueryComments = () => {
     // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
     staleTime: Infinity,
     /*
- まずはPromiseをthrowさせる。→fallback
+ まずはPromiseをthrowさせる。→Suspeseで待ち受けてfallback
   Promiseが解決→データを返す→埋め込んだコンポーネントを返す
 　　*/
   })
