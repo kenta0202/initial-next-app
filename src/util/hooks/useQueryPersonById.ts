@@ -31,8 +31,12 @@ export const useQueryPersonById = () => {
   return useQuery<IPerson, Error>(["person", id], () => getPersonById(id), {
     enabled: !!id /* falseに設定(依存クエリ) */,
     /*
-    true(Default):
-    false：自動的なrefetchを禁止。
+    ↑をすることで動的に処理をする
+    true→fetcher関数が実行
+    false→自動的なrefetchを禁止。
+    これがないとページの読み込み中やレンダリング中にcallしてしまう。
+    この段階ではまだidはundefind
+    動的ルーティングの場合は、Fetchとレンダリングを同時に走らせないで、レンダリングの後にFetchを走らせる
     */
     cacheTime: 2000,
     /*
