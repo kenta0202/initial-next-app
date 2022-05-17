@@ -17,7 +17,12 @@ const Concurrent = () => {
   const [input, setInput] = useState("1")
   const deferredWord = useDeferredValue(input)
   /*
+  インクリメンタルサーチ
  入力する値がテキストのレンダリングを待つ→ほぼ同時
+
+ input:1
+ updateHandlerでinput:2  input要素のレンダリング
+ photosが変わる(defferedValueによる遅延) photosのレンダリング
   */
 
   useEffect(() => {
@@ -45,9 +50,8 @@ const Concurrent = () => {
       <p className={`my-3 text-xl font-bold `}>startTransition(concurrent feature)</p>
       <input
         type="number"
+        min={0}
         className=" py-1 px-3 mb-5 text-xs rounded border border-gray-100"
-        // value={searchKey}
-        // 重たい処理に妨害されてstateの更新が遅くなってしまう
         value={input}
         onChange={updateHandler}
       />

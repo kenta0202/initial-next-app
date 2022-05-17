@@ -8,6 +8,12 @@ import FetchUsers from "components/practice/react18/FetchUsers"
 import { Suspense } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 
+/*
+●Suspense
+レンダリングと同時にFetchingも行うのでできるだけ早く次の画面を表示する。
+データのロードが間に合わない場合は進行状態で
+あることを表現するプレースホルダーの UI を代わりに出す
+*/
 const SuspenseDemo = () => {
   return (
     <CSR>

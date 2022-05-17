@@ -53,6 +53,11 @@ const queryClient = new QueryClient({
       suspence:trueだとuseErrorBoundary: trueになる
       */
       /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除*/
+      // keepPreviousData: false,
+      /*
+      true:新しいデータの取得ができるまで以前のデータを使う
+      false(デフォルト):ページが切り替わる度にローディングが発生
+    */
     },
   },
 })
@@ -63,14 +68,14 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <HeadInformation />
-      <Profiler id="user" onRender={profileRender}>
-        <Provider store={store}>
-          <QueryClientProvider client={queryClient}>
-            {getLayout(<Component {...pageProps} />)}
-            {process.env.NODE_ENV === "development" && <ReactQueryDevtools initialIsOpen={false} />}
-          </QueryClientProvider>
-        </Provider>
-      </Profiler>
+      {/* <Profiler id="user" onRender={profileRender}> */}
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          {getLayout(<Component {...pageProps} />)}
+          {process.env.NODE_ENV === "development" && <ReactQueryDevtools initialIsOpen={false} />}
+        </QueryClientProvider>
+      </Provider>
+      {/* </Profiler> */}
     </>
   )
 }

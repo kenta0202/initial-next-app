@@ -22,7 +22,7 @@ const NestedSuspense = () => {
         <FetchUsers />
         <Suspense
           fallback={
-            /* 2秒 */
+            /* 5-3=2秒 */
             <>
               <p className="my-5 text-pink-500 ">Showing inner skelton...</p>
               <Sppinner />
