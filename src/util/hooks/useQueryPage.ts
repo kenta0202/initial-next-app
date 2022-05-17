@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios"
 import { useState } from "react"
-import { useQuery } from "react-query"
+import { useQuery, UseQueryResult } from "react-query"
 import { delay } from "util/func/fetchDelay"
 
 type Post = {
@@ -24,7 +24,7 @@ const fetchProjects = async (page = 1) => {
     return data
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
 }
@@ -32,7 +32,14 @@ const fetchProjects = async (page = 1) => {
 export const useQueryPage = () => {
   const [page, setPage] = useState(1)
 
-  const { isLoading, isError, error, data, isFetching, isPreviousData } = useQuery<Post[], Error>(
+  const {
+    isLoading,
+    isError,
+    error,
+    data,
+    isFetching,
+    isPreviousData,
+  }: UseQueryResult<Post[], Error> = useQuery<Post[], Error>(
     ["projects", page],
     () => fetchProjects(page),
     { keepPreviousData: true }

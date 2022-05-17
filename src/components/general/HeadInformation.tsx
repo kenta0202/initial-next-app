@@ -1,15 +1,14 @@
 /* eslint-disable react/function-component-definition */
-import Head from "next/head";
-import { useRouter } from "next/router";
-import React from "react";
+import Head from "next/head"
+import { useRouter } from "next/router"
 
-export const HeadInformation: React.VFC = () => {
-  const router = useRouter();
+export const HeadInformation = () => {
+  const router = useRouter()
 
   const HeadTitle =
     router.pathname === "/"
       ? `${process.env.NEXT_PUBLIC_SITE_NAME}`
-      : `${router.pathname.slice(1).toUpperCase()} | ${process.env.NEXT_PUBLIC_SITE_NAME} `;
+      : `${router.pathname.slice(1).toUpperCase()} | ${process.env.NEXT_PUBLIC_SITE_NAME} `
   return (
     <Head>
       <title>{HeadTitle}</title>
@@ -59,7 +58,7 @@ export const HeadInformation: React.VFC = () => {
       {/* ホームページをスマホのホーム画面に追加した時に表示される画像のこと */}
       {/* デザイン上、自動処理を行なわれたく無い場合には、apple-touch-icon-precomposedを指定 */}
     </Head>
-  );
-};
+  )
+}
 
-export default HeadInformation;
+export default HeadInformation

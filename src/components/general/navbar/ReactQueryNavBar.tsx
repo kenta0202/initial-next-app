@@ -11,6 +11,12 @@ const ReactQueryNavBar = () => {
           <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
             <Link href="/sample/reactquery/pagenation">PageNation</Link>
           </div>
+          <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
+            <Link href="/sample/reactquery/person">Person</Link>
+          </div>
+          <div className="py-2 px-3 text-gray-300 hover:bg-gray-700 rounded">
+            <Link href="/sample/reactquery/person/33">Person/33</Link>
+          </div>
         </div>
       </div>
     </nav>

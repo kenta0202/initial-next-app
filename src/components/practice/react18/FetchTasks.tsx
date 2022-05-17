@@ -1,4 +1,4 @@
-import { useQueryTasks } from "util/hooks/useQueryTasks"
+import { useQueryTasks } from "util/hooks/practice/react18/useQueryTasks"
 
 const FetchTasks = () => {
   const { /* status, */ data } = useQueryTasks()

@@ -20,12 +20,13 @@ const getTasks = async () => {
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
       console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
 }
 
 export const useQueryTasks = () => {
-  return useQuery({
+  return useQuery<RootObject[], Error>({
     queryKey: ["task"],
     queryFn: getTasks,
     // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない

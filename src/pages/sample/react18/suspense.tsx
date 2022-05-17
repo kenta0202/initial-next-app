@@ -1,5 +1,6 @@
 import { ExclamationCircleIcon } from "@heroicons/react/solid"
 import CSR from "components/general/CSR"
+import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary"
 import React18Layout from "components/general/layout/practice/React18Layout"
 import Sppinner from "components/general/Sppinner"
 import FetchComments from "components/practice/react18/FetchComments"
@@ -18,21 +19,21 @@ const SuspenseDemo = () => {
   return (
     <CSR>
       <p className="mb-3 text-xl font-bold text-blue-500">Suspense Demo</p>
-      <ErrorBoundary fallback={<ExclamationCircleIcon className="my-5 w-10 h-10 text-pink-500" />}>
+      <LayoutErrorBoundary>
         <Suspense fallback={<Sppinner />}>
           <FetchUsers />
         </Suspense>
-      </ErrorBoundary>
-      <ErrorBoundary fallback={<ExclamationCircleIcon className="my-5 w-10 h-10 text-pink-500" />}>
+      </LayoutErrorBoundary>
+      <LayoutErrorBoundary>
         <Suspense fallback={<Sppinner />}>
           <FetchTasks />
         </Suspense>
-      </ErrorBoundary>
-      <ErrorBoundary fallback={<ExclamationCircleIcon className="my-5 w-10 h-10 text-pink-500" />}>
+      </LayoutErrorBoundary>
+      <LayoutErrorBoundary>
         <Suspense fallback={<Sppinner />}>
           <FetchComments />
         </Suspense>
-      </ErrorBoundary>
+      </LayoutErrorBoundary>
       {/* <ErrorBoundary fallback={<ExclamationCircleIcon className="my-5 w-10 h-10 text-pink-500" />}>
         <Suspense fallback={<Sppinner />}>
           <FetchUsers />

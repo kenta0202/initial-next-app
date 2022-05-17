@@ -42,13 +42,13 @@ const getUsers = async () => {
     return data
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
 }
 
 export const useQueryUsers = () => {
-  return useQuery({
+  return useQuery<RootObject[], Error>({
     queryKey: ["users"],
     queryFn: getUsers,
     // キャッシュされたデータは常に最新とみなす(Fresh)→ページ遷移するたびにFetchしない

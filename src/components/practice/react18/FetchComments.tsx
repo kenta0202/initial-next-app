@@ -1,4 +1,4 @@
-import { useQueryComments } from "util/hooks/useQueryComments"
+import { useQueryComments } from "util/hooks/practice/react18/useQueryComments"
 
 const FetchComments = () => {
   const { /* status, */ data: tasks = [] } = useQueryComments()

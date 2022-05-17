@@ -45,13 +45,14 @@ const queryClient = new QueryClient({
     queries: {
       retry: false /* 失敗したときのRetryをfalse */,
       /* デフォルトは3回 */
-      refetchOnWindowFocus: false /* フォーカスしたときの自動フェッチfalse */,
-      /* デフォルトはon */
+      refetchOnWindowFocus: false,
+      /* フォーカスしたときやタブを切り替えた時の自動フェッチ→false デフォルトはtrue */
       suspense: true,
       /*
       suspenceはデフォルトでfalse
       suspence:trueだとuseErrorBoundary: trueになる
       */
+      cacheTime: 5000,
       /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除*/
       // keepPreviousData: false,
       /*

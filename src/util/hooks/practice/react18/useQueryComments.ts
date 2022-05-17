@@ -11,6 +11,7 @@ interface RootObject {
   body: string
 }
 
+// Promiseを返す関数
 const getComments = async () => {
   try {
     const responce: AxiosResponse<RootObject[]> = await axios
@@ -20,16 +21,13 @@ const getComments = async () => {
     return data
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
-  /*
-  これはただ、fetchしてdataをreturnするだけの関数
-  */
 }
 
 export const useQueryComments = () => {
-  return useQuery({
+  return useQuery<RootObject[], Error>({
     queryKey: ["comments"],
     queryFn: getComments /* Promiseを返す関数 */,
     // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
