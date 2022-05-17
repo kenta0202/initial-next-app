@@ -3,7 +3,7 @@ import FetchPersonById from "components/practice/reactquery/FetchPersonById"
 import { Suspense } from "react"
 
 const PersonIdPage = () => {
-  console.log(process.env.NEXT_PUBLIC_HOST)
+  console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
