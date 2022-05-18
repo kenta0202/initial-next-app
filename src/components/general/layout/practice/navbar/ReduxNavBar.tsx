@@ -1,4 +1,4 @@
-import { navBarDataList } from "data/navBarDataList"
+import { navBarDataList } from "data/practice/navBarDataList"
 import NavBar from "components/general/layout/practice/navbar/NavBar"
 
 const ReduxSampleNavBar = () => {

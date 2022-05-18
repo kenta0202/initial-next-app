@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { TNavBarList, TSampleEnum } from "data/navBarDataList"
+import { TNavBarList, TSampleEnum } from "data/practice/navBarDataList"
 import Link from "next/link"
 
 type Props = {
