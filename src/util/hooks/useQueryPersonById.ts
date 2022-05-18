@@ -11,7 +11,7 @@ type IPerson = {
 // Promiseを返す関数
 const getPersonById = async (id: string | string[] | undefined): Promise<IPerson> => {
   if (typeof id === "string") {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/person/${id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/person/${id}`)
     if (res.ok) {
       return res.json()
     }
