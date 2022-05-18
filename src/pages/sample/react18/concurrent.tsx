@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import axios, { AxiosResponse } from "axios"
-import React18Layout from "components/general/layout/practice/React18Layout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import React18NavBar from "components/general/layout/practice/navbar/React18NavBar"
 import { useState, useEffect, useTransition } from "react"
 
 /*
@@ -85,7 +86,7 @@ const Concurrent = () => {
 }
 
 Concurrent.getLayout = function getLayout(page) {
-  return <React18Layout>{page}</React18Layout>
+  return <PracticeLayout sampleElement={<React18NavBar />}>{page}</PracticeLayout>
 }
 
 export default Concurrent

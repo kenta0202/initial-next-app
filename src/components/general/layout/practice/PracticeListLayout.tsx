@@ -1,30 +1,30 @@
 import Footer from "components/general/Footer"
 import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary"
+import React18NavBar from "components/general/layout/practice/navbar/React18NavBar"
 import { FC, ReactNode } from "react"
-import RenderingSampleNavBar from "components/general/navbar/RederingSampleNavBar"
-import Link from "next/link"
+import RenderingSampleNavBar from "components/general/layout/practice/navbar/RederingSampleNavBar"
+import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
+import ReactQueryNavBar from "components/general/layout/practice/navbar/ReactQueryNavBar"
 
 type Props = {
   children: ReactNode
 }
 
-const RenderingLayout: FC<Props> = ({ children }) => {
+const PracticeListLayout: FC<Props> = ({ children }) => {
   return (
     <LayoutErrorBoundary>
       <div className="flex flex-col justify-center items-center min-h-screen text-gray-600">
+        <React18NavBar />
         <RenderingSampleNavBar />
+        <ReduxSampleNavBar />
+        <ReactQueryNavBar />
         <main className="flex flex-col flex-1 justify-center items-center w-screen">
           {children}
         </main>
-        <Link href={"/sample"}>
-          <div className="py-2 px-3 text-sm text-gray-300 hover:bg-gray-700 rounded">
-            SampleMenu
-          </div>
-        </Link>
         <Footer />
       </div>
     </LayoutErrorBoundary>
   )
 }
 
-export default RenderingLayout
+export default PracticeListLayout

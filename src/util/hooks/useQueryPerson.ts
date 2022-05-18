@@ -8,7 +8,7 @@ type IPerson = {
 
 // Promiseを返す関数
 const getPerson = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/person`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/person`)
   if (res.ok) {
     return res.json()
   }

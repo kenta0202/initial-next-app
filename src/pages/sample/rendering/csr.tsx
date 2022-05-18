@@ -2,7 +2,8 @@ import { NextPage } from "next"
 import { useEffect, useState } from "react"
 import { Notice, Task } from "interface/supabase/types"
 import { supabase } from "util/supabase"
-import RenderingLayout from "components/general/layout/practice/RenderingLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
 
 const Csr: NextPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -27,7 +28,7 @@ const Csr: NextPage = () => {
   }, [])
 
   return (
-    <RenderingLayout>
+    <PracticeLayout sampleElement={<ReduxSampleNavBar />}>
       <p className="mb-3 text-blue-500">SSG + CSF</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -47,7 +48,7 @@ const Csr: NextPage = () => {
           )
         })}
       </ul>
-    </RenderingLayout>
+    </PracticeLayout>
   )
 }
 

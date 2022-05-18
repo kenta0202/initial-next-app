@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import ReacQueryLayout from "components/general/layout/practice/ReactQueryLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import ReactQueryNavBar from "components/general/layout/practice/navbar/ReactQueryNavBar"
 import FetchPerson from "components/practice/reactquery/FetchPerson"
-import { IPerson } from "interface/practice/reactquery/IPerson"
 import { Suspense } from "react"
-import { useQuery, UseQueryResult } from "react-query"
 
 const Person = () => {
   return (
@@ -14,6 +12,6 @@ const Person = () => {
 }
 
 Person.getLayout = function getLayout(page) {
-  return <ReacQueryLayout>{page}</ReacQueryLayout>
+  return <PracticeLayout sampleElement={<ReactQueryNavBar />}>{page}</PracticeLayout>
 }
 export default Person

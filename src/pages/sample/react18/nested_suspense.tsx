@@ -1,5 +1,6 @@
 import CSR from "components/general/CSR"
-import React18Layout from "components/general/layout/practice/React18Layout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import React18NavBar from "components/general/layout/practice/navbar/React18NavBar"
 import Sppinner from "components/general/Sppinner"
 import FetchTasks from "components/practice/react18/FetchTasks"
 import FetchUsers from "components/practice/react18/FetchUsers"
@@ -37,7 +38,7 @@ const NestedSuspense = () => {
 }
 
 NestedSuspense.getLayout = function getLayout(page) {
-  return <React18Layout>{page}</React18Layout>
+  return <PracticeLayout sampleElement={<React18NavBar />}>{page}</PracticeLayout>
 }
 
 export default NestedSuspense

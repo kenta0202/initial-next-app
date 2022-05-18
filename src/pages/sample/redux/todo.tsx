@@ -1,11 +1,11 @@
-import ReduxLayout from "components/general/layout/practice/ReduxLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
 
-const todo = () => {
-  return (
-    <ReduxLayout>
-      <div>todo</div>
-    </ReduxLayout>
-  )
+const Todo = () => {
+  return <div>todo</div>
+}
+Todo.getLayout = function getLayout(page) {
+  return <PracticeLayout sampleElement={<ReduxSampleNavBar />}>{page}</PracticeLayout>
 }
 
-export default todo
+export default Todo

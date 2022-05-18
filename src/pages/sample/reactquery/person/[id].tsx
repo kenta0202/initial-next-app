@@ -1,4 +1,5 @@
-import ReacQueryLayout from "components/general/layout/practice/ReactQueryLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import ReactQueryNavBar from "components/general/layout/practice/navbar/ReactQueryNavBar"
 import FetchPersonById from "components/practice/reactquery/FetchPersonById"
 import { Suspense } from "react"
 
@@ -13,7 +14,7 @@ const PersonIdPage = () => {
 }
 
 PersonIdPage.getLayout = function getLayout(page) {
-  return <ReacQueryLayout>{page}</ReacQueryLayout>
+  return <PracticeLayout sampleElement={<ReactQueryNavBar />}>{page}</PracticeLayout>
 }
 
 export default PersonIdPage
