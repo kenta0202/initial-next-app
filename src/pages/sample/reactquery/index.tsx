@@ -1,12 +1,14 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import ReactQueryNavBar from "components/general/layout/practice/navbar/ReactQueryNavBar"
+import NavBar from "components/practice/NavBar"
 
 const ReactQueryHome = () => {
   return <div>ReactQueryHome</div>
 }
 
 ReactQueryHome.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<ReactQueryNavBar />}>{page}</PracticeLayout>
+  return (
+    <PracticeLayout sampleElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+  )
 }
 
 export default ReactQueryHome

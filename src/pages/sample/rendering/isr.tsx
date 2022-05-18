@@ -5,7 +5,7 @@ import { GetStaticProps } from "next"
 import { supabase } from "util/supabase"
 import { Notice, Task } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
+import NavBar from "components/practice/NavBar"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/isr invoked")
@@ -30,7 +30,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout sampleElement={<ReduxSampleNavBar />}>
+    <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-indigo-500">ISR</p>
       <ul className="mb-3">
         {tasks.map((task) => {

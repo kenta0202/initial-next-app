@@ -1,7 +1,7 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import ReactQueryNavBar from "components/general/layout/practice/navbar/ReactQueryNavBar"
 import FetchPersonById from "components/practice/reactquery/FetchPersonById"
 import { Suspense } from "react"
+import NavBar from "components/practice/NavBar"
 
 const PersonIdPage = () => {
   console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
@@ -14,7 +14,9 @@ const PersonIdPage = () => {
 }
 
 PersonIdPage.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<ReactQueryNavBar />}>{page}</PracticeLayout>
+  return (
+    <PracticeLayout sampleElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+  )
 }
 
 export default PersonIdPage

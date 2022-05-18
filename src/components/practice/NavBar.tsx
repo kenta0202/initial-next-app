@@ -1,28 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { TNavBarList, TSampleEnum } from "data/practice/navBarDataList"
+import { navBarDataList, TSampleEnum } from "data/practice/navBarDataList"
 import Link from "next/link"
 
 type Props = {
-  dataList: TNavBarList
   sampleName: TSampleEnum
 }
 
-const NavBar: React.FC<Props> = ({ dataList, sampleName }) => {
-  const { Redux, Rendering, ReactQuery, React18 } = dataList
-
+const NavBar: React.FC<Props> = ({ sampleName }) => {
   const dataFuc = (data: TSampleEnum) => {
     switch (data) {
       case "React18": {
-        return React18
+        return navBarDataList.React18
       }
       case "Rendering": {
-        return Rendering
+        return navBarDataList.Rendering
       }
       case "Redux": {
-        return Redux
+        return navBarDataList.Redux
       }
       case "ReactQuery": {
-        return ReactQuery
+        return navBarDataList.ReactQuery
       }
       default: // it depends
         throw new Error()

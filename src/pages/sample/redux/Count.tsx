@@ -1,7 +1,7 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
 import { selectCount, increment, decrement } from "features/countSlice"
 import { useDispatch, useSelector } from "react-redux"
+import NavBar from "components/practice/NavBar"
 
 const Count = () => {
   const dispatch = useDispatch()
@@ -16,7 +16,7 @@ const Count = () => {
 }
 
 Count.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<ReduxSampleNavBar />}>{page}</PracticeLayout>
+  return <PracticeLayout sampleElement={<NavBar sampleName={"Redux"} />}>{page}</PracticeLayout>
 }
 
 export default Count

@@ -5,7 +5,7 @@ import { GetStaticProps } from "next"
 import { supabase } from "util/supabase"
 import { Task, Notice } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import ReduxSampleNavBar from "components/general/layout/practice/navbar/ReduxNavBar"
+import NavBar from "components/practice/NavBar"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/ssg invoked")
@@ -30,7 +30,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout sampleElement={<ReduxSampleNavBar />}>
+    <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-blue-500">SSG</p>
       <ul className="mb-3">
         {tasks.map((task) => {

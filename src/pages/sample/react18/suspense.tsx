@@ -1,12 +1,12 @@
 import CSR from "components/general/CSR"
 import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import React18NavBar from "components/general/layout/practice/navbar/React18NavBar"
-import Sppinner from "components/general/Sppinner"
 import FetchComments from "components/practice/react18/FetchComments"
 import FetchTasks from "components/practice/react18/FetchTasks"
 import FetchUsers from "components/practice/react18/FetchUsers"
 import { Suspense } from "react"
+import NavBar from "components/practice/NavBar"
+import Sppinner from "components/general/Sppinner"
 
 /*
 ●Suspense
@@ -45,7 +45,7 @@ const SuspenseDemo = () => {
 }
 
 SuspenseDemo.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<React18NavBar />}>{page}</PracticeLayout>
+  return <PracticeLayout sampleElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 
 export default SuspenseDemo

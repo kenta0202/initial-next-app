@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 export const navBarDataList = {
   Redux: [
     {
@@ -84,3 +85,9 @@ export const navBarDataList = {
 export type TNavBarList = typeof navBarDataList
 
 export type TSampleEnum = keyof TNavBarList
+
+export const ArrSamplePractice = Object.entries(navBarDataList)
+  .flat()
+  .filter((k, v) => {
+    return v % 2 === 0
+  })
