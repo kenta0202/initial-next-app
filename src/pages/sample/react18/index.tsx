@@ -6,7 +6,7 @@ const React18 = () => {
 }
 
 React18.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 
 export default React18

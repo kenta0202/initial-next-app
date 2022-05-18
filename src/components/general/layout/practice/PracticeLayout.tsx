@@ -5,14 +5,14 @@ import { FC, ReactNode } from "react"
 
 type Props = {
   children: ReactNode
-  sampleElement: ReactNode
+  NavBarElement: ReactNode
 }
 
-const PracticeLayout: FC<Props> = ({ children, sampleElement }) => {
+const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {
   return (
     <LayoutErrorBoundary>
       <div className="flex flex-col justify-center items-center min-h-screen text-gray-600">
-        {sampleElement}
+        {NavBarElement}
         <main className="flex flex-col flex-1 justify-center items-center w-screen">
           {children}
         </main>

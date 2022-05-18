@@ -6,7 +6,7 @@ const ReduxHome = () => {
 }
 
 ReduxHome.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<NavBar sampleName={"Redux"} />}>{page}</PracticeLayout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"Redux"} />}>{page}</PracticeLayout>
 }
 
 export default ReduxHome

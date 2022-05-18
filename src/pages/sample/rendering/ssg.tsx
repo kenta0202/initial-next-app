@@ -30,7 +30,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-blue-500">SSG</p>
       <ul className="mb-3">
         {tasks.map((task) => {

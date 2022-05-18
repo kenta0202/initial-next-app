@@ -6,7 +6,7 @@ const RenderingHome = () => {
 }
 
 RenderingHome.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
 }
 
 export default RenderingHome

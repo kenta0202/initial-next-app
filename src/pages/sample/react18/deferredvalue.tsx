@@ -64,7 +64,7 @@ const Concurrent = () => {
 }
 
 Concurrent.getLayout = function getLayout(page) {
-  return <PracticeLayout sampleElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 
 export default Concurrent

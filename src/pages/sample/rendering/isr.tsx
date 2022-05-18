@@ -30,7 +30,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-indigo-500">ISR</p>
       <ul className="mb-3">
         {tasks.map((task) => {

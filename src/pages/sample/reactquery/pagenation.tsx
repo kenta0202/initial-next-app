@@ -22,7 +22,7 @@ const PageNation = () => {
 
 PageNation.getLayout = function getLayout(page) {
   return (
-    <PracticeLayout sampleElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
   )
 }
 

@@ -29,7 +29,7 @@ type StaticProps = {
 const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
   return (
-    <PracticeLayout sampleElement={<NavBar sampleName={"Rendering"} />}>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-pink-500">SSR</p>
       <ul className="mb-3">
         {tasks.map((task) => {
