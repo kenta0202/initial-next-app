@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-type bg-whitegrey text-darkgrey hidden-scrollbar min-h-screen   dark:text-whitegrey dark:bg-darkgrey  dark:border-whitegrey;
+    @apply font-type bg-darkgrey text-whitegrey hidden-scrollbar border-whitegrey;
   }
 }
 

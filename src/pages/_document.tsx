@@ -8,7 +8,7 @@ export default function Document() {
       prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# website:http://ogp.me/ns/website#"
     >
       <Head></Head>
-      <body className="font-type">
+      <body>
         <Main />
         <NextScript />
       </body>
