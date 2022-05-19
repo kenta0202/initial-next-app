@@ -2,7 +2,7 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
 
 const ReduxHome = () => {
-  return <div>ReduxHome</div>
+  return <div className=" text-lg">ReduxHome</div>
 }
 
 ReduxHome.getLayout = function getLayout(page) {

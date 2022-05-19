@@ -11,16 +11,18 @@ type Props = {
 const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {
   return (
     <LayoutErrorBoundary>
-      <div className="flex flex-col justify-center items-center min-h-screen text-gray-600">
+      <div className="flex flex-col justify-center items-center min-h-screen ">
         {NavBarElement}
-        <main className="flex flex-col flex-1 justify-center items-center w-screen">
+        <main className="flex flex-col flex-1 justify-center items-center mt-2 w-screen">
           {children}
         </main>
-        <Link href={"/sample"}>
-          <div className="py-2 px-3 text-sm text-gray-300 hover:bg-gray-700 rounded">
-            SampleMenu
-          </div>
-        </Link>
+        <div className="cursor-pointer">
+          <Link href={"/sample"}>
+            <div className=" py-2 px-3 text-sm  rounded hover:opacity-90 ">
+              <div className="inline hover:border-b-[1px]">SampleMenu</div>
+            </div>
+          </Link>
+        </div>
         <Footer />
       </div>
     </LayoutErrorBoundary>

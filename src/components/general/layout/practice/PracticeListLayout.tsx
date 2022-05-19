@@ -10,7 +10,7 @@ type Props = {
 const PracticeListLayout: FC<Props> = ({ children }) => {
   return (
     <LayoutErrorBoundary>
-      <div className="flex flex-col justify-center items-center min-h-screen text-gray-600">
+      <div className="flex flex-col justify-center items-center min-h-screen ">
         <NavBar sampleName={"React18"} />
         <NavBar sampleName={"Rendering"} />
         <NavBar sampleName={"Redux"} />

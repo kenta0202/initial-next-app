@@ -2,7 +2,7 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
 
 const ReactQueryHome = () => {
-  return <div>ReactQueryHome</div>
+  return <div className=" text-lg">ReactQueryHome</div>
 }
 
 ReactQueryHome.getLayout = function getLayout(page) {

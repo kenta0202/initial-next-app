@@ -1,11 +1,13 @@
 import { navBarDataList, TSampleEnum } from "data/practice/navBarDataList"
-import Link from "next/link"
+import NavBarData from "components/practice/NavBarData"
+import { useRouter } from "next/router"
 
 type Props = {
   sampleName: TSampleEnum
 }
 
 const NavBar: React.FC<Props> = ({ sampleName }) => {
+  // 変数：sampleName、返り値：配列
   const dataFuc = (data: TSampleEnum) => {
     switch (data) {
       case "React18": {
@@ -25,20 +27,18 @@ const NavBar: React.FC<Props> = ({ sampleName }) => {
     }
   }
 
+  const { pathname } = useRouter()
+
   return (
-    <nav className="w-screen font-mono bg-gray-800">
-      <div className="flex items-center pl-4 h-12">
-        <div className="flex items-center space-x-1 text-sm">
-          {dataFuc(sampleName).map((data) => (
-            <div
-              className="py-2 px-3 text-base text-gray-300 hover:bg-gray-700 rounded"
-              key={data.linkName}
-            >
-              <Link href={`/sample/${data.dir}`}>{data.linkName}</Link>
-            </div>
-          ))}
-        </div>
-      </div>
+    <nav className=" flex overflow-x-scroll sticky top-0 z-10   flex-row grow-0 items-center space-x-2 w-screen  font-mono   whitespace-nowrap bg-darkgrey hidden-scrollbar ">
+      {dataFuc(sampleName).map((data) => (
+        <NavBarData
+          linkName={data.linkName}
+          dir={data.dir}
+          key={data.linkName}
+          pathname={pathname}
+        />
+      ))}
     </nav>
   )
 }

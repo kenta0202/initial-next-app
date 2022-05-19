@@ -1,3 +1,6 @@
+/* GoogleFontの追加   */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@300&family=M+PLUS+Rounded+1c:wght@900&display=swap");
+
 /* なにも設定しない状態(box-sizing:content-box; )だと、widthやheightで指定した大きさにborderとpaddingの値が加算された領域を占めてしまうので、計算するのが面倒くさいのです。
 
 border-boxにしておけば、width: 100%; にするだけで親要素幅や画面幅にフィットさせることができてスムーズになりますね。 */
