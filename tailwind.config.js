@@ -5,7 +5,7 @@ module.exports = {
     /* fontfamilyUtilityの追加 */
     // ➀globals.cssに埋め込みをコピペ
     // ➁tailwindconfigにfontFamilyの追加
-    // ➂bodyのclassにfont-typeの追加
+    // ➂styledのbodyのclassにfont-typeの追加
 
     fontFamily: {
       type: ["Open Sans", "sans-serif"],

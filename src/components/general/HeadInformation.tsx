@@ -19,9 +19,9 @@ export const HeadInformation = () => {
       */}
       <meta name="description" content={process.env.NEXT_PUBLIC_SITE_DESCRIPTION} />
       {/* Webページの概要や内容などを指定 */}
-      <meta name="theme-color" content="#5588cc" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fa811e" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2894bf" />
+      <meta name="theme-color" content="#222831" />
+      {/*       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fa811e" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2894bf" /> */}
       {/* ブラウザのバーの色を変更 */}
       <meta name="format-detection" content="telephone=no, email=no address=no" />
       {/* スマホの関連するアプリにリンクする拡張の無効化 */}

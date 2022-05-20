@@ -728,19 +728,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     /* Chrome, Safari 対応 */
     display: none;
   }
+
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
+
 .hover\:border-b-\[1px\]:hover {
   border-bottom-width: 1px;
 }
+
 .hover\:bg-indigo-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
+
 @media (min-width: 768px) {
 
   .md\:text-base {
