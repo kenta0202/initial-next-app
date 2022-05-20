@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import axios, { AxiosResponse } from "axios"
 import { useQuery } from "react-query"
-import { delay } from "util/func/fetchDelay"
+import { getUsers } from "util/func/promise/getUsers"
 
 interface RootObject {
   id: number
@@ -31,20 +29,6 @@ interface Address {
 interface Geo {
   lat: string
   lng: string
-}
-
-const getUsers = async () => {
-  try {
-    const responce: AxiosResponse<RootObject[]> = await axios
-      .get("https://jsonplaceholder.typicode.com/users?_limit=3")
-      .then(delay(3000))
-    const data = responce.data
-    return data
-  } catch (error) {
-    if (axios.isAxiosError(error) && error.response) {
-      throw new Error("Network responce not ok")
-    }
-  }
 }
 
 export const useQueryUsers = () => {

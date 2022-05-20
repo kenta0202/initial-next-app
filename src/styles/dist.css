@@ -549,14 +549,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-col {
   flex-direction: column;
 }
-.items-start {
-  align-items: flex-start;
-}
 .items-center {
   align-items: center;
-}
-.justify-start {
-  justify-content: flex-start;
 }
 .justify-center {
   justify-content: center;
@@ -593,6 +587,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-2 {
   border-width: 2px;
 }
+.border-4 {
+  border-width: 4px;
+}
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -607,6 +604,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-whitegrey {
   --tw-border-opacity: 1;
   border-color: rgb(230 230 230 / var(--tw-border-opacity));
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-red-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 242 242 / var(--tw-border-opacity));
+}
+.border-red-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 202 202 / var(--tw-border-opacity));
 }
 .border-t-transparent {
   border-top-color: transparent;
@@ -626,6 +635,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+.bg-transparent {
+  background-color: transparent;
 }
 .p-2 {
   padding: 0.5rem;
@@ -725,6 +737,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(244 114 182 / var(--tw-text-opacity));
 }
+.text-darkgrey {
+  --tw-text-opacity: 1;
+  color: rgb(34 40 49 / var(--tw-text-opacity));
+}
 .opacity-60 {
   opacity: 0.6;
 }
@@ -739,19 +755,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     /* Chrome, Safari 対応 */
     display: none;
   }
+
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
+
 .hover\:border-b-\[1px\]:hover {
   border-bottom-width: 1px;
 }
+
 .hover\:bg-indigo-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
+
 @media (min-width: 768px) {
 
   .md\:text-base {
@@ -759,10 +780,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.5rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:text-lg {
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }

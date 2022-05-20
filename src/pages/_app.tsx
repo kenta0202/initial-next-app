@@ -48,7 +48,7 @@ import { NextWebVitalsMetric } from "next/app"
 //   }
 // }
 
-// queryClientの設定
+// queryClientの設定 Topレベルではnewする。下の階層ではuseQueryClient()
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

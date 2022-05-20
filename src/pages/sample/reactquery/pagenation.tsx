@@ -9,7 +9,7 @@ const PageNation = () => {
     <>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center">
+          <div>
             <Sppinner />
           </div>
         }

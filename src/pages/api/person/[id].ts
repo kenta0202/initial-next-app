@@ -1,4 +1,4 @@
-import { IPerson } from "interface/practice/reactquery/IPerson"
+import { IPerson } from "interface/practice/reactquery/Person"
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default (req: NextApiRequest, res: NextApiResponse<IPerson | Error>): void => {

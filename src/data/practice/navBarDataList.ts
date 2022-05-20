@@ -53,6 +53,10 @@ export const navBarDataList = {
       dir: "reactquery/person/33",
       linkName: "Person/33",
     },
+    {
+      dir: "reactquery/create",
+      linkName: "CreatePerson",
+    },
   ],
   React18: [
     {

@@ -18,7 +18,7 @@ const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {
         </main>
         <div className="cursor-pointer">
           <Link href={"/sample"}>
-            <div className=" py-2 px-3 text-sm  rounded hover:opacity-90 ">
+            <div className=" py-2 px-3 text-sm rounded border-whitegrey  hover:opacity-90 md:text-base lg:text-xl ">
               <div className="inline hover:border-b-[1px]">SampleMenu</div>
             </div>
           </Link>
