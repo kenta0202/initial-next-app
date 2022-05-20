@@ -5,4 +5,3 @@ module.exports = {
     cssnano: process.env.NODE_ENV === "production" ? {} : false,
   },
 }
-

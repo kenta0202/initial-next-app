@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-type bg-darkgrey text-whitegrey hidden-scrollbar border-whitegrey;
+    @apply heightfill  font-type bg-darkgrey text-whitegrey hidden-scrollbar border-whitegrey;
   }
 }
 
@@ -15,6 +15,10 @@
 }
 
 @layer utilities {
+  /* 100vhの計算にアドレスバーが考慮されていない問題の解消 */
+  .heightfill {
+    min-height: -webkit-fill-available;
+  }
   .p-21 {
     padding: 5.5rem;
   }
