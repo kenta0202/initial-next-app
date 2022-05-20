@@ -12,8 +12,8 @@ const ErrorFallback = ({ error }: FallbackProps) => {
     <div className="flex gap-3 items-center">
       <ExclamationCircleIcon className="my-5 w-10 h-10 text-pink-500" />
       <div>
-        <p className=" text-base text-pink-400">Something went wrong:</p>
-        <pre className=" text-base">
+        <p className="  text-pink-400">Something went wrong:</p>
+        <pre className="">
           {error.name}:{error.message}:
         </pre>
       </div>

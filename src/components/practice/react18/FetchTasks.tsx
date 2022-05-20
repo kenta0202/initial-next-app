@@ -8,7 +8,7 @@ const FetchTasks = () => {
     <div className="my-3 text-center">
       <p className="my-3 font-bold">Task List</p>
       {data.map((task) => (
-        <p className="my-3 text-sm" key={task.id}>
+        <p className="my-3 " key={task.id}>
           {task.title}
         </p>
       ))}

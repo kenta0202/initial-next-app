@@ -9,10 +9,7 @@ type Props = {
 const NavBarData: React.FC<Props> = ({ dir, linkName, pathname }) => {
   const isAcitve = pathname === `/sample/${dir}`
   return (
-    <div
-      className={`text-center  m-1 flex-1 py-3 px-4 md:text-base lg:text-lg  text-sm cursor-pointer`}
-      key={linkName}
-    >
+    <div className={`text-center  m-1 flex-1 py-3 px-4 cursor-pointer`} key={linkName}>
       <div
         className={` border-whitegrey hover:opacity-90 hover:border-b-2 inline ${
           isAcitve ? " border-b-2 font-bold" : ""

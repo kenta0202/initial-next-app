@@ -9,7 +9,7 @@ const FetchComments = () => {
     <div className="my-3 text-center">
       <p className="my-3 font-bold">Comments List</p>
       {tasks.map((comment) => (
-        <p className="my-3 text-sm" key={comment.id}>
+        <p className="my-3 " key={comment.id}>
           {comment.name}
         </p>
       ))}
