@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import axios from "axios"
-import React18Layout from "components/general/layout/practice/React18Layout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useState } from "react"
 import { flushSync } from "react-dom"
+import NavBar from "components/practice/NavBar"
 const AutoBatch = () => {
   /*
     Reactv18の新機能 StrictMode
@@ -66,7 +67,7 @@ const AutoBatch = () => {
 }
 
 AutoBatch.getLayout = function getLayout(page) {
-  return <React18Layout>{page}</React18Layout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 
 export default AutoBatch

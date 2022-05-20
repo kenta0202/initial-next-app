@@ -2,17 +2,26 @@ import "../styles/dist.css"
 import "../styles/normalize.css"
 import "../styles/global.css"
 
+// モジュール系
 import React, { Profiler } from "react"
-import HeadInformation from "components/general/HeadInformation"
-import { Provider } from "react-redux"
-import { store } from "app/store"
-import profileRender from "util/profiler-render"
-
-// import type { AppProps } from "next/app";
-
+import { Provider as ReduxProvider } from "react-redux"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
+
+// ファイル系
+import HeadInformation from "components/general/HeadInformation"
+import { store } from "app/store"
+
+// 計測系
+import profileRender from "util/profiler-render"
 import { NextWebVitalsMetric } from "next/app"
+// import type { AppProps } from "next/app";
+
+/*
+すべてのページにおいて、ページを初期化するために App コンポーネント
+ページ移動間の固定レイアウト,状態管理ライブラリとの結合,広告まわりの関数の実行や、NProgress などのローディングを設定
+肥大化に注意
+*/
 
 // WebVitalの計測
 // export function reportWebVitals(metric: NextWebVitalsMetric) {
@@ -39,19 +48,20 @@ import { NextWebVitalsMetric } from "next/app"
 //   }
 // }
 
-// queryClientの設定
+// queryClientの設定 Topレベルではnewする。下の階層ではuseQueryClient()
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: false /* 失敗したときのRetryをfalse */,
       /* デフォルトは3回 */
-      refetchOnWindowFocus: false /* フォーカスしたときの自動フェッチfalse */,
-      /* デフォルトはon */
+      refetchOnWindowFocus: false,
+      /* フォーカスしたときやタブを切り替えた時の自動フェッチ→false デフォルトはtrue */
       suspense: true,
       /*
       suspenceはデフォルトでfalse
       suspence:trueだとuseErrorBoundary: trueになる
       */
+      cacheTime: 5000,
       /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除*/
       // keepPreviousData: false,
       /*
@@ -69,12 +79,12 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <HeadInformation />
       {/* <Profiler id="user" onRender={profileRender}> */}
-      <Provider store={store}>
+      <ReduxProvider store={store}>
         <QueryClientProvider client={queryClient}>
           {getLayout(<Component {...pageProps} />)}
           {process.env.NODE_ENV === "development" && <ReactQueryDevtools initialIsOpen={false} />}
         </QueryClientProvider>
-      </Provider>
+      </ReduxProvider>
       {/* </Profiler> */}
     </>
   )

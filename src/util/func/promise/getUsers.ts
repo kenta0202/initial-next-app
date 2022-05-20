@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios"
-import { useQuery } from "react-query"
-import { delay } from "util/func/fetchDelay"
+import { delay } from "../fetchDelay"
 
 interface RootObject {
   id: number
@@ -33,7 +32,7 @@ interface Geo {
   lng: string
 }
 
-const getUsers = async () => {
+export const getUsers = async () => {
   try {
     const responce: AxiosResponse<RootObject[]> = await axios
       .get("https://jsonplaceholder.typicode.com/users?_limit=3")
@@ -42,16 +41,7 @@ const getUsers = async () => {
     return data
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
-}
-
-export const useQueryUsers = () => {
-  return useQuery({
-    queryKey: ["users"],
-    queryFn: getUsers,
-    // キャッシュされたデータは常に最新とみなす(Fresh)→ページ遷移するたびにFetchしない
-    staleTime: Infinity,
-  })
 }

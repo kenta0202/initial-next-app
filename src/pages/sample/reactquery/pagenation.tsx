@@ -1,14 +1,15 @@
-import ReacQueryLayout from "components/general/layout/practice/ReactQueryLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Sppinner from "components/general/Sppinner"
 import FetchPageNation from "components/practice/reactquery/FetchPageNation"
 import { Suspense } from "react"
+import NavBar from "components/practice/NavBar"
 
 const PageNation = () => {
   return (
     <>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center">
+          <div>
             <Sppinner />
           </div>
         }
@@ -20,7 +21,9 @@ const PageNation = () => {
 }
 
 PageNation.getLayout = function getLayout(page) {
-  return <ReacQueryLayout>{page}</ReacQueryLayout>
+  return (
+    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+  )
 }
 
 export default PageNation

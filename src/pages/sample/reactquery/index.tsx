@@ -1,14 +1,14 @@
-import ReacQueryLayout from "components/general/layout/practice/ReactQueryLayout"
-import Sppinner from "components/general/Sppinner"
-import FetchPageNation from "components/practice/reactquery/FetchPageNation"
-import { Suspense } from "react"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import NavBar from "components/practice/NavBar"
 
 const ReactQueryHome = () => {
-  return <div>ReactQueryHome</div>
+  return <div className=" text-lg">ReactQueryHome</div>
 }
 
 ReactQueryHome.getLayout = function getLayout(page) {
-  return <ReacQueryLayout>{page}</ReacQueryLayout>
+  return (
+    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+  )
 }
 
 export default ReactQueryHome

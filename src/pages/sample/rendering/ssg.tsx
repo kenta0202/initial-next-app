@@ -2,9 +2,10 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { NextPage } from "next"
 import { GetStaticProps } from "next"
-import RenderingLayout from "components/general/layout/practice/RenderingLayout"
 import { supabase } from "util/supabase"
 import { Task, Notice } from "interface/supabase/types"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import NavBar from "components/practice/NavBar"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/ssg invoked")
@@ -29,7 +30,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <RenderingLayout>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-blue-500">SSG</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -60,7 +61,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
       >
         Route to ssr
       </button>
-    </RenderingLayout>
+    </PracticeLayout>
   )
 }
 

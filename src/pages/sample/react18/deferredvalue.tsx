@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import axios, { AxiosResponse } from "axios"
-import React18Layout from "components/general/layout/practice/React18Layout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useEffect, useDeferredValue, useState } from "react"
+import NavBar from "components/practice/NavBar"
 
 interface RootObject {
   albumId: number
@@ -63,7 +64,7 @@ const Concurrent = () => {
 }
 
 Concurrent.getLayout = function getLayout(page) {
-  return <React18Layout>{page}</React18Layout>
+  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 
 export default Concurrent

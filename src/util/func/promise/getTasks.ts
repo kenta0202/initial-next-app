@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios"
-import { useQuery } from "react-query"
-import { delay } from "util/func/fetchDelay"
+import { delay } from "../fetchDelay"
 
 interface RootObject {
   userId: number
@@ -10,7 +9,7 @@ interface RootObject {
   completed: boolean
 }
 
-const getTasks = async () => {
+export const getTasks = async () => {
   try {
     const responce: AxiosResponse<RootObject[]> = await axios
       .get("https://jsonplaceholder.typicode.com/todos?_limit=3")
@@ -20,15 +19,7 @@ const getTasks = async () => {
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
       console.log(error.message)
+      throw new Error("Network responce not ok")
     }
   }
-}
-
-export const useQueryTasks = () => {
-  return useQuery({
-    queryKey: ["task"],
-    queryFn: getTasks,
-    // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
-    staleTime: Infinity,
-  })
 }

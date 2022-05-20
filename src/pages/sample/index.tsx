@@ -1,11 +1,11 @@
-import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import PracticeListLayout from "components/general/layout/practice/PracticeListLayout"
 
 const SampleHome = () => {
-  return <div>SampleHome</div>
+  return <div className=" text-lg">SampleHome</div>
 }
 
 SampleHome.getLayout = function getLayout(page) {
-  return <PracticeLayout>{page}</PracticeLayout>
+  return <PracticeListLayout>{page}</PracticeListLayout>
 }
 
 export default SampleHome

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* body {
-    @apply font-family: "M PLUS Rounded 1c", sans-serif;
-  } */
+  body {
+    @apply font-type bg-darkgrey text-whitegrey hidden-scrollbar border-whitegrey;
+  }
 }
 
 @layer components {
@@ -18,7 +18,12 @@
   .p-21 {
     padding: 5.5rem;
   }
-  /* .no-scrollbar::-webkit-scrollbar {
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
     display: none;
-  } */
+  }
 }

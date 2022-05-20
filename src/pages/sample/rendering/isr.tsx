@@ -4,7 +4,8 @@ import { NextPage } from "next"
 import { GetStaticProps } from "next"
 import { supabase } from "util/supabase"
 import { Notice, Task } from "interface/supabase/types"
-import RenderingLayout from "components/general/layout/practice/RenderingLayout"
+import PracticeLayout from "components/general/layout/practice/PracticeLayout"
+import NavBar from "components/practice/NavBar"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/isr invoked")
@@ -29,7 +30,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <RenderingLayout>
+    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
       <p className="mb-3 text-indigo-500">ISR</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -61,7 +62,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
       >
         Route to ssr
       </button>
-    </RenderingLayout>
+    </PracticeLayout>
   )
 }
 

@@ -1,11 +1,11 @@
 const Footer = () => {
   return (
     <>
-      <footer className="px-4 text-gray-600 bg-gray-200">
+      <footer className=" py-1 px-4 w-screen  text-center text-whitegrey bg-darkgrey">
         <small>&copy; 20xx example</small>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

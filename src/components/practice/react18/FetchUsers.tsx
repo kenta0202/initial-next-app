@@ -1,4 +1,4 @@
-import { useQueryUsers } from "util/hooks/useQueryUsers"
+import { useQueryUsers } from "util/hooks/practice/react18/useQueryUsers"
 
 const FetchUsers = () => {
   const { /* status, */ data } = useQueryUsers()
