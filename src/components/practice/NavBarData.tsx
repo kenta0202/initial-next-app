@@ -15,7 +15,7 @@ const NavBarData: React.FC<Props> = ({ dir, linkName, pathname }) => {
     >
       <div
         className={` border-whitegrey hover:opacity-90 hover:border-b-2 inline ${
-          isAcitve ? " border-b-2 font-semibold" : ""
+          isAcitve ? " border-b-2 font-bold" : ""
         } `}
       >
         <Link href={`/sample/${dir}`}>{linkName}</Link>

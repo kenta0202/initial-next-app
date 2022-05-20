@@ -3,12 +3,12 @@ module.exports = {
   content: [],
   theme: {
     /* fontfamilyUtilityの追加 */
-    // ➀globals.csssに埋め込みをコピペ
+    // ➀globals.cssに埋め込みをコピペ
     // ➁tailwindconfigにfontFamilyの追加
     // ➂bodyのclassにfont-typeの追加
 
     fontFamily: {
-      type: ["Roboto", "sans-serif"],
+      type: ["Open Sans", "sans-serif"],
     },
     extend: {
       darkMode: "class", //ダークモードを有効化する
