@@ -2,7 +2,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { GetStaticProps } from "next"
-import { supabase } from "util/supabase"
 import { Task, Notice } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
@@ -14,7 +13,6 @@ export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/ssg invoked")
   const tasks = await getTasks()
   const notices = await getNotices()
-  // 新しいものが一番下
   return { props: { tasks, notices } }
 }
 

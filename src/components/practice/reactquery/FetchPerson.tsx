@@ -1,6 +1,6 @@
 import Sppinner from "components/general/Sppinner"
 import { Suspense } from "react"
-import { useQueryPerson } from "util/hooks/useQueryPerson"
+import { useQueryPerson } from "util/hooks/practice/reactquery/useQueryPerson"
 
 const FetchPerson = () => {
   const { data, status, error } = useQueryPerson()

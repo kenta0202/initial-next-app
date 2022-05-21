@@ -1,4 +1,4 @@
-import { useQueryPage } from "util/hooks/useQueryPage"
+import { useQueryPage } from "util/hooks/practice/reactquery/useQueryPage"
 
 const FetchPageNation = () => {
   const { isLoading, isError, error, data, isFetching, isPreviousData, page, setPage } =

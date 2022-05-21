@@ -12,9 +12,6 @@ type StaticProps = {
   tasks: Task[]
   notices: Notice[]
 }
-// const { tasks, getTasks } = useTasks()
-// const { notices, getNotices } = useNotices()
-
 const Isr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 

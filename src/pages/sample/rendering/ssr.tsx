@@ -2,22 +2,16 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { GetServerSideProps } from "next"
 import { Task, Notice } from "interface/supabase/types"
-import { supabase } from "util/supabase"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
 import { NextPageWithLayout } from "interface/general"
+import { getTasks } from "util/func/promise/supabase/getTasks"
+import { getNotices } from "util/func/promise/supabase/getNotices"
 
 export const getServerSideProps: GetServerSideProps = async () => {
   console.log("getServerSideProps/ssr invoked")
-  const { data: tasks } = await supabase
-    .from("todos")
-    .select("*")
-    .order("created_at", { ascending: true })
-  const { data: notices } = await supabase
-    .from("notices")
-    .select("*")
-    .order("created_at", { ascending: true })
-  // 新しいものが一番下
+  const tasks = await getTasks()
+  const notices = await getNotices()
   return { props: { tasks, notices } }
 }
 
