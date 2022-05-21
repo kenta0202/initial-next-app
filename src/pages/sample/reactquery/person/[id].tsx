@@ -13,10 +13,8 @@ const PersonIdPage = () => {
   )
 }
 
-PersonIdPage.getLayout = function getLayout(page) {
-  return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
-  )
-}
+PersonIdPage.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+)
 
 export default PersonIdPage

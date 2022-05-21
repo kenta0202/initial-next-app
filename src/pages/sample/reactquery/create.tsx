@@ -5,7 +5,7 @@ import NavBar from "components/practice/NavBar"
 import FetchPerson from "components/practice/reactquery/FetchPerson"
 import React, { FormEventHandler, Suspense, useState } from "react"
 import { QueryClient, useQueryClient } from "react-query"
-import { useMutationCreatePerson } from "util/hooks/useMutationCreatePerson"
+import { useMutationCreatePerson } from "util/hooks/practice/reactquery/useMutationCreatePerson"
 
 const Mutations = () => {
   const mutation = useMutationCreatePerson()
@@ -70,9 +70,7 @@ const Mutations = () => {
   )
 }
 
-Mutations.getLayout = function getLayout(page) {
-  return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
-  )
-}
+Mutations.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+)
 export default Mutations

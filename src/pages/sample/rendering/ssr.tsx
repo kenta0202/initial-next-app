@@ -1,11 +1,11 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { NextPage } from "next"
 import { GetServerSideProps } from "next"
 import { Task, Notice } from "interface/supabase/types"
 import { supabase } from "util/supabase"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
+import { NextPageWithLayout } from "interface/general"
 
 export const getServerSideProps: GetServerSideProps = async () => {
   console.log("getServerSideProps/ssr invoked")
@@ -26,10 +26,10 @@ type StaticProps = {
   notices: Notice[]
 }
 
-const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
+const Ssr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
   return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
+    <>
       <p className="mb-3 text-pink-500">SSR</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -49,9 +49,6 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
           )
         })}
       </ul>
-      {/*
-
-      */}
       <Link href="./ssg" prefetch={false}>
         <a className="my-3 text-xs"> Link to ssg</a>
       </Link>
@@ -74,8 +71,12 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
       >
         Route to isr
       </button>
-    </PracticeLayout>
+    </>
   )
 }
+
+Ssr.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
+)
 
 export default Ssr

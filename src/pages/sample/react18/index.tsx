@@ -5,8 +5,8 @@ const React18 = () => {
   return <div className=" text-lg">React18 basic lesson</div>
 }
 
-React18.getLayout = function getLayout(page) {
-  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
-}
+React18.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
+)
 
 export default React18

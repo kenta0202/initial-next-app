@@ -5,10 +5,8 @@ const ReactQueryHome = () => {
   return <div className=" text-lg">ReactQueryHome</div>
 }
 
-ReactQueryHome.getLayout = function getLayout(page) {
-  return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
-  )
-}
+ReactQueryHome.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+)
 
 export default ReactQueryHome

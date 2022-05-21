@@ -15,7 +15,7 @@ import { store } from "app/store"
 // 計測系
 import profileRender from "util/profiler-render"
 import { NextWebVitalsMetric } from "next/app"
-// import type { AppProps } from "next/app";
+import { AppPropsWithLayout } from "interface/general"
 
 /*
 すべてのページにおいて、ページを初期化するために App コンポーネント
@@ -72,9 +72,8 @@ const queryClient = new QueryClient({
   },
 })
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout || ((page) => page)
-  // Q: AppProps型がつくとgetLayoutがはじかれる
   return (
     <>
       <HeadInformation />

@@ -13,7 +13,7 @@ interface RootObject {
   thumbnailUrl: string
 }
 
-const Concurrent = () => {
+const Deferredvalue = () => {
   const [photo, setPhotos] = useState<RootObject>()
   const [input, setInput] = useState("1")
   const deferredWord = useDeferredValue(input)
@@ -63,8 +63,8 @@ const Concurrent = () => {
   )
 }
 
-Concurrent.getLayout = function getLayout(page) {
-  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
-}
+Deferredvalue.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
+)
 
-export default Concurrent
+export default Deferredvalue

@@ -80,7 +80,7 @@ export const navBarDataList = {
       linkName: "startTransition",
     },
     {
-      dir: "react18/concurrent",
+      dir: "react18/deferredvalue",
       linkName: "DefferdValue",
     },
   ],

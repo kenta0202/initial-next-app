@@ -44,8 +44,8 @@ const SuspenseDemo = () => {
   )
 }
 
-SuspenseDemo.getLayout = function getLayout(page) {
-  return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
-}
+SuspenseDemo.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
+)
 
 export default SuspenseDemo

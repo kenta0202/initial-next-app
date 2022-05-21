@@ -1,36 +1,25 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { NextPage } from "next"
 import { GetStaticProps } from "next"
-import { supabase } from "util/supabase"
 import { Notice, Task } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
-
-export const getStaticProps: GetStaticProps = async () => {
-  console.log("getStaticProps/isr invoked")
-  const { data: tasks } = await supabase
-    .from("todos")
-    .select("*")
-    .order("created_at", { ascending: true })
-  const { data: notices } = await supabase
-    .from("notices")
-    .select("*")
-    .order("created_at", { ascending: true })
-  // 新しいものが一番下
-  return { props: { tasks, notices }, revalidate: 5 }
-}
+import { NextPageWithLayout } from "interface/general"
+import { getNotices } from "util/func/promise/supabase/getNotices"
+import { getTasks } from "util/func/promise/supabase/getTasks"
 
 type StaticProps = {
   tasks: Task[]
   notices: Notice[]
 }
+// const { tasks, getTasks } = useTasks()
+// const { notices, getNotices } = useNotices()
 
-const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
+const Isr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
+    <>
       <p className="mb-3 text-indigo-500">ISR</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -62,12 +51,19 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
       >
         Route to ssr
       </button>
-    </PracticeLayout>
+    </>
   )
 }
 
-// Isr.getLayout = function getLayout(page) {
-//     return <Layout>{page}</Layout>
-//   }
+Isr.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
+)
+
+export const getStaticProps: GetStaticProps = async () => {
+  console.log("getStaticProps/isr invoked")
+  const tasks = await getTasks()
+  const notices = await getNotices()
+  return { props: { tasks, notices }, revalidate: 5 }
+}
 
 export default Isr

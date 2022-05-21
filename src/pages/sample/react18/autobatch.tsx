@@ -66,7 +66,7 @@ const AutoBatch = () => {
   )
 }
 
-AutoBatch.getLayout = function getLayout(page) {
+AutoBatch.getLayout = (page) => {
   return <PracticeLayout NavBarElement={<NavBar sampleName={"React18"} />}>{page}</PracticeLayout>
 }
 

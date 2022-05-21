@@ -1,37 +1,28 @@
-import { NextPage } from "next"
-import { useEffect, useState } from "react"
-import { Notice, Task } from "interface/supabase/types"
-import { supabase } from "util/supabase"
+import { useEffect } from "react"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
+import { NextPageWithLayout } from "interface/general"
+import { useTasks } from "util/hooks/practice/supabase/useTasks"
+import { useNotices } from "util/hooks/practice/supabase/useNotices"
 
-const Csr: NextPage = () => {
-  const [tasks, setTasks] = useState<Task[]>([])
-  const [notices, setNotices] = useState<Notice[]>([])
+const Csr: NextPageWithLayout = () => {
+  const { tasks, getTasks } = useTasks()
+  const { notices, getNotices } = useNotices()
+
   useEffect(() => {
-    const getTasks = async () => {
-      const { data: tasks } = await supabase
-        .from("todos")
-        .select("*")
-        .order("created_at", { ascending: true })
-      setTasks(tasks as Task[])
-    }
-    const getNotices = async () => {
-      const { data: notices } = await supabase
-        .from("notices")
-        .select("*")
-        .order("created_at", { ascending: true })
-      setNotices(notices as Notice[])
-    }
     void getTasks()
     void getNotices()
   }, [])
 
   return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
+    <>
       <p className="mb-3 text-blue-500">SSG + CSF</p>
       <ul className="mb-3">
-        {tasks.map((task) => {
+        {/*
+        ■Optional Chaining
+        tasksとnoticesがfalsyならエラーではなくundefindを返す→何も表示されない
+        */}
+        {tasks?.map((task) => {
           return (
             <li key={task.id}>
               <p className="text-lg font-extrabold">{task.title}</p>
@@ -40,7 +31,7 @@ const Csr: NextPage = () => {
         })}
       </ul>
       <ul className="mb-3">
-        {notices.map((notice) => {
+        {notices?.map((notice) => {
           return (
             <li key={notice.id}>
               <p className="text-lg font-extrabold">{notice.content}</p>
@@ -48,8 +39,11 @@ const Csr: NextPage = () => {
           )
         })}
       </ul>
-    </PracticeLayout>
+    </>
   )
 }
 
+Csr.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
+)
 export default Csr

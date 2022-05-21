@@ -20,10 +20,8 @@ const PageNation = () => {
   )
 }
 
-PageNation.getLayout = function getLayout(page) {
-  return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
-  )
-}
+PageNation.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+)
 
 export default PageNation

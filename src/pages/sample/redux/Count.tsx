@@ -15,8 +15,8 @@ const Count = () => {
   )
 }
 
-Count.getLayout = function getLayout(page) {
-  return <PracticeLayout NavBarElement={<NavBar sampleName={"Redux"} />}>{page}</PracticeLayout>
-}
+Count.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"Redux"} />}>{page}</PracticeLayout>
+)
 
 export default Count

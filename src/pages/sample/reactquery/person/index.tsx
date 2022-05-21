@@ -11,9 +11,8 @@ const Person = () => {
   )
 }
 
-Person.getLayout = function getLayout(page) {
-  return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
-  )
-}
+Person.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
+)
+
 export default Person

@@ -1,22 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { NextPage } from "next"
 import { GetStaticProps } from "next"
 import { supabase } from "util/supabase"
 import { Task, Notice } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
+import { NextPageWithLayout } from "interface/general"
+import { getNotices } from "util/func/promise/supabase/getNotices"
+import { getTasks } from "util/func/promise/supabase/getTasks"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/ssg invoked")
-  const { data: tasks } = await supabase
-    .from("todos")
-    .select("*")
-    .order("created_at", { ascending: true })
-  const { data: notices } = await supabase
-    .from("notices")
-    .select("*")
-    .order("created_at", { ascending: true })
+  const tasks = await getTasks()
+  const notices = await getNotices()
   // 新しいものが一番下
   return { props: { tasks, notices } }
 }
@@ -26,11 +23,11 @@ type StaticProps = {
   notices: Notice[]
 }
 
-const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
+const Ssg: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
 
   return (
-    <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>
+    <>
       <p className="mb-3 text-blue-500">SSG</p>
       <ul className="mb-3">
         {tasks.map((task) => {
@@ -61,8 +58,12 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
       >
         Route to ssr
       </button>
-    </PracticeLayout>
+    </>
   )
 }
+
+Ssg.getLayout = (page) => (
+  <PracticeLayout NavBarElement={<NavBar sampleName={"Rendering"} />}>{page}</PracticeLayout>
+)
 
 export default Ssg
