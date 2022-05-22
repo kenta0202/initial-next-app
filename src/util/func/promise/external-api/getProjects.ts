@@ -1,6 +1,7 @@
+// delayをしているからresの型が分からない
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios"
-import { delay } from "../fetchDelay"
+import { delay } from "../../fetchDelay"
 
 type Post = {
   usedId: number
@@ -14,12 +15,12 @@ export const getProjects = async (page = 1) => {
     const responce: AxiosResponse<Post[]> = await axios
       .get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`)
       .then(delay(1000))
-
-    const data = responce.data
-    return data
-  } catch (error) {
-    if (axios.isAxiosError(error) && error.response) {
-      throw new Error("Network responce not ok")
+    return responce.data
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      // if (axios.isAxiosError(err) && err.response) {
+      throw err
     }
+    throw err /* 意図していない例外 */
   }
 }

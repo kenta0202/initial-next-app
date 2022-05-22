@@ -1,5 +1,5 @@
 import { useQuery, UseQueryResult } from "react-query"
-import { getPerson } from "util/func/promise/getPerson"
+import { getPerson } from "util/func/promise/internal-api/getPerson"
 
 type IPerson = {
   id: string

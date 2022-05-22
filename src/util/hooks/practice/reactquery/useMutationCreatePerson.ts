@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { IContext, ICreatePersonParams, IPerson } from "interface/practice/reactquery/Person"
 import { useMutation, UseMutationResult, useQueryClient } from "react-query"
-import { createPerson } from "util/func/promise/createPerson"
+import { createPerson } from "util/func/promise/internal-api/createPerson"
 
 // contextの型
 

@@ -14,7 +14,7 @@ const ErrorFallback = ({ error }: FallbackProps) => {
       <div>
         <p className="  text-pink-400">Something went wrong:</p>
         <pre className="">
-          {error.name}:{error.message}:
+          {error.name}:{error.message}
         </pre>
       </div>
     </div>

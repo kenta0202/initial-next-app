@@ -1,5 +1,5 @@
 import { useQuery } from "react-query"
-import { getComments } from "util/func/promise/getComments"
+import { getComments } from "util/func/promise/external-api/getComments"
 
 interface RootObject {
   postId: number

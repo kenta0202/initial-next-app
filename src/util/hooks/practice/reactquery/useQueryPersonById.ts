@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { useRouter } from "next/router"
 import { useQuery } from "react-query"
-import { getPersonById } from "util/func/promise/getPersonById"
+import { getPersonById } from "util/func/promise/internal-api/getPersonById"
 
 type IPerson = {
   id: string

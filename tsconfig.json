@@ -16,6 +16,6 @@
     "baseUrl": "src",
     "incremental": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "next-env.d.ts", "src/util/func/fetchDelay.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "next-env.d.ts", "src/util/func/fetchDelay.js"],
   "exclude": ["node_modules"]
 }

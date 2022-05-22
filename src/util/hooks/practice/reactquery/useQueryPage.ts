@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useQuery, UseQueryResult } from "react-query"
-import { getProjects } from "util/func/promise/getProjects"
+import { getProjects } from "util/func/promise/external-api/getProjects"
 
 type Post = {
   usedId: number

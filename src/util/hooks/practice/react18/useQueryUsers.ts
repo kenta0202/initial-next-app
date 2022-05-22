@@ -1,5 +1,5 @@
 import { useQuery } from "react-query"
-import { getUsers } from "util/func/promise/getUsers"
+import { getUsers } from "util/func/promise/external-api/getUsers"
 
 interface RootObject {
   id: number

@@ -1,5 +1,5 @@
 import { useQuery } from "react-query"
-import { getTasks } from "util/func/promise/getTasks"
+import { getTasks } from "util/func/promise/external-api/getTasks"
 
 interface RootObject {
   userId: number

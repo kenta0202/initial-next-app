@@ -2,6 +2,7 @@ import { Task } from "interface/supabase/types"
 import { useState } from "react"
 import { supabase } from "util/supabase"
 
+// CSRのuseEffect用
 export const useTasks = () => {
   const [tasks, setTasks] = useState<Task[]>()
   const getTasks = async () => {
