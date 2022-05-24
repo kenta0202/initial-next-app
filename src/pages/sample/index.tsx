@@ -1,7 +1,8 @@
 import PracticeListLayout from "components/general/layout/practice/PracticeListLayout"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 const SampleHome = () => {
-  return <div className=" text-2xl">SampleHome</div>
+  return <PracticeTitle>SampleHome</PracticeTitle>
 }
 
 SampleHome.getLayout = function getLayout(page) {

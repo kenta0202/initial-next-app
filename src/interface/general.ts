@@ -17,3 +17,8 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export type AppPropsWithLayout<P = {}> = AppProps<P> & {
   Component: NextPageWithLayout
 }
+
+// React.memoコンポーネントの型
+export type NamedExoticComponentMemo<P = {}> = React.NamedExoticComponent<P> & {
+  getLayout: GetLayout
+}

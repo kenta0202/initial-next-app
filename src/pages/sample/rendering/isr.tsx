@@ -7,6 +7,7 @@ import NavBar from "components/practice/NavBar"
 import { NextPageWithLayout } from "interface/general"
 import { getNotices } from "util/func/promise/supabase/getNotices"
 import { getTasks } from "util/func/promise/supabase/getTasks"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 type StaticProps = {
   tasks: Task[]
@@ -17,7 +18,7 @@ const Isr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
 
   return (
     <>
-      <p className="mb-3 text-indigo-500">ISR</p>
+      <PracticeTitle>ISR</PracticeTitle>
       <ul className="mb-3">
         {tasks.map((task) => {
           return (

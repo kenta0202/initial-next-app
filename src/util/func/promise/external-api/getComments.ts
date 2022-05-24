@@ -22,8 +22,8 @@ export const getComments = async (): Promise<RootObject[]> => {
     // }
     return res.data
   } catch (err: unknown) {
-    if (err instanceof Error) {
-      throw err
+    if (axios.isAxiosError(err)) {
+      throw new Error(err.message)
       /* LayoutErrorBoundaryがエラーを受け取る */
     }
     throw err /* 意図していない例外 */

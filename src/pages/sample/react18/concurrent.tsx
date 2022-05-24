@@ -64,8 +64,8 @@ const Concurrent = () => {
   }
 
   return (
-    <div className="flex flex-col items-center text-gray-600">
-      <p className={`my-3 text-xl font-bold ${isPending ? "text-pink-500" : "text-blue-500"}`}>
+    <>
+      <p className={`my-3 text-xl font-bold ${isPending ? "text-pink-400" : "text-blue-400"}`}>
         startTransition(concurrent feature)
       </p>
       <input
@@ -81,7 +81,7 @@ const Concurrent = () => {
           {photo.title}
         </p>
       ))}
-    </div>
+    </>
   )
 }
 

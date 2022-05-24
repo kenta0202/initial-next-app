@@ -4,6 +4,7 @@ import axios, { AxiosResponse } from "axios"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useEffect, useDeferredValue, useState } from "react"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 interface RootObject {
   albumId: number
@@ -47,8 +48,8 @@ const Deferredvalue = () => {
   }
 
   return (
-    <div className="flex flex-col items-center text-gray-600">
-      <p className={`my-3 text-xl font-bold `}>startTransition(concurrent feature)</p>
+    <>
+      <PracticeTitle>startTransition(concurrent feature)</PracticeTitle>
       <input
         type="number"
         min={0}
@@ -59,7 +60,7 @@ const Deferredvalue = () => {
       <p className="mb-2 text-xs" key={photo?.id}>
         {photo?.title}
       </p>
-    </div>
+    </>
   )
 }
 

@@ -84,6 +84,40 @@ export const navBarDataList = {
       linkName: "DefferdValue",
     },
   ],
+  Hooks: [
+    {
+      dir: "hooks",
+      linkName: "Hooks",
+    },
+    {
+      dir: "hooks/usestate",
+      linkName: "useState",
+    },
+    {
+      dir: "hooks/useeffect",
+      linkName: "useEffect",
+    },
+    {
+      dir: "hooks/useref",
+      linkName: "useRef",
+    },
+    {
+      dir: "hooks/usecallback",
+      linkName: "useCallback",
+    },
+    {
+      dir: "hooks/memo",
+      linkName: "Memo",
+    },
+    {
+      dir: "hooks/usereducer",
+      linkName: "useReducer",
+    },
+    {
+      dir: "hooks/usecontext",
+      linkName: "useContext",
+    },
+  ],
 }
 
 export type TNavBarList = typeof navBarDataList

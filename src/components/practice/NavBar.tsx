@@ -1,12 +1,13 @@
 import { navBarDataList, TSampleEnum } from "data/practice/navBarDataList"
 import NavBarData from "components/practice/NavBarData"
 import { useRouter } from "next/router"
+import React, { memo } from "react"
 
 type Props = {
   sampleName: TSampleEnum
 }
 
-const NavBar: React.FC<Props> = ({ sampleName }) => {
+const NavBar: React.FC<Props> = memo(function NavBar({ sampleName }) {
   // 変数：sampleName、返り値：配列
   const dataFuc = (data: TSampleEnum) => {
     switch (data) {
@@ -21,6 +22,9 @@ const NavBar: React.FC<Props> = ({ sampleName }) => {
       }
       case "ReactQuery": {
         return navBarDataList.ReactQuery
+      }
+      case "Hooks": {
+        return navBarDataList.Hooks
       }
       default: // it depends
         throw new Error()
@@ -41,6 +45,5 @@ const NavBar: React.FC<Props> = ({ sampleName }) => {
       ))}
     </nav>
   )
-}
-
+})
 export default NavBar

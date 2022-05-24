@@ -1,8 +1,9 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 const React18 = () => {
-  return <div className=" text-lg">React18 basic lesson</div>
+  return <PracticeTitle>React18 Practice</PracticeTitle>
 }
 
 React18.getLayout = (page) => (

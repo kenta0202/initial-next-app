@@ -15,11 +15,15 @@ export const getTasks = async () => {
     const responce: AxiosResponse<RootObject[]> = await axios
       .get("https://jsonplaceholder.typicode.com/todos?_limit=3")
       .then(delay(5000))
+
     return responce.data
   } catch (err: unknown) {
-    if (err instanceof Error) {
-      // if (axios.isAxiosError(err) && err.response) {
-      throw err
+    // if (err instanceof Error) {
+    //   throw err
+    // }
+    if (axios.isAxiosError(err)) {
+      throw new Error(err.message)
+      /* LayoutErrorBoundaryがエラーを受け取る */
     }
     throw err /* 意図していない例外 */
   }

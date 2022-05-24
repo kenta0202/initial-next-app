@@ -7,6 +7,7 @@ import FetchUsers from "components/practice/react18/FetchUsers"
 import { Suspense } from "react"
 import NavBar from "components/practice/NavBar"
 import Sppinner from "components/general/Sppinner"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 /*
 ●Suspense
@@ -17,7 +18,7 @@ import Sppinner from "components/general/Sppinner"
 const SuspenseDemo = () => {
   return (
     <CSR>
-      <p className="mb-3 text-xl font-bold text-blue-500">Suspense Demo</p>
+      <PracticeTitle>Suspense</PracticeTitle>
       <LayoutErrorBoundary>
         <Suspense fallback={<Sppinner />}>
           <FetchUsers />

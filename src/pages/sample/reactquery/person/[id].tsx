@@ -2,14 +2,18 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import FetchPersonById from "components/practice/reactquery/FetchPersonById"
 import { Suspense } from "react"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 const PersonIdPage = () => {
   console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <FetchPersonById />
-    </Suspense>
+    <>
+      <PracticeTitle>Get PersonData</PracticeTitle>
+      <Suspense fallback={<div>Loading...</div>}>
+        <FetchPersonById />
+      </Suspense>
+    </>
   )
 }
 

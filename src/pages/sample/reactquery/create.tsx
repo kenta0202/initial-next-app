@@ -2,6 +2,7 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Sppinner from "components/general/Sppinner"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 import FetchPerson from "components/practice/reactquery/FetchPerson"
 import React, { FormEventHandler, Suspense, useState } from "react"
 import { QueryClient, useQueryClient } from "react-query"
@@ -28,6 +29,7 @@ const Mutations = () => {
 
   return (
     <>
+      <PracticeTitle>Create PersonData</PracticeTitle>
       {mutation.isLoading ? (
         <p>Adding todo</p>
       ) : (

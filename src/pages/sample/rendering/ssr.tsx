@@ -7,6 +7,7 @@ import NavBar from "components/practice/NavBar"
 import { NextPageWithLayout } from "interface/general"
 import { getTasks } from "util/func/promise/supabase/getTasks"
 import { getNotices } from "util/func/promise/supabase/getNotices"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 export const getServerSideProps: GetServerSideProps = async () => {
   console.log("getServerSideProps/ssr invoked")
@@ -24,7 +25,7 @@ const Ssr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
   return (
     <>
-      <p className="mb-3 text-pink-500">SSR</p>
+      <PracticeTitle>SSR</PracticeTitle>
       <ul className="mb-3">
         {tasks.map((task) => {
           return (

@@ -18,7 +18,6 @@ export const getProjects = async (page = 1) => {
     return responce.data
   } catch (err: unknown) {
     if (err instanceof Error) {
-      // if (axios.isAxiosError(err) && err.response) {
       throw err
     }
     throw err /* 意図していない例外 */

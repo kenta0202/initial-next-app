@@ -4,6 +4,7 @@ import NavBar from "components/practice/NavBar"
 import { NextPageWithLayout } from "interface/general"
 import { useTasks } from "util/hooks/practice/supabase/useTasks"
 import { useNotices } from "util/hooks/practice/supabase/useNotices"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 const Csr: NextPageWithLayout = () => {
   const { tasks, getTasks } = useTasks()
@@ -16,7 +17,7 @@ const Csr: NextPageWithLayout = () => {
 
   return (
     <>
-      <p className="mb-3 text-blue-500">SSG + CSF</p>
+      <PracticeTitle>SSG + CSF</PracticeTitle>
       <ul className="mb-3">
         {/*
         ■Optional Chaining

@@ -4,6 +4,7 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useState } from "react"
 import { flushSync } from "react-dom"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 const AutoBatch = () => {
   /*
     Reactv18の新機能 StrictMode
@@ -45,7 +46,7 @@ const AutoBatch = () => {
   console.log("Rendered AutoBatch")
   return (
     <>
-      <p className="my-3 text-xl font-bold text-blue-500">Automatic batching</p>
+      <PracticeTitle>Automatic batching</PracticeTitle>
       <p className="my-5">{fetchcount}</p>
       <button
         className="py-1 px-3 my-5 text-white bg-indigo-600 hover:bg-indigo-500 rounded"

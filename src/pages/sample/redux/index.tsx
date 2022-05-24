@@ -1,8 +1,9 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/NavBar"
+import PracticeTitle from "components/practice/PracticeTitle"
 
 const ReduxHome = () => {
-  return <div className=" text-lg">ReduxHome</div>
+  return <PracticeTitle>Home</PracticeTitle>
 }
 
 ReduxHome.getLayout = (page) => (
