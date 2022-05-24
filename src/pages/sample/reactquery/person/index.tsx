@@ -3,12 +3,13 @@ import FetchPerson from "components/practice/reactquery/FetchPerson"
 import { Suspense } from "react"
 import NavBar from "components/practice/NavBar"
 import PracticeTitle from "components/practice/PracticeTitle"
+import Sppinner from "components/general/Sppinner"
 
 const Person = () => {
   return (
     <>
       <PracticeTitle>Get PersonData</PracticeTitle>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Sppinner />}>
         <FetchPerson />
       </Suspense>
     </>

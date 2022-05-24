@@ -17,6 +17,7 @@ export const useQueryPersonById = () => {
   return useQuery<IPerson, Error>(["person", id], () => getPersonById(id), {
     enabled: !!id /* falseに設定(依存クエリ) */,
     /*
+    id が存在する場合にのみ API を叩く
     ↑をすることで動的に処理をする
     true→fetcher関数が実行
     false→自動的なrefetchを禁止。

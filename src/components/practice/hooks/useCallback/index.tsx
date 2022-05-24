@@ -50,7 +50,8 @@ const UseCallback = React.memo(function UseCallback() {
       <div className="text-center">
         <div>
           <Counter countertitle={"A"} count={countA} />
-          {/* ButtonはonClickがアロー関数なので、Buttonをメモ化かつ、アロー関数もuseCallbackでメモ化しないといけない */}
+          {/* ButtonはonClickがイベントハンドラなので、Buttonをメモ化かつ、イベントハンドラもuseCallbackでメモ化しないといけない */}
+          {/* useCallbackでメモ化された関数は、React.memoでメモ化されたコンポーネントへpropsとして渡されることで、はじめて意味を成す */}
           <Button onClick={handleCountUpA} buttonText={"もちろんA派"} />
         </div>
         <div>
