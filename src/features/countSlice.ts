@@ -2,31 +2,37 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "app/store";
+import { createSlice /* PayloadAction  */ } from "@reduxjs/toolkit"
+import { RootState } from "app/store"
 
-type ICount = {
-  count: number;
-};
+type TinitialState = {
+  value: number
+  mode: boolean
+}
 
 export const countSlice = createSlice({
   name: "count",
   initialState: {
     // 自動で型付けをする
-    count: 0,
+    value: 0,
+    mode: false,
   },
   reducers: {
-    increment: (state: ICount) => {
-      state.count++;
+    increment: (state) => {
+      state.value++
     },
     decrement: (state) => {
-      state.count--;
+      state.value--
+    },
+    toggleMode: (state) => {
+      state.mode = !state.mode
     },
   },
-});
+})
 
-export const { increment, decrement } = countSlice.actions;
+export const { increment, decrement, toggleMode } = countSlice.actions
 
-export const selectCount = (state: RootState) => state.count.count; /* reducerのuserと一致 */
+export const selectCount = (state: RootState) => state.count.value /* reducerのuserと一致 */
+export const selectMode = (state: RootState) => state.count.mode /* reducerのuserと一致 */
 
-export default countSlice.reducer;
+export default countSlice.reducer

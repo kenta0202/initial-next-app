@@ -10,6 +10,7 @@ type Post = {
   body: string
 }
 
+// データを返すPromise関数
 export const getProjects = async (page = 1) => {
   try {
     const responce: AxiosResponse<Post[]> = await axios

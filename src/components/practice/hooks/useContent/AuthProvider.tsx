@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useContext, useState } from "react"
 
 type Props = {
   children: React.ReactNode
@@ -22,3 +22,5 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 }
 
 export default AuthProvider
+
+export const useAuthStateContext = (): TState => useContext(AuthContext)

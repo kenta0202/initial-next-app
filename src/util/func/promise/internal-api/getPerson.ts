@@ -1,4 +1,8 @@
-export const getPerson = async () => {
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+import { IPerson } from "interface/practice/reactquery/Person"
+
+// GET Promise<IPerson>
+export const getPerson = async (): Promise<IPerson[]> => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/person`)
     if (!res.ok)

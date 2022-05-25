@@ -1,6 +1,6 @@
 import { IPerson } from "interface/practice/reactquery/Person"
 
-// Post
+// Post　Promise<IPerson>
 export const createPerson = async (id: string, name: string, age: number): Promise<IPerson> => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/person/create`, {

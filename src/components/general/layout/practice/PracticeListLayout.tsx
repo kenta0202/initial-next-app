@@ -16,6 +16,7 @@ const PracticeListLayout: FC<Props> = ({ children }) => {
         <NavBar sampleName={"Rendering"} />
         <NavBar sampleName={"React18"} />
         <NavBar sampleName={"ReactQuery"} />
+        <NavBar sampleName={"Other"} />
         <main className="flex flex-col flex-1 justify-center items-center w-screen">
           {children}
         </main>

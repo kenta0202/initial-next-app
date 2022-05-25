@@ -1,12 +1,14 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import { selectCount, increment, decrement } from "features/countSlice"
-import { useDispatch, useSelector } from "react-redux"
+import { selectCount, increment, decrement, toggleMode, selectMode } from "features/countSlice"
 import NavBar from "components/practice/NavBar"
 import PracticeTitle from "components/practice/PracticeTitle"
+import { useAppDispatch, useAppSelector } from "app/hooks"
 
 const Count = () => {
-  const dispatch = useDispatch()
-  const count = useSelector(selectCount)
+  const dispatch = useAppDispatch()
+  const count = useAppSelector(selectCount)
+  const mode = useAppSelector(selectMode)
+  console.log("Render")
   return (
     <>
       <PracticeTitle>Counter</PracticeTitle>
@@ -15,6 +17,10 @@ const Count = () => {
         <p>{count}</p>
         <button onClick={() => dispatch(decrement())}>-</button>
       </div>
+      <div>{mode ? "mode on" : "mode off"}</div>
+      <button className="btn" onClick={() => dispatch(toggleMode())}>
+        toggle mode
+      </button>
     </>
   )
 }

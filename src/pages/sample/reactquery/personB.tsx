@@ -1,25 +1,23 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import FetchPersonById from "components/practice/reactquery/FetchPersonById"
 import { Suspense } from "react"
 import NavBar from "components/practice/NavBar"
 import PracticeTitle from "components/practice/PracticeTitle"
 import Sppinner from "components/general/Sppinner"
+import FetchPersonB from "components/practice/reactquery/FetchPersonB"
 
-const PersonIdPage = () => {
-  console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
-
+const Person = () => {
   return (
     <>
-      <PracticeTitle>Get PersonData</PracticeTitle>
+      <PracticeTitle>Get PersonData from Person Cache</PracticeTitle>
       <Suspense fallback={<Sppinner />}>
-        <FetchPersonById />
+        <FetchPersonB />
       </Suspense>
     </>
   )
 }
 
-PersonIdPage.getLayout = (page) => (
+Person.getLayout = (page) => (
   <PracticeLayout NavBarElement={<NavBar sampleName={"ReactQuery"} />}>{page}</PracticeLayout>
 )
 
-export default PersonIdPage
+export default Person

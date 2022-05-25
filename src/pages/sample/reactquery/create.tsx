@@ -3,7 +3,7 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Sppinner from "components/general/Sppinner"
 import NavBar from "components/practice/NavBar"
 import PracticeTitle from "components/practice/PracticeTitle"
-import FetchPerson from "components/practice/reactquery/FetchPerson"
+import FetchPersonA from "components/practice/reactquery/FetchPersonA"
 import React, { FormEventHandler, Suspense, useState } from "react"
 import { QueryClient, useQueryClient } from "react-query"
 import { useMutationCreatePerson } from "util/hooks/practice/reactquery/useMutationCreatePerson"
@@ -66,7 +66,7 @@ const Mutations = () => {
         </button>
       </form>
       <Suspense fallback={<Sppinner />}>
-        <FetchPerson />
+        <FetchPersonA />
       </Suspense>
     </>
   )

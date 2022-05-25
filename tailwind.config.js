@@ -25,5 +25,6 @@ module.exports = {
     backgroundColor: ["responsive", "hover", "focus", "active"],
   },
   plugins: [],
+  // 実際に使われているものだけBuild
   content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
 }

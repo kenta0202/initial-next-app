@@ -9,10 +9,16 @@ type Props = {
   NavBarElement: ReactNode
 }
 
-const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {
+const PracticeLayouthasProvider: FC<Props> = ({ children, NavBarElement }) => {
   return (
     <StateProvider>
       {/* 共有するコンポーネントを同じProviderでラップする */}
+      {/* 一つのコンポーネントで何か変わると、
+      他のコンポーネントも含めてまとめて全体で再レンダリングされてしまう
+      →StateごとにProviderで分ける必要がある
+      →RTKを使用
+      */}
+
       <LayoutErrorBoundary>
         <div className="flex flex-col justify-center items-center min-h-screen ">
           {NavBarElement}
@@ -33,4 +39,4 @@ const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {
   )
 }
 
-export default PracticeLayout
+export default PracticeLayouthasProvider

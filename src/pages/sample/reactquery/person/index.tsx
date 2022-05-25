@@ -1,5 +1,5 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import FetchPerson from "components/practice/reactquery/FetchPerson"
+import FetchPersonA from "components/practice/reactquery/FetchPersonA"
 import { Suspense } from "react"
 import NavBar from "components/practice/NavBar"
 import PracticeTitle from "components/practice/PracticeTitle"
@@ -8,9 +8,9 @@ import Sppinner from "components/general/Sppinner"
 const Person = () => {
   return (
     <>
-      <PracticeTitle>Get PersonData</PracticeTitle>
+      <PracticeTitle>Get PersonData from CustomAPIServer</PracticeTitle>
       <Suspense fallback={<Sppinner />}>
-        <FetchPerson />
+        <FetchPersonA />
       </Suspense>
     </>
   )

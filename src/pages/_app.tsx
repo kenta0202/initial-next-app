@@ -55,7 +55,7 @@ const queryClient = new QueryClient({
       retry: false /* 失敗したときのRetryをfalse */,
       /* デフォルトは3回 */
       refetchOnWindowFocus: false,
-      /* フォーカスしたときやタブを切り替えた時の自動フェッチ→false デフォルトはtrue */
+      /* フォーカスしたときやタブを切り替えた時の自動フェッチ→false デフォルトはtrue 過剰なFetchを防ぐ*/
       suspense: true,
       /*
       suspenceはデフォルトでfalse

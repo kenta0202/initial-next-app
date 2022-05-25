@@ -11,7 +11,7 @@ interface RootObject {
   body: string
 }
 
-// Promiseを返す関数
+// データを返すPromise関数
 export const getComments = async (): Promise<RootObject[]> => {
   try {
     const res: AxiosResponse<RootObject[], string> = await axios

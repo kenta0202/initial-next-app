@@ -12,7 +12,7 @@ interface RootObject {
 export const useQueryComments = () => {
   return useQuery<RootObject[], Error>({
     queryKey: ["comments"],
-    queryFn: getComments /* Promiseを返す関数 */,
+    queryFn: getComments /* Promiseでデータを返す関数 */,
     // キャッシュされたデータは常に最新とみなす→ページ遷移するたびにFetchしない
     staleTime: Infinity,
     /*

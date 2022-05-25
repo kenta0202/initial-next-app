@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import axios, { AxiosResponse } from "axios"
 import { delay } from "../../fetchDelay"
@@ -32,12 +33,13 @@ interface Geo {
   lng: string
 }
 
+// データを返すPromise関数
 export const getUsers = async () => {
   try {
-    const responce: AxiosResponse<RootObject[]> = await axios
-      .get("https://jsonplaceholder.typicode.com/users?_limit=3")
+    const { data } = await axios
+      .get<RootObject[]>("https://jsonplaceholder.typicode.com/users?_limit=3")
       .then(delay(3000))
-    return responce.data
+    return data
   } catch (err: unknown) {
     if (err instanceof Error) {
       // if (axios.isAxiosError(err) && err.response) {

@@ -47,7 +47,11 @@ export const navBarDataList = {
     },
     {
       dir: "reactquery/person",
-      linkName: "Person",
+      linkName: "PersonA",
+    },
+    {
+      dir: "reactquery/personB",
+      linkName: "PersonB",
     },
     {
       dir: "reactquery/person/33",
@@ -116,6 +120,28 @@ export const navBarDataList = {
     {
       dir: "hooks/usecontext",
       linkName: "useContext",
+    },
+  ],
+  Other: [
+    {
+      dir: "other",
+      linkName: "Other",
+    },
+    {
+      dir: "other/fetch-a",
+      linkName: "ClassicalFetchA",
+    },
+    {
+      dir: "other/fetch-b",
+      linkName: "ClassicalFetchB",
+    },
+    {
+      dir: "other/context-a",
+      linkName: "ContextA",
+    },
+    {
+      dir: "other/context-b",
+      linkName: "ContextB",
     },
   ],
 }

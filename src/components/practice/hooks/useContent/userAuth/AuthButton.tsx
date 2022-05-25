@@ -1,22 +1,21 @@
 import { useContext } from "react"
-import { AuthContext } from "components/practice/hooks/useContent/AuthProvider"
+import { AuthContext, useAuthStateContext } from "components/practice/hooks/useContent/AuthProvider"
 
 const AuthButton = () => {
   console.log("render Button")
 
-  // context変数
-  const auth = useContext(AuthContext)
+  const { setUserAuth, userAuth } = useAuthStateContext()
 
   const handleSignOut = () => {
-    auth?.setUserAuth(false)
+    setUserAuth(false)
   }
   const handleSignIn = () => {
-    auth?.setUserAuth(true)
+    setUserAuth(true)
   }
 
   return (
     <>
-      {auth?.userAuth ? (
+      {userAuth ? (
         <button onClick={handleSignOut} className="btn">
           ログアウト
         </button>

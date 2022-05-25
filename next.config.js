@@ -8,5 +8,6 @@ module.exports = {
   // ビルド時の型チェックをスキップ
   ignoreBuildErrors: true,
   // Reactv18の新機能
+  // 2回マウントさせたくないのでfalseにする
   reactStrictMode: false,
 }

@@ -10,6 +10,7 @@ interface RootObject {
   completed: boolean
 }
 
+// データを返すPromise関数
 export const getTasks = async () => {
   try {
     const responce: AxiosResponse<RootObject[]> = await axios
