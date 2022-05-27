@@ -1,4 +1,4 @@
-import { TTask } from "data/task"
+import { TTask } from "interface/todo/tasks"
 import { createContext, Dispatch, SetStateAction, useContext, useState } from "react"
 
 type TStateContext = {
