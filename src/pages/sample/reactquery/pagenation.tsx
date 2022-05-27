@@ -2,8 +2,8 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Sppinner from "components/general/Sppinner"
 import FetchPageNation from "components/practice/reactquery/FetchPageNation"
 import { Suspense } from "react"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 const PageNation = () => {
   return (

@@ -3,7 +3,7 @@
 import axios, { AxiosResponse } from "axios"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useState, useEffect, useTransition } from "react"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 
 /*
 ●Description

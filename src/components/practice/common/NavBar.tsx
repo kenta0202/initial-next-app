@@ -1,5 +1,5 @@
 import { navBarDataList, TSampleEnum } from "data/practice/navBarDataList"
-import NavBarData from "components/practice/NavBarData"
+import NavBarData from "components/practice/common/NavBarData"
 import { useRouter } from "next/router"
 import React, { memo } from "react"
 

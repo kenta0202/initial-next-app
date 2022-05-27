@@ -1,4 +1,4 @@
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import React from "react"
 
 type Props = {

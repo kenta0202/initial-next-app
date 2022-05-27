@@ -1,5 +1,5 @@
 import PracticeLayouthasProvider from "components/general/layout/practice/PracticeLayouthasProvider"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 import { ClassicalFetchA } from "components/practice/other/ClassicalFetchA"
 
 const ClassicalFetchAPage = () => {

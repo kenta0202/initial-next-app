@@ -1,11 +1,4 @@
-export type TTask = {
-  id: number
-  title: string
-  created_at: string
-  updated_at: string
-  tag: number
-  tag_name: string
-}
+import { TTag, TTask } from "interface/todo/tasks"
 
 export const TaskList: TTask[] = [
   {
@@ -18,10 +11,24 @@ export const TaskList: TTask[] = [
   },
   {
     id: 2,
-    title: "Unit Test",
+    title: "Unit Test➀",
     created_at: "2021-05-13",
     updated_at: "2021-05-13",
     tag: 2,
     tag_name: "Coding",
   },
+  {
+    id: 3,
+    title: "Unit Test➁",
+    created_at: "2021-05-13",
+    updated_at: "2021-05-13",
+    tag: 3,
+    tag_name: "Coding",
+  },
 ]
+
+export const Tags: TTag[] = TaskList.map((v) => {
+  const newValue = { id: v.id, tag_name: v.tag_name }
+
+  return newValue
+})

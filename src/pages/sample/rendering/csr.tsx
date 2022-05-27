@@ -1,10 +1,10 @@
 import { useEffect } from "react"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 import { NextPageWithLayout } from "interface/general"
 import { useTasks } from "util/hooks/practice/supabase/useTasks"
 import { useNotices } from "util/hooks/practice/supabase/useNotices"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 const Csr: NextPageWithLayout = () => {
   const { tasks, getTasks } = useTasks()

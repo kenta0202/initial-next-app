@@ -3,8 +3,8 @@ import axios from "axios"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useState } from "react"
 import { flushSync } from "react-dom"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 const AutoBatch = () => {
   /*
     Reactv18の新機能 StrictMode

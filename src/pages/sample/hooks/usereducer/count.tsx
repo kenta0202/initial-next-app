@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Count from "components/practice/hooks/useReducer/Count"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import { useReducer } from "react"
 
 // Actionの値の列挙型

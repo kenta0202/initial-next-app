@@ -1,6 +1,6 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import { useState, useMemo } from "react"
 
 // 引数の数値を２倍にして返す。

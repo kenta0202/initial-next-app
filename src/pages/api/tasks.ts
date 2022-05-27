@@ -1,5 +1,6 @@
-import { TaskList, TTask } from "data/task"
+import { TaskList } from "data/task"
 import { TApiResponceError } from "interface/api"
+import { TTask } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
 
 const handler = (_req: NextApiRequest, res: NextApiResponse<TTask[] | TApiResponceError>) => {

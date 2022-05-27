@@ -1,5 +1,5 @@
 import PracticeLayouthasProvider from "components/general/layout/practice/PracticeLayouthasProvider"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 import { ContextB } from "components/practice/other/ContextB"
 
 const ContextBpage = () => {

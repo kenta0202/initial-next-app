@@ -3,9 +3,9 @@ import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import FetchTasks from "components/practice/react18/FetchTasks"
 import FetchUsers from "components/practice/react18/FetchUsers"
 import { Suspense } from "react"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 import Sppinner from "components/general/Sppinner"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 const NestedSuspense = () => {
   return (

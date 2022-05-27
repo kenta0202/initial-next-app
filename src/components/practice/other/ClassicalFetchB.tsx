@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { ChevronDoubleLeftIcon } from "@heroicons/react/solid"
 import { useStateContext } from "components/practice/other/context/StateProvider"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 export const ClassicalFetchB: React.FC = () => {
   const router = useRouter()

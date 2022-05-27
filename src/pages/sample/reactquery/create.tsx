@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Sppinner from "components/general/Sppinner"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import FetchPersonA from "components/practice/reactquery/FetchPersonA"
 import React, { FormEventHandler, Suspense, useState } from "react"
 import { QueryClient, useQueryClient } from "react-query"

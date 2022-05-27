@@ -3,8 +3,8 @@
 import axios, { AxiosResponse } from "axios"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { useEffect, useDeferredValue, useState } from "react"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 interface RootObject {
   albumId: number

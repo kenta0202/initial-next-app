@@ -1,7 +1,7 @@
 import Footer from "components/general/Footer"
 import { LayoutErrorBoundary } from "components/general/layout/LayoutErrorBoundary"
 import { FC, ReactNode } from "react"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 
 type Props = {
   children: ReactNode

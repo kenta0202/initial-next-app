@@ -1,7 +1,7 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import { selectCount, increment, decrement, toggleMode, selectMode } from "features/countSlice"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import { useAppDispatch, useAppSelector } from "app/hooks"
 
 const Count = () => {

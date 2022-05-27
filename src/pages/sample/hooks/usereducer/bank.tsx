@@ -1,8 +1,8 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import Button from "components/practice/hooks/useReducer/Bank/Button"
 import Input from "components/practice/hooks/useReducer/Bank/Input"
-import NavBar from "components/practice/NavBar"
-import PracticeTitle from "components/practice/PracticeTitle"
+import NavBar from "components/practice/common/NavBar"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import React, { useReducer, useState } from "react"
 
 type TState = {

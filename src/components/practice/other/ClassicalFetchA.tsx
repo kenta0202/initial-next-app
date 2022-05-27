@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useRouter } from "next/router"
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid"
 import { useClassicalFetch } from "util/hooks/practice/other/useClassicalFetch"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 export const ClassicalFetchA: React.FC = () => {
   const router = useRouter()

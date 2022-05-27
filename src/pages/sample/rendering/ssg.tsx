@@ -4,11 +4,11 @@ import { useRouter } from "next/router"
 import { GetStaticProps } from "next"
 import { Task, Notice } from "interface/supabase/types"
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
-import NavBar from "components/practice/NavBar"
+import NavBar from "components/practice/common/NavBar"
 import { NextPageWithLayout } from "interface/general"
 import { getNotices } from "util/func/promise/supabase/getNotices"
 import { getTasks } from "util/func/promise/supabase/getTasks"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log("getStaticProps/ssg invoked")

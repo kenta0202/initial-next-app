@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { useStateContext } from "components/practice/other/context/StateProvider"
-import PracticeTitle from "components/practice/PracticeTitle"
+import PracticeTitle from "components/practice/common/PracticeTitle"
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid"
 import router from "next/router"
 
