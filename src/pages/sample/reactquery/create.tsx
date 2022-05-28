@@ -55,11 +55,23 @@ const Mutations = () => {
       <form onSubmit={onSubmit}>
         <label htmlFor="name">Name:</label>
         <br />
-        <input type="text" id="name" name="name" className=" text-darkgrey" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          className=" text-darkgrey"
+          placeholder="Input Name"
+        />
         <br />
         <label htmlFor="age">Age:</label>
         <br />
-        <input type="number" id="age" name="age" className=" text-darkgrey" />
+        <input
+          type="number"
+          id="age"
+          name="age"
+          className=" text-darkgrey"
+          placeholder="Input Age"
+        />
         <br />
         <button type="submit" value="Submit">
           Submit

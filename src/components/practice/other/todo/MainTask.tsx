@@ -5,12 +5,14 @@ import { TaskListMemo } from "components/practice/other/todo/TaskList"
 
 export const MainTask: FC = () => {
   const router = useRouter()
+
+  // LocalState
   const [text, setText] = useState("")
   console.log("rendered MainTask")
   return (
     <>
       <input
-        className="py-2 px-3 mb-3 border border-gray-300"
+        className="py-2 px-3 mb-3 text-darkgrey border border-gray-300"
         placeholder="dummy text ?"
         type="text"
         onChange={(e) => setText(e.target.value)}
@@ -25,9 +27,9 @@ export const MainTask: FC = () => {
         onClick={() => {
           void router.push("./tags")
         }}
-        className="mt-2 w-5 h-5 text-blue-500 cursor-pointer"
+        className="mt-2 w-10 h-10 text-blue-500 cursor-pointer"
       />
-      <p>Tag page</p>
+      <p className="text-xl">Tag page</p>
     </>
   )
 }

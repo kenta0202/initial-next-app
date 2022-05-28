@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { AuthContext, useAuthStateContext } from "components/practice/hooks/useContent/AuthProvider"
+import { useAuthStateContext } from "components/practice/hooks/useContent/AuthProvider"
 
 const AuthButton = () => {
   console.log("render Button")

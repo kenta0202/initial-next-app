@@ -45,6 +45,7 @@ const Todo = () => {
       <PracticeTitle>TaskList</PracticeTitle>
       <form className="  space-x-2" onSubmit={handleOnClick}>
         <input
+          placeholder="Input Name"
           type="text"
           value={value}
           ref={inputRef}

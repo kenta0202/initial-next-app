@@ -26,8 +26,11 @@ export const userSlice = createSlice({
   },
 })
 
+// Action
 export const { login, logout } = userSlice.actions
 
+// useAppSelectorの引数になる
+export const selectCount = (state: RootState) => state.count.value /* reducerのuserと一致 */
 export const selectUser = (state: RootState) => state.user.user /* reducerのuserと一致 */
 
 export default userSlice.reducer

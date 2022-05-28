@@ -32,6 +32,7 @@ export const countSlice = createSlice({
 
 export const { increment, decrement, toggleMode } = countSlice.actions
 
+// useAppSelectorの引数になる
 export const selectCount = (state: RootState) => state.count.value /* reducerのuserと一致 */
 export const selectMode = (state: RootState) => state.count.mode /* reducerのuserと一致 */
 

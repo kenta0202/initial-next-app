@@ -41,13 +41,15 @@ const UseMemo = () => {
           のべき乗は <span className="py-1 px-4 text-xl">"{Memoexponentiation}"</span>
         </div>
         <form action="" className=" space-x-2">
-          <label htmlFor="username">テキスト:</label>
+          {/* <label htmlFor="username">テキスト:</label> */}
           <input
+            placeholder="Input Number"
             type="text"
             name="username"
             id=""
             value={userName}
             onChange={(e) => {
+              e.preventDefault()
               setUserName(e.target.value)
             }}
             className=" text-darkgrey"

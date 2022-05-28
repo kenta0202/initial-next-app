@@ -53,9 +53,10 @@ const Deferredvalue = () => {
       <input
         type="number"
         min={0}
-        className=" py-1 px-3 mb-5 text-xs rounded border border-gray-100"
+        className=" py-1 px-3 mb-5 text-xs text-darkgrey rounded border border-gray-100"
         value={input}
         onChange={updateHandler}
+        placeholder="Input Number"
       />
       <p className="mb-2 text-xs" key={photo?.id}>
         {photo?.title}

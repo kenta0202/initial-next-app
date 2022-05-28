@@ -40,6 +40,7 @@ export const useMutateTask = () => {
   const deleteTaskMutation = useMutation(deleteTask, {
     onSuccess: (res, variables) => {
       const previousTodos = queryClient.getQueryData<TTask[]>(["tasks"])
+      console.log(previousTodos)
       if (previousTodos) {
         queryClient.setQueryData<TTask[]>(
           ["tasks"],

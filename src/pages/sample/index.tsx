@@ -5,7 +5,7 @@ const SampleHome = () => {
   return <PracticeTitle>SampleHome</PracticeTitle>
 }
 
-SampleHome.getLayout = function getLayout(page) {
+SampleHome.getLayout = (page) => {
   return <PracticeListLayout>{page}</PracticeListLayout>
 }
 

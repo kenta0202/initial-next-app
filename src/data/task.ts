@@ -27,6 +27,14 @@ export const TaskList: TTask[] = [
   },
 ]
 
+export const Task = (num: string | number | string[]) => {
+  const Task = TaskList.filter((v) => {
+    return v.id == num /* numberとstring */
+  })
+
+  return { ...Task }
+}
+
 export const Tags: TTag[] = TaskList.map((v) => {
   const newValue = { id: v.id, tag_name: v.tag_name }
 

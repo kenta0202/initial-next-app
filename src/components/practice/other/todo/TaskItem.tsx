@@ -1,10 +1,16 @@
 import { FC, memo } from "react"
 
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid"
+
+// 型
 import { TTask } from "interface/todo/tasks"
-import { useMutateTask } from "util/hooks/practice/other/todo/useMutateTask"
-import { setEditedTask } from "features/todoSlice"
+// Redux
 import { useAppDispatch } from "app/hooks"
+// Action
+import { setEditedTask } from "features/todoSlice"
+
+// MutationHooks
+import { useMutateTask } from "util/hooks/practice/other/todo/useMutateTask"
 
 interface Props {
   task: TTask
@@ -13,7 +19,9 @@ interface Props {
 // taskを受け取って、
 const TaskItem: FC<Props> = ({ task }) => {
   const dispatch = useAppDispatch()
+  //   MutationResult
   const { deleteTaskMutation } = useMutateTask()
+
   console.log("rendered TaskItem")
   if (deleteTaskMutation.isLoading) {
     return <p>Deleting...</p>
@@ -29,6 +37,7 @@ const TaskItem: FC<Props> = ({ task }) => {
       <div className="flex float-right ml-20">
         <PencilAltIcon
           className="mx-1 w-5 h-5 text-blue-500 cursor-pointer"
+          // イベントハンドラ：Globaltate(EditedTask)を変更
           onClick={() => {
             dispatch(
               setEditedTask({
