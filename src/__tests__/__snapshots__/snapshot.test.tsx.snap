@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TestingPage unchanged 1`] = `
+Array [
+  <main>
+    <h1>
+      Hello
+    </h1>
+    <p>
+      Hello
+    </p>
+    <p
+      data-testid="test"
+    >
+      Test
+    </p>
+  </main>,
+  <div
+    style={
+      Object {
+        "margin": "2em",
+      }
+    }
+  >
+    <h1>
+      電源
+       
+      OFF
+    </h1>
+    <button
+      disabled={false}
+      onClick={[Function]}
+      onPointerDown={[Function]}
+    >
+      ON
+    </button>
+    <button
+      disabled={true}
+      onClick={[Function]}
+      onPointerDown={[Function]}
+    >
+      OFF
+    </button>
+  </div>,
+]
+`;

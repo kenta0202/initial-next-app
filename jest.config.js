@@ -1,6 +1,6 @@
 const nextJest = require("next/jest")
 /*
-●next/jestの機能
+●next/jestの機能 Next.js 12 に搭載されたSWC(ビルドツール)の恩恵
 transform の記載が不要（SWC が自動で transform してくれる）
 css/scss ファイル/画像ファイルのモック化が自動で行われる
 testPath から node_modules/.next フォルダがデフォルトで無視される
@@ -16,12 +16,6 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   // jest.setup.jsを作成する場合のみ定義。
   // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  // preset: "ts-jest",
-  // globals: {
-  //   "ts-jest": {
-  //     tsConfig: "tsconfig.json",
-  //   },
-  // },
   roots: [
     // すべてのTypeScriptファイルをプロジェクトのsrcフォルダに入れる tsconfigとおなじにする
     "<rootDir>/src",
@@ -37,3 +31,10 @@ const customJestConfig = {
 
 // createJestConfigを定義することによって、本ファイルで定義された設定がNext.jsの設定に反映されます
 module.exports = createJestConfig(customJestConfig)
+
+/*
+preset: ts-jest
+TS で書かれたコードをテストするためのトランスパイラとよばれるプリプロセッサ(これがコンパイルする)
+JestでTypeScriptを動かすことができる ただの変換ツール
+Babelの代わり
+*/
