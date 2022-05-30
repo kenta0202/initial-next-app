@@ -1,5 +1,5 @@
 /*
-リクエストが完了する前に実行
+リクエスト完了前に特定のコードを実行
 Pros
 ・VercelにNext.jsをデプロイするとこのmiddleware部分をEdge Functionsで捌いてくれる
 → オリジンサーバーに触れことなくmiddlewareを実行できる
