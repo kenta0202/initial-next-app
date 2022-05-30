@@ -10,4 +10,8 @@ module.exports = {
   // Reactv18の新機能
   // 2回マウントさせたくないのでfalseにする
   reactStrictMode: false,
+  // experimental: {
+  //   runtime: "edge",
+  //   serverComponents: true,
+  // },
 }

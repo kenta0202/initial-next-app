@@ -69,6 +69,7 @@ const Concurrent = () => {
         startTransition(concurrent feature)
       </p>
       <input
+        role={"search"}
         type="text"
         className=" py-1 px-3 mb-5 text-xs rounded border border-gray-100"
         // value={searchKey}

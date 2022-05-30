@@ -1,5 +1,5 @@
 const Header = () => {
-  return <div>Header</div>;
-};
+  return <div translate="no">Header</div>
+}
 
-export default Header;
+export default Header
