@@ -30,6 +30,9 @@ module.exports = {
     "react-hooks",
   ],
   extends: [
+    /*
+    next lintの場合
+    "next", */
     /*   どのルールセットを導入するか？
     プラグインが提供する推奨設定を指定
     ここに記述した共有設定間でルール設定が重複している場合、
@@ -160,4 +163,4 @@ module.exports = {
     "src/pages/_error.tsx",
     "_tests_",
   ],
-};
+}

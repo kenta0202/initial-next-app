@@ -1,4 +1,3 @@
-/* eslint-disable react/function-component-definition */
 import Head from "next/head"
 import { useRouter } from "next/router"
 
