@@ -24,7 +24,7 @@ export const TaskList: TTask[] = [
     tag_name: "健康",
   },
   {
-    id: "3",
+    id: "4",
     title: "一日一時間勉強する",
     created_at: "2021-05-13",
     updated_at: "2021-05-13",
@@ -44,8 +44,8 @@ export const CreateTask = (num: string | number | string[]) => {
 
 // 配列 Tags
 // TaskList配列からプロパティを抽出してTag配列を作成
-export const Tags: TTag[] = TaskList.map((v) => {
-  const newValue = { id: v.id, tag_name: v.tag_name }
 
-  return newValue
-})
+export const Tags: TTag[] = TaskList.filter(
+  (x, i, array) =>
+    array.findIndex((y) => y.tag_name === x.tag_name && y.tag_name === x.tag_name) === i
+)

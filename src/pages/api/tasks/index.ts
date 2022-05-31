@@ -2,6 +2,7 @@ import { TaskList } from "data/task"
 import { TApiResponceError } from "interface/api"
 import { TTask } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
+import { getDate } from "util/func/getDate"
 
 // GET,POST /api/tasks/
 const handler = (_req: NextApiRequest, res: NextApiResponse<TTask[] | TApiResponceError>) => {
@@ -18,7 +19,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse<TTask[] | TApiRespon
         break
       // Create
       case "POST":
-        res.status(200).json([{ ..._req.body }])
+        res.status(200).json([{ ..._req.body, created_at: getDate(), updated_at: getDate() }])
         break
     }
   } catch (err: unknown) {
