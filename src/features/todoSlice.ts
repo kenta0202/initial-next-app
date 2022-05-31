@@ -9,12 +9,12 @@ export interface TaskState {
 
 const initialState: TaskState = {
   editedTask: {
-    id: 0,
+    id: "0",
     title: "",
-    tag: 0,
+    tag_name: "0",
   },
   editedTag: {
-    id: 0,
+    id: "0",
     tag_name: "",
   },
 }

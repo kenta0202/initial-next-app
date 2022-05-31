@@ -1,7 +1,11 @@
+//  react
 import { FC, useState } from "react"
 import { useRouter } from "next/router"
+// heroicon
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid"
+// Component
 import { TaskListMemo } from "components/practice/other/todo/TaskList"
+import { TaskEditMemo } from "components/practice/other/todo/TaskEdit"
 
 export const MainTask: FC = () => {
   const router = useRouter()
@@ -21,7 +25,7 @@ export const MainTask: FC = () => {
       <p className="mb-10 text-xl font-bold">Tasks</p>
       <div className="grid grid-cols-2 gap-40">
         <TaskListMemo />
-        {/* <TaskEditMemo /> */}
+        <TaskEditMemo />
       </div>
       <ChevronDoubleRightIcon
         onClick={() => {

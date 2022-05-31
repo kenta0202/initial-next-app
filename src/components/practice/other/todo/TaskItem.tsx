@@ -1,14 +1,13 @@
+// React
 import { FC, memo } from "react"
-
+// Icons
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid"
-
 // 型
 import { TTask } from "interface/todo/tasks"
 // Redux
 import { useAppDispatch } from "app/hooks"
 // Action
-import { setEditedTask } from "features/todoSlice"
-
+import { setEditedTag, setEditedTask } from "features/todoSlice"
 // MutationHooks
 import { useMutateTask } from "util/hooks/practice/other/todo/useMutateTask"
 
@@ -19,6 +18,7 @@ interface Props {
 // taskを受け取って、
 const TaskItem: FC<Props> = ({ task }) => {
   const dispatch = useAppDispatch()
+
   //   MutationResult
   const { deleteTaskMutation } = useMutateTask()
 
@@ -43,7 +43,13 @@ const TaskItem: FC<Props> = ({ task }) => {
               setEditedTask({
                 id: task.id,
                 title: task.title,
-                tag: task.tag,
+                tag_name: task.tag_name,
+              })
+            )
+            dispatch(
+              setEditedTag({
+                id: task.id,
+                tag_name: task.tag_name,
               })
             )
           }}

@@ -532,11 +532,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-2 {
   margin-top: 0.5rem;
 }
-.ml-20 {
-  margin-left: 5rem;
-}
 .mb-10 {
   margin-bottom: 2.5rem;
+}
+.ml-20 {
+  margin-left: 5rem;
 }
 .inline {
   display: inline;
@@ -558,9 +558,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-5 {
   height: 1.25rem;
-}
-.h-screen {
-  height: 100vh;
 }
 .min-h-screen {
   min-height: 100vh;

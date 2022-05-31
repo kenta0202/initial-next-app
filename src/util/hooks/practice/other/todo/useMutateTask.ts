@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 // 型
 import { TTask } from "interface/todo/tasks"
 // redux
 import { useAppDispatch } from "app/hooks"
-import { resetEditedTask } from "features/todoSlice"
+import { resetEditedTag, resetEditedTask } from "features/todoSlice"
 // react query
 import { useMutation, useQueryClient } from "react-query"
 // Promise関数
@@ -15,14 +14,19 @@ export const useMutateTask = () => {
   const dispatch = useAppDispatch()
   const queryClient = useQueryClient()
 
+  // Mutation関数
+  // サーバーデータ["tasks"]のキャッシュの書き換えとGlobal変数EditedTaskの初期化
+
   const createTaskMutation = useMutation(createTask, {
     onSuccess: (res /* 結果が返る */) => {
       const previousTodos = queryClient.getQueryData<TTask[]>(["tasks"])
       if (previousTodos) {
-        //   キャッシュの書き換え
-        queryClient.setQueryData<TTask[]>(["tasks"], [...previousTodos, res.data])
+        //   キャッシュの追加
+        queryClient.setQueryData<TTask[]>(["tasks"], [...previousTodos, ...res.data])
+        console.log(res.data)
       }
       dispatch(resetEditedTask())
+      dispatch(resetEditedTag())
     },
   })
   const updateTaskMutation = useMutation(putTask, {
@@ -31,10 +35,12 @@ export const useMutateTask = () => {
       if (previousTodos) {
         queryClient.setQueryData<TTask[]>(
           ["tasks"],
+          // キャッシュの変更
           previousTodos.map((task) => (task.id === variables.id ? res.data : task))
         )
       }
       dispatch(resetEditedTask())
+      dispatch(resetEditedTag())
     },
   })
   const deleteTaskMutation = useMutation(deleteTask, {

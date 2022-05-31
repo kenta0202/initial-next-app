@@ -41,7 +41,7 @@ export const useMutateTag = () => {
       if (previousTags) {
         queryClient.setQueryData<TTag[]>(
           ["tags"],
-          previousTags.filter((tag) => tag.id !== variables)
+          previousTags.filter((tag) => Number(tag.id) !== variables)
         )
       }
       dispatch(resetEditedTag())

@@ -23,6 +23,7 @@ module.exports = {
   // ユーティリティに対してactiveバリアントを有効にするかどうかを制御
   variants: {
     backgroundColor: ["responsive", "hover", "focus", "active"],
+    opacity: ["disabled"],
   },
   plugins: [],
   // 実際に使われているものだけBuild
