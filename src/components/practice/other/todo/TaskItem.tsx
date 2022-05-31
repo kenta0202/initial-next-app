@@ -37,7 +37,7 @@ const TaskItem: FC<Props> = ({ task }) => {
       <div className="flex float-right ml-20">
         <PencilAltIcon
           className="mx-1 w-5 h-5 text-blue-500 cursor-pointer"
-          // イベントハンドラ：Globaltate(EditedTask)を変更
+          //
           onClick={() => {
             dispatch(
               setEditedTask({
@@ -54,6 +54,7 @@ const TaskItem: FC<Props> = ({ task }) => {
             )
           }}
         />
+        {/* DELETE /api/tasks/[id]  */}
         <TrashIcon
           className="w-5 h-5 text-blue-500 cursor-pointer"
           onClick={() => {

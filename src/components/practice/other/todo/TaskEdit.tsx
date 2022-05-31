@@ -32,21 +32,13 @@ const TaskEdit: FC = () => {
     e.preventDefault()
     //   サーバーサイドへの副作用をもたらす処理を実行
     if (/* GlobalState */ editedTask.id === "0")
-      /*
-editedTask: {
-    id: 0,
-    title: "",
-    tag: 0,
-  },
-*/
-
       /* Create 編集中のタスクがない */
       // 引数の型は, id,title,tag_name,
       createTaskMutation.mutate({ ...editedTask, ...editedTag, id: uid() })
     else {
       /* Update */
       // 引数の型は, id,title,tag_name,
-      updateTaskMutation.mutate({ ...editedTask, ...editedTag })
+      updateTaskMutation.mutate({ ...editedTask })
     }
   }
 
@@ -77,9 +69,8 @@ editedTask: {
         />
         <button
           className="py-2 px-3 m-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded disabled:opacity-40"
-          disabled={!editedTask.title || !editedTask.id}
-          // 両方とも空のとき
-          // Q: よくわからん
+          disabled={!editedTask.title || editedTask.tag_name === "0"}
+          // 左がFalthyなとき左に移動して、 右が trurethy の時disableがture
         >
           {editedTask.id === "0" ? "Create" : "Update"}
           {/* 編集中のタスクがあるかないか */}

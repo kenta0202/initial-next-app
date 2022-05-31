@@ -1,8 +1,9 @@
-import { Tags, TaskList } from "data/task"
+import { Tags } from "data/task"
 import { TApiResponceError } from "interface/api"
 import { TTag } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
 
+// GET /api/tags
 const handler = (_req: NextApiRequest, res: NextApiResponse<TTag[] | TApiResponceError>) => {
   try {
     if (!Array.isArray(Tags)) {

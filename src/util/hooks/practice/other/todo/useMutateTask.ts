@@ -32,6 +32,8 @@ export const useMutateTask = () => {
   const updateTaskMutation = useMutation(putTask, {
     onSuccess: (res, variables /* taskオブジェクトのデータ */) => {
       const previousTodos = queryClient.getQueryData<TTask[]>(["tasks"])
+      console.log(previousTodos, "previousTodos")
+      console.log(variables)
       if (previousTodos) {
         queryClient.setQueryData<TTask[]>(
           ["tasks"],

@@ -2,12 +2,9 @@ import { TaskList } from "data/task"
 import { TApiResponceError } from "interface/api"
 import { TTask } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
-import date from "date-and-time"
 
+// GET,POST /api/tasks/
 const handler = (_req: NextApiRequest, res: NextApiResponse<TTask[] | TApiResponceError>) => {
-  const now = new Date()
-  const DATE = date.format(now, "YYYY-MM-DD")
-
   try {
     if (!Array.isArray(TaskList)) {
       throw new Error("Cannot find user data")
@@ -15,11 +12,13 @@ const handler = (_req: NextApiRequest, res: NextApiResponse<TTask[] | TApiRespon
 
     const { method } = _req
     switch (method) {
+      // Read
       case "GET":
         res.status(200).json(TaskList)
         break
+      // Create
       case "POST":
-        res.json([/* ...TaskList, */ { ..._req.body, created_at: DATE, updated_at: DATE }])
+        res.status(200).json([{ ..._req.body }])
         break
     }
   } catch (err: unknown) {
