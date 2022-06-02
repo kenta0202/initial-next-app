@@ -3,9 +3,9 @@
 ### Basics
 - EcoSystem(npm.Webpack,Babel), Reactとは, TypeScript‬, Hooks
 ### Styling
-- ‪Tailwind 
+- ‪レスポンシブ対応, Tailwind 
 ### 状態管理
-- Redux,RTK
+- Redux, ReduxToolKit
 ### DataFetch
 - React Query
 ### Next.js
@@ -26,7 +26,7 @@
 ### ➁ 開発に関わる技術をそれぞれ学習 (202203〜202205)
 - 技術スタック参照
 
-### ➂ 【NOW】技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
+### ➂ 【Now】技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
 - BaaS × RTK × NextAPI Routes ×  React Query × 各レンダリング手法  x  Suspenseなど
 - Jest, react-testing-library
 
