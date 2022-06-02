@@ -1,7 +1,7 @@
 ## Webアプリケーションの技術スタック
 
 ### Basics
-- TypeScript‬, React, Hooks
+- ES6, TypeScript‬, React, Hooks
 ### Styling
 - ‪レスポンシブ対応, Tailwind 
 ### 状態管理
