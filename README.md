@@ -26,10 +26,10 @@
 ### 2. 開発に関わる技術をそれぞれ学習 (202203〜202205)
 - 技術スタック参照
 
-### 3.【Now】技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
+### 3.Now 技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
 - BaaS × RTK × NextAPI Routes ×  React Query × 各レンダリング手法  x  Suspenseなど
 - Jest, react-testing-library
 
-### 4.【Future】
+### 4.Future
 - GraphQL, サーバーサイド言語
 
