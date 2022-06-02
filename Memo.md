@@ -25,7 +25,7 @@ throw new Error(`${num} is not positive.`);
 try {
 // 0 未満の値を渡しているので、関数が例外を投げる
 assertPositiveNumber(-1);
-} catch (error) {
-console.log(error instanceof Error); // => true
-console.log(error.message); // => "-1 is not positive."
+} catch (err: unknown) {
+if (err instanceof Error) {
+throw err
 }
