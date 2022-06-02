@@ -2,7 +2,7 @@
   //別ファイルに分けて、チェックするファイルを限定
   // コンパイルするファイルを指定
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
-  "exclude": ["node_modules", "dist", "build","config"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "next-env.d.ts"],
+  "exclude": ["node_modules", "dist", "build", "config"],
   "eslintIgnore": ["webpack"]
 }
