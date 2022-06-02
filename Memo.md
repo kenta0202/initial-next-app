@@ -29,19 +29,3 @@ assertPositiveNumber(-1);
 console.log(error instanceof Error); // => true
 console.log(error.message); // => "-1 is not positive."
 }
-
-## TypeScript で Jest ファイルを走らせる(ビルドする)方法
-
-- ➀Next12 以降
-  - メリット1
-    - jest.cofing.json の記述の簡略化
-  - メリット2
-    - ビルドをする Webpack の一部を SWC で置き換えることでビルドの高速化
-  - コンパイル：Babel→SWCLoader
-  - 圧縮Terser→swcMinify
-- ➁TypeScript のコンパイルに TypeScript を使う場合
-  - ts-jest が必要
-  - jest.config.json で preset: 'ts-jest' を指定
-- ➂TypeScript のコンパイルに Babel を使う場合
-  - babel.config.js で perset の設定
-  - @preset/typescript と babel-jest をインストール

@@ -11,6 +11,9 @@ export default function Document() {
       <body className="  text-xl md:text-base  md:font-medium">
         <Main />
         <NextScript />
+        {/*styles flickering： CSSモジュールなどを使いながら実装していると、以下のissueに出ている画像のように一瞬だけスタイルシートの当たっていない状態で画面が表示される→対処 */}
+        {/* ここに空のscriptタグを入れる */}
+        <script> </script>
       </body>
     </Html>
   )

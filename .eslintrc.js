@@ -1,4 +1,4 @@
-module.exports = {
+/* CommonJS */ module.exports = {
   root: true,
   env: {
     // プログラムの実行環境を ESLint に教える
