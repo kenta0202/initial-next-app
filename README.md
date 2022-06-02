@@ -1,7 +1,7 @@
 ## Webアプリケーションの技術スタック
 
 ### Basics
-- EcoSystem(npm.Webpack,Babel), Reactとは, TypeScript‬, Hooks
+- TypeScript‬, React, Hooks
 ### Styling
 - ‪レスポンシブ対応, Tailwind 
 ### 状態管理
