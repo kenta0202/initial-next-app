@@ -13,10 +13,8 @@ module.exports = {
     extend: {
       darkMode: "class", //ダークモードを有効化する
       colors: {
-        darkgreyafter: "#4b5058", //darkModeで使用したい色を拡張定義
         darkgrey: "#222831", //darkModeで使用したい色を拡張定義
         whitegrey: "#e6e6e6",
-        whitegreyafter: "#f0f0f0",
       },
     },
   },

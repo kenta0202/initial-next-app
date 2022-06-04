@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { CreateTask } from "data/task"
-import { TApiResponceError } from "interface/api"
+import { TApiResponceError } from "interface/general"
 import { TTask } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getDate } from "util/func/getDate"

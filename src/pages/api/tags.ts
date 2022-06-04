@@ -1,5 +1,5 @@
 import { Tags } from "data/task"
-import { TApiResponceError } from "interface/api"
+import { TApiResponceError } from "interface/general"
 import { TTag } from "interface/todo/tasks"
 import { NextApiRequest, NextApiResponse } from "next"
 

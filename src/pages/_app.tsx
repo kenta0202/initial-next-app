@@ -73,6 +73,7 @@ const queryClient = new QueryClient({
 })
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  // ComponentにgetLayout関数があればgetLayout関数を, そうでなければそのままコンポーネントを返す
   const getLayout = Component.getLayout || ((page) => page)
   return (
     <>

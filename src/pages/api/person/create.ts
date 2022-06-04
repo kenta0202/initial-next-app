@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { NextApiRequest, NextApiResponse } from "next"
 import { IPerson } from "interface/practice/reactquery/Person"
-import { TApiResponceError } from "interface/api"
+import { TApiResponceError } from "interface/general"
 
 const handler = (_req: NextApiRequest, res: NextApiResponse<IPerson | TApiResponceError>): void => {
   /* res.status(500).jsonの引数がNextAppiResponce<>型 */

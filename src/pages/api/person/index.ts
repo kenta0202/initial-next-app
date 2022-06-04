@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { IPerson } from "interface/practice/reactquery/Person"
-import { TApiResponceError } from "interface/api"
+import { TApiResponceError } from "interface/general"
 
 const handler = (
   _req: NextApiRequest,

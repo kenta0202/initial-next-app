@@ -1,6 +1,5 @@
-
 import { IUser, UserData } from "data/users"
-import { TApiResponceError } from "interface/api"
+import { TApiResponceError } from "interface/general"
 import { NextApiRequest, NextApiResponse } from "next"
 
 const handler = (_req: NextApiRequest, res: NextApiResponse<IUser[] | TApiResponceError>) => {
