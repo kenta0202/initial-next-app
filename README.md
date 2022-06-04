@@ -22,7 +22,7 @@
 
 ### 1. 土台固め (202110〜202203) 
 - 資格取得(HTML,CSS,JavaScript)
-  - HTMLプロフェッショナルレベル1,HTNLプロフェッショナルレベル2  
+  - HTMLプロフェッショナルレベル1,HTMLプロフェッショナルレベル2  
 - Webの仕組みの基礎 
 - Reactの基本
 
@@ -30,15 +30,13 @@
 - 技術スタック参照
 
 ### 3. 「Now」実際の業務を意識した学習 (202206〜202208) 
-- 全体の機能
-  -  技術を組み合わせてCRUDを実装
+- 全体の機能(技術を組み合わせてCRUDを実装)
     - BaaS × RTK × Next.js API Routes ×  React Query × 各レンダリング手法 
-- 部分的なUIや機能
-  - リッチなUIの導入
-    -  Material UI
+- 部分的なUIや機能(リッチなUIの導入)
+    - Material UI
 - ‪Testing
   - Jest, react-testing-library
 
-### 4. 「Future」
+### 4. 「Future」(202209～)
 - 業務を経験を積む
 - GraphQL, バックエンドの学習
