@@ -17,6 +17,9 @@
 
 ## 学習の道のり
 
+### 0. 迷走期 (202107〜202109)
+-  土台がない状態で駆け足で色々なことを身につけようとしたため挫折 
+
 ### 1. 土台固め (202110〜202203) 
 - 資格取得(HTML,CSS,JavaScript)
   - HTMLプロフェッショナルレベル1,HTNLプロフェッショナルレベル2  
@@ -26,10 +29,16 @@
 ### 2. 開発に関わる技術をそれぞれ学習 (202203〜202205)
 - 技術スタック参照
 
-### 3. 「Now」 技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
-- BaaS × RTK × NextAPI Routes ×  React Query × 各レンダリング手法  x  Suspenseなど
-- Jest, react-testing-library
+### 3. 実際の業務を意識した学習 (202206〜202208) 
+- 全体の機能
+  -  技術を組み合わせてCRUDを実装
+    - BaaS × RTK × Next.js API Routes ×  React Query × 各レンダリング手法 
+- 部分的な機能や UI
+  - リッチなUIを導入
+    -  Material UI
+- ‪Testing
+  - Jest, react-testing-library
 
 ### 4. 「Future」
-- GraphQL, サーバーサイド言語
-
+- 業務を経験を積む
+- GraphQL, バックエンドの学習
