@@ -1,12 +1,19 @@
 import Layout from "components/general/layout/Layout"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 
 function IndexPage() {
+  const router = useRouter()
+
+  useEffect(() => {
+    void router.push("/sample")
+  }, [])
+
   return (
-    <>
-      <h1 className=" text-xl">func D 👋 </h1>
+    <div className="btn">
       <Link href={"/sample"}>Sampleへ</Link>
-    </>
+    </div>
   )
 }
 

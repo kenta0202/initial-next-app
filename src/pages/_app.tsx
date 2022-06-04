@@ -81,6 +81,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       {/* <Profiler id="user" onRender={profileRender}> */}
       <ReduxProvider store={store}>
         <QueryClientProvider client={queryClient}>
+          {/* Componentにパラメータをまとめて渡している */}
           {getLayout(<Component {...pageProps} />)}
           {process.env.NODE_ENV === "development" && <ReactQueryDevtools initialIsOpen={false} />}
         </QueryClientProvider>
