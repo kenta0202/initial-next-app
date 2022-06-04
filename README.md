@@ -1,47 +1,35 @@
-# TypeScript Next.js example
+## Webアプリケーションの技術スタック
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+### Basics
+- ES6, TypeScript‬, React, Hooks
+### Styling
+- ‪レスポンシブ対応, Tailwind 
+### 状態管理
+- Redux, ReduxToolKit
+### DataFetch
+- React Query
+### Next.js
+- APIRoutes, 各レンダリング手法
+### Testing
+- Jest, react-testing-library
+### Other
+- React18, Supabase
 
-## Preview
+## 学習の道のり
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+### 1. 土台固め (202110〜202203) 
+- 資格取得(HTML,CSS,JavaScript)
+  - HTMLプロフェッショナルレベル1,HTNLプロフェッショナルレベル2  
+- Webの仕組みの基礎 
+- Reactの基本
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+### 2. 開発に関わる技術をそれぞれ学習 (202203〜202205)
+- 技術スタック参照
 
-## Deploy your own
+### 3. 「Now」 技術を組み合わせてCRUDアプリを作成 + Testing (202206〜) 
+- BaaS × RTK × NextAPI Routes ×  React Query × 各レンダリング手法  x  Suspenseなど
+- Jest, react-testing-library
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+### 4. 「Future」
+- GraphQL, サーバーサイド言語
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
-```
-npm install --save-dev typescript
-```
-
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
-
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
