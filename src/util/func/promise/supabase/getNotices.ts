@@ -17,6 +17,7 @@ returnする変数をアサーションする
   // return notices as Notice[]
 
   // ダウンキャスト:型の詳細を指定して絞り込む(アサーション)
+  // 実装推論では測れない部分的補足
   const { data } = (await supabase
     .from("notices")
     .select("*")

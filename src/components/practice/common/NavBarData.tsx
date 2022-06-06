@@ -1,9 +1,8 @@
 import Link from "next/link"
 
+// インデックスシグネチャ：オブジェクトの型を一律で制約
 type Props = {
-  dir: string
-  linkName: string
-  pathname: string
+  [k: string]: string
 }
 
 const NavBarData: React.FC<Props> = ({ dir, linkName, pathname }) => {

@@ -4,9 +4,11 @@ import Link from "next/link"
 import { FC, ReactNode } from "react"
 import { StateProvider } from "components/practice/other/context/StateProvider"
 
+// インデックスシグネチャと呼ばれる型を付与→オブジェクトプロパティの型を一律で制約
 type Props = {
-  children: ReactNode
-  NavBarElement: ReactNode
+  /*   children: ReactNode
+  NavBarElement: ReactNode */
+  [k: string]: ReactNode
 }
 
 const PracticeLayouthasProvider: FC<Props> = ({ children, NavBarElement }) => {

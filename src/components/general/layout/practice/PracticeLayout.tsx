@@ -4,9 +4,12 @@ import Link from "next/link"
 import { FC, ReactNode } from "react"
 import { StateProvider } from "components/practice/other/context/StateProvider"
 
+// インデックスプロパティ：型を一律で制約
+
 type Props = {
-  children: ReactNode
-  NavBarElement: ReactNode
+  // children: ReactNode
+  // NavBarElement: ReactNode
+  [k: string]: ReactNode
 }
 
 const PracticeLayout: FC<Props> = ({ children, NavBarElement }) => {

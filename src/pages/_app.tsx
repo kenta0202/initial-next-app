@@ -25,6 +25,7 @@ import { AppPropsWithLayout } from "interface/general"
 
 // WebVitalの計測
 // export function reportWebVitals(metric: NextWebVitalsMetric) {
+// UnionTypeの分岐
 //   switch (metric.name) {
 //     case "FCP":
 //       console.log(`FCP: ${Math.round(metric.value * 10) / 10}`)

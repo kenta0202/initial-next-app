@@ -1,3 +1,7 @@
+## 質問
+
+- 型アサーションを使う場面の例知りたい
+
 ## レンダリングのアプローチ
 
 - Fetch-on-Render（レンダリングしたうえでフェッチする）
@@ -29,3 +33,13 @@ assertPositiveNumber(-1);
 if (err instanceof Error) {
 throw err
 }
+
+## TypeScript
+
+- アノテーション>アサーション
+- ReturnType:関数の戻り値の型から新たな型を生成
+  - type hogehoge = ReturnType<関数型>
+  - 使用例
+    - import { calculateByAllOperator } from "./calculateByAllOperator";
+    - type Props = ReturnType<typeof calculateByAllOperator>;
+    - const hogehogeComponent: React.FC<Props> = (props) => {...}

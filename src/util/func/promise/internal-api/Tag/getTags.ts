@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import { TTag } from "interface/todo/tasks"
 
-// GET Promise<TTsdk>
+// GET Promise
 export const getTags = async (): Promise<TTag[]> => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/tags`)

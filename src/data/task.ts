@@ -49,3 +49,6 @@ export const Tags: TTag[] = TaskList.filter(
   (x, i, array) =>
     array.findIndex((y) => y.tag_name === x.tag_name && y.tag_name === x.tag_name) === i
 )
+
+// tag_nameの配列 ["健康","清潔","学習"]
+export const TagsList = [...new Set(TaskList.flatMap((data) => data.tag_name))]
