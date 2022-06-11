@@ -147,6 +147,10 @@ export const navBarDataList = {
       linkName: "Todo",
     },
     {
+      dir: "other/tags",
+      linkName: "Tags",
+    },
+    {
       dir: "other/testing",
       linkName: "Testing",
     },

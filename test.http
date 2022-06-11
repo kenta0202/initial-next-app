@@ -22,3 +22,13 @@ content-type: application/json
 "title": "Unit Test4",
 "tag_name": "tag4"
 }
+
+### 更新
+
+
+POST http://localhost:3000/api/tags/1 HTTP/1.1
+content-type: application/json
+
+{
+"tag_name": "tag4"
+}

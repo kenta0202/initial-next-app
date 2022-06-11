@@ -1,18 +1,18 @@
 import PracticeLayout from "components/general/layout/practice/PracticeLayout"
 import NavBar from "components/practice/common/NavBar"
 import PracticeTitle from "components/practice/common/PracticeTitle"
-import { MainTask } from "components/practice/other/todo/MainTask"
+import { MainTag } from "components/practice/other/todo/MainTag"
 
-const todoPage = () => {
+const tagsPage = () => {
   return (
     <>
       <PracticeTitle>CustomAPIServer+useQuery+RTK</PracticeTitle>
-      <MainTask />
+      <MainTag />
     </>
   )
 }
 
-todoPage.getLayout = (page) => (
+tagsPage.getLayout = (page) => (
   <PracticeLayout NavBarElement={<NavBar sampleName={"Other"} />}>{page}</PracticeLayout>
 )
-export default todoPage
+export default tagsPage

@@ -43,3 +43,9 @@ throw err
     - import { calculateByAllOperator } from "./calculateByAllOperator";
     - type Props = ReturnType<typeof calculateByAllOperator>;
     - const hogehogeComponent: React.FC<Props> = (props) => {...}
+- ユニオンのリテラル型から型を抽出する Extract
+  - Extract<対象の型, { type: "route" }<!-- 抜き出すものの一部 -->>
+
+## Tips
+
+- Recoil に key に uuid を使ってユニークにしてしまう → 意図しない衝突を防ぐ

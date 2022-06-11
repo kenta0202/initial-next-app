@@ -63,11 +63,14 @@ const queryClient = new QueryClient({
       suspence:trueだとuseErrorBoundary: trueになる
       */
       cacheTime: 5000,
-      /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除*/
+      /* GCの機能:cacheTimeはデフォルトで5分 5分を超えると自動的に削除 完全に消える*/
       // keepPreviousData: false,
       /*
       true:新しいデータの取得ができるまで以前のデータを使う
       false(デフォルト):ページが切り替わる度にローディングが発生
+    */
+      /*   refetchInterval:5000
+         ポーリングを行う
     */
     },
   },

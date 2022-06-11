@@ -44,11 +44,19 @@ export const CreateTask = (num: string | number | string[]) => {
 
 // 配列 Tags
 // TaskList配列からプロパティを抽出してTag配列を作成
+export const Tags: TTag[] = TaskList.map((v) => {
+  return [{ id: v.id, tag_name: v.tag_name }]
+})
+  .flat()
+  .filter(
+    (x, i, array) =>
+      array.findIndex((y) => y.tag_name === x.tag_name && y.tag_name === x.tag_name) === i
+  )
 
-export const Tags: TTag[] = TaskList.filter(
-  (x, i, array) =>
-    array.findIndex((y) => y.tag_name === x.tag_name && y.tag_name === x.tag_name) === i
-)
+export const CreateTag = (num: string | number | string[]) => {
+  const Tag = Tags.filter((v) => {
+    return v.id == num /* numberとstring */
+  })
 
-// tag_nameの配列 ["健康","清潔","学習"]
-export const TagsList = [...new Set(TaskList.flatMap((data) => data.tag_name))]
+  return { ...Tag[0] }
+}

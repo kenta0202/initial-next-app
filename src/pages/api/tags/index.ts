@@ -10,7 +10,17 @@ const handler = (_req: NextApiRequest, res: NextApiResponse<TTag[] | TApiResponc
       throw new Error("Cannot find user data")
     }
 
-    res.status(200).json(Tags)
+    const { method } = _req
+    switch (method) {
+      // Read
+      case "GET":
+        res.status(200).json(Tags)
+        break
+      // Create
+      case "POST":
+        res.status(200).json([_req.body]) /* TTag[]として返る */
+        break
+    }
   } catch (err: unknown) {
     // unknown型は型の特定をしないとオブジェクトのプロパティやメソッドの参照ができない
     if (err instanceof Error) {

@@ -15,17 +15,24 @@ export const useMutateTag = () => {
   const dispatch = useAppDispatch()
 
   const createTagMutation = useMutation(createTag, {
-    onSuccess: (res) => {
+    onSuccess: (res /* 結果が返る */) => {
       const previousTags = queryClient.getQueryData<TTag[]>(["tags"])
       if (previousTags) {
-        queryClient.setQueryData<TTag[]>(["tags"], [...previousTags, res.data])
+        queryClient.setQueryData<TTag[]>(
+          ["tags"],
+          [...previousTags, res.data /* TTag[]型 */].flat()
+        )
       }
       dispatch(resetEditedTag())
     },
   })
   const updateTagMutation = useMutation(putTag, {
-    onSuccess: (res, variables) => {
+    onSuccess: (res, variables /* POSTされたデータ */) => {
       const previousTags = queryClient.getQueryData<TTag[]>(["tags"])
+      console.log(previousTags, "previousTodos")
+      console.log(res.data)
+      console.log(variables)
+
       if (previousTags) {
         queryClient.setQueryData<TTag[]>(
           ["tags"],
@@ -36,12 +43,15 @@ export const useMutateTag = () => {
     },
   })
   const deleteTagMutation = useMutation(deleteTag, {
-    onSuccess: (res, variables) => {
+    onSuccess: (res, variables /* deleteTagの引数 */) => {
       const previousTags = queryClient.getQueryData<TTag[]>(["tags"])
+      console.log(res.data)
+      console.log(variables)
+
       if (previousTags) {
         queryClient.setQueryData<TTag[]>(
           ["tags"],
-          previousTags.filter((tag) => Number(tag.id) !== variables)
+          previousTags.filter((tag) => tag.id !== variables)
         )
       }
       dispatch(resetEditedTag())
