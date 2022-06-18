@@ -29,6 +29,9 @@ const NavBar: React.FC<Props> = memo(function NavBar({ sampleName }) {
       case "Other": {
         return navBarDataList.Other
       }
+      case "Try": {
+        return navBarDataList.Try
+      }
       default: // it depends
         throw new Error()
     }

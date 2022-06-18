@@ -746,6 +746,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }

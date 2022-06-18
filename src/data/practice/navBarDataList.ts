@@ -155,6 +155,12 @@ export const navBarDataList = {
       linkName: "Testing",
     },
   ],
+  Try: [
+    {
+      dir: "try",
+      linkName: "Try",
+    },
+  ],
 }
 
 export type TNavBarList = typeof navBarDataList

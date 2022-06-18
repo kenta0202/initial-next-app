@@ -41,3 +41,8 @@ export type TApiResponceError = {
   statusCode: number
   message: string
 }
+
+// Propsの型
+export type OnlyChildrenProps = {
+  children: React.ReactNode
+}
