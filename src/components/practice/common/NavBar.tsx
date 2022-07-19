@@ -44,7 +44,7 @@ const NavBar: React.FC<Props> = memo(function NavBar({ sampleName }) {
       role="navigation"
       className=" flex overflow-x-scroll sticky top-0 z-10   flex-row grow-0 items-center space-x-2 w-screen  whitespace-nowrap bg-darkgrey hidden-scrollbar "
     >
-      {dataFuc(sampleName).map((data) => (
+      {dataFuc(sampleName)?.map((data) => (
         <NavBarData
           linkName={data.linkName}
           dir={data.dir}
