@@ -52,7 +52,7 @@ const Todo = () => {
           onChange={onChangeHandle}
           className=" text-darkgrey"
         />
-        <button>タスクを追加</button>
+        <button>タスクを追加。</button>
       </form>
       <div>
         {lists.map((list) => (
