@@ -158,6 +158,10 @@ export const navBarDataList = {
       dir: "other/try",
       linkName: "Try",
     },
+    {
+      dir: "other/prisma",
+      linkName: "Prisma",
+    },
   ],
   Try: [
     {
