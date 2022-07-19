@@ -1,3 +1,8 @@
+/*
+_app.jsは全てのページで必要なファイルとして読み込まれる
+_appに実装を継ぎ足していくと、chunkが肥大化し続ける
+*/
+
 import "../styles/dist.css"
 import "../styles/normalize.css"
 import "../styles/global.css"
