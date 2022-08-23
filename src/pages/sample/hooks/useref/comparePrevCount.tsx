@@ -3,6 +3,7 @@ import NavBar from "components/practice/common/NavBar"
 import PracticeTitle from "components/practice/common/PracticeTitle"
 import { useState, useEffect, useRef } from "react"
 
+// ➀データの保持
 export default function ComparePrevCount() {
   const [count, setCount] = useState(10)
   // prevCountRef.current の初期値は 0

@@ -37,7 +37,7 @@ function reducer(state: TState, action: TCountAction) {
     case CountCategory.RESET:
       return { count: 0 }
     default:
-      return state
+      return state as never
   }
 }
 // Container

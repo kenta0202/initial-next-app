@@ -1,5 +1,5 @@
 // React
-import { FC, memo } from "react"
+import { memo } from "react"
 // Icons
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/solid"
 // 型
@@ -16,7 +16,7 @@ interface Props {
 }
 
 // taskを受け取って、
-const TaskItem: FC<Props> = ({ task }) => {
+const TaskItem = ({ task }: Props) => {
   const dispatch = useAppDispatch()
 
   //   MutationResult

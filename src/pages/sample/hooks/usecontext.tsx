@@ -11,6 +11,12 @@ const UseContext: NextPageWithLayout = () => {
   return (
     <>
       <PracticeTitle>ユーザ認証 (useContext)</PracticeTitle>
+      {/* AuthContext.ProviderにPropsとしてデータ(stateとstate関数)を渡す */}
+      {/* AuthContextにデータを保存 */}
+      {/* そのデータをchildrenのコンポーネントのuseContextでAuthContextを引数にして取り出す
+      ・データを親から直接渡さない
+      ・useContextフックではConsumerを使わずにContextのデータを参照できる
+      */}
       <AuthProvider>
         <AuthButton />
         <AuthDisplay />

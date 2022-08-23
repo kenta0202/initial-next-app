@@ -4,6 +4,7 @@ import PracticeTitle from "components/practice/common/PracticeTitle"
 import React, { useState } from "react"
 import { useAutoResize } from "util/hooks/practice/hooks/useAutoResize"
 
+// ➁DOMの参照
 const textArea = () => {
   // 画面に表示するItem一覧の値を管理
   const [itemList, setItemList] = useState<string[]>([])
@@ -49,7 +50,7 @@ const textArea = () => {
           <textarea
             value={value}
             onChange={handleOnChange}
-            ref={textAreaRef}
+            ref={textAreaRef} //DOMの参照
             className="text-darkgrey"
           ></textarea>
           <button className="btn">送信する</button>

@@ -4,6 +4,8 @@ import PracticeTitle from "components/practice/common/PracticeTitle"
 import { NextPageWithLayout } from "interface/general"
 import Link from "next/link"
 
+// useRefの役割は、➀データの保持、➁DOMの参照
+
 const useRefHome: NextPageWithLayout = () => {
   return (
     <>

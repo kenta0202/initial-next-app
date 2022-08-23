@@ -3,6 +3,7 @@ import NavBar from "components/practice/common/NavBar"
 import PracticeTitle from "components/practice/common/PracticeTitle"
 import { useState, useEffect, useRef } from "react"
 
+// ➀データの保持
 export default function isInitial() {
   const [count, setCount] = useState(0)
   // 初回レンダーかどうかのフラグ
@@ -14,6 +15,7 @@ export default function isInitial() {
     if (isInitialRender.current) {
       // ref オブジェクトの更新
       isInitialRender.current = false
+
       console.log(isInitialRender.current)
     }
   })

@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react"
 
 export const useAutoResize = (value: string) => {
+  // HTMLTextElementの属性の値 ref={○○}
   const ref = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
+    // refの役割はDOMの参照
     // 現在参照している要素を取得
     const element = ref.current
+    console.log(element)
     if (!element) {
       return
     }
