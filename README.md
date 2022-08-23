@@ -46,15 +46,20 @@
 - りあクト！3部作(https://oukayuka.booth.pm/)
 - 技術スタック参照
 
-### 3. 「Now」実際の業務を意識した学習 (202206〜202208)
+### 3. 「Now」実際の業務を意識した学習と基礎固め (202206〜202208)
 
 - 全体の機能(技術を組み合わせて CRUD を実装)
   - BaaS × RTK × Next.js API Routes × React Query × 各レンダリング手法
-- 部分的な UI や機能(リッチな UI の導入)
-  - Material UI
 - Testing
   - Jest, react-testing-library
-
+- ソフトウェア設計
+  - 良いコード悪いコードで学ぶ設計入門
+  - クリーンアーキテクチャ(React)
+- UI・UX設計
+  - UIデザイン必携
+  - UXデザインの法則
+  - オブジェクト指向UIデザイン
+  
 ### 4. 「Future」(202209 ～)
 
 - 業務を経験を積む
