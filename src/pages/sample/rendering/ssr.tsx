@@ -23,6 +23,7 @@ type StaticProps = {
 
 const Ssr: NextPageWithLayout<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
+
   return (
     <>
       <PracticeTitle>SSR</PracticeTitle>
