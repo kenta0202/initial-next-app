@@ -164,5 +164,7 @@
     "src/pages/_error.tsx",
     "_tests_",
     "jest**",
+    "**/*.test.ts",
+    "**/*.test.tsx",
   ],
 }
