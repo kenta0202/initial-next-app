@@ -3,6 +3,15 @@
   // コンパイルするファイルを指定
   "extends": "./tsconfig.json",
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "next-env.d.ts"],
-  "exclude": ["node_modules", "dist", "build", "config", "src/**/*.test.ts", "src/**/*.test.tsx"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "config",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.ts",
+    "src/**/*.stories.tsx"
+  ],
   "eslintIgnore": ["webpack"]
 }

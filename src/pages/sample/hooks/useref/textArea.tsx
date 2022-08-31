@@ -4,7 +4,7 @@ import PracticeTitle from "components/practice/common/PracticeTitle"
 import React, { useState } from "react"
 import { useAutoResize } from "util/hooks/practice/hooks/useAutoResize"
 
-// ➁DOMの参照
+// ➁DOMの参照s
 const textArea = () => {
   // 画面に表示するItem一覧の値を管理
   const [itemList, setItemList] = useState<string[]>([])
