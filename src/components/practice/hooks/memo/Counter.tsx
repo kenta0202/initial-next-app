@@ -18,7 +18,7 @@ const Counter: React.FC<Props> = React.memo(function Counter({ count2 }) {
   console.log("render Counter")
   const doubledCount = double(count2)
   return (
-    <p>
+    <p data-testid="count2">
       Counter: {count2}, {doubledCount}
     </p>
   )

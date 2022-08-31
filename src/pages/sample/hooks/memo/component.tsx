@@ -12,7 +12,7 @@ export default function Comp() {
   return (
     <>
       <PracticeTitle>コンポーネントのメモ化 (useMemo)</PracticeTitle>
-      <p>Counter: {count1}</p>
+      <p data-testid="count1">Counter: {count1}</p>
       <button onClick={() => setCount1(count1 + 1)} className="btn">
         Increment count1
       </button>

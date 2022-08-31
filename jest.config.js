@@ -14,18 +14,17 @@ const createJestConfig = nextJest({
 
 // Jestのカスタム設定を設置する場所。従来のプロパティはここで定義。
 const customJestConfig = {
-  // jest.setup.jsを作成する場合のみ定義。
-  // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   roots: [
     // すべてのTypeScriptファイルをプロジェクトのsrcフォルダに入れる tsconfigとおなじにする
     "<rootDir>/src",
   ],
   testEnvironment: "jest-environment-jsdom",
+  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   testMatch: ["**/?(*.)+(spec|test).+(ts|tsx|js)"],
   // transform: {
   //   "^.+\\.(ts|tsx)$": "ts-jest",
   // },
-
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleDirectories: ["node_modules", "<rootDir>/src"] /* Pathでsrcを省く ts.confingと同じにする */,
 }
 
