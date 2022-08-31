@@ -4,6 +4,7 @@
     // プログラムの実行環境を ESLint に教える
     es6: true,
     node: true,
+    "jest/globals": true /* jestを実行する場合の設定 */,
   },
   // ソースコードを特定の言語仕様に沿って解析
   parser: "@typescript-eslint/parser",
@@ -23,7 +24,7 @@
      */
     "@typescript-eslint",
     "tailwindcss",
-    // 'jest',
+    "jest" /* jestを実行する場合の設定 */,
     "import",
     "jsx-a11y",
     "react",
