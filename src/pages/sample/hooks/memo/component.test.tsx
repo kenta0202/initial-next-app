@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import Counter from "components/practice/hooks/memo/Counter"
 import Comp from "pages/sample/hooks/memo/component"
+import React from "react"
 
 describe("sample/hooks/memo/component", () => {
   it("[button1]Should increment correctly", async () => {

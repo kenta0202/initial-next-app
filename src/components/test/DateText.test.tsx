@@ -2,6 +2,7 @@
 import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import { DateText } from "./DateText"
+import React from "react"
 
 test("should render date", () => {
   jest.useFakeTimers()
